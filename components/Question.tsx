@@ -1,12 +1,23 @@
 'use client';
 
 import { Question as QuestionType } from '@/lib/types/game';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { 
+  getAbilityIconUrl, 
+  getItemIconUrl, 
+  getHeroIconUrl,
+  getAbilityIconFallbackUrl,
+  getItemIconFallbackUrl,
+  getHeroIconFallbackUrl,
+} from '@/lib/utils/asset-resolver';
+import AssetImage from './AssetImage';
 
 interface QuestionProps {
   question: QuestionType;
   questionNumber: number;
   totalQuestions: number;
+  currentScore: number;
+  pointsEarned: number;
   onAnswer: (answer: 'A' | 'B' | 'C' | 'D', timeRemaining: number) => void;
   onTimeout: () => void;
 }
@@ -17,26 +28,72 @@ export default function Question({
   question,
   questionNumber,
   totalQuestions,
+  currentScore,
+  pointsEarned,
   onAnswer,
   onTimeout,
 }: QuestionProps) {
   const [timeRemaining, setTimeRemaining] = useState(TIMER_DURATION);
   const [answered, setAnswered] = useState(false);
+  const [selectedAnswer, setSelectedAnswer] = useState<'A' | 'B' | 'C' | 'D' | null>(null);
+  const [displayScore, setDisplayScore] = useState(currentScore);
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const answeredRef = useRef(false);
 
   // Reset timer when question changes
   useEffect(() => {
     setTimeRemaining(TIMER_DURATION);
     setAnswered(false);
+    setSelectedAnswer(null);
+    setIsCorrect(null);
+    answeredRef.current = false;
   }, [question.id]);
 
+  // Update display score without resetting other state
   useEffect(() => {
-    if (answered) return;
+    if (pointsEarned === 0) {
+      setDisplayScore(currentScore);
+    }
+  }, [currentScore, pointsEarned]);
+
+  // Animate score counting when points are earned
+  useEffect(() => {
+    if (pointsEarned > 0) {
+      const duration = 1000; // 1 second
+      const steps = 30;
+      const increment = pointsEarned / steps;
+      const stepDuration = duration / steps;
+      
+      let currentStep = 0;
+      const interval = setInterval(() => {
+        currentStep++;
+        if (currentStep <= steps) {
+          setDisplayScore((prev) => Math.min(prev + increment, currentScore + pointsEarned));
+        } else {
+          setDisplayScore(currentScore + pointsEarned);
+          clearInterval(interval);
+        }
+      }, stepDuration);
+
+      return () => clearInterval(interval);
+    }
+  }, [pointsEarned, currentScore]);
+
+  useEffect(() => {
+    if (answeredRef.current) return;
 
     const interval = setInterval(() => {
+      if (answeredRef.current) {
+        clearInterval(interval);
+        return;
+      }
+
       setTimeRemaining((prev) => {
         if (prev <= 1) {
-          clearInterval(interval);
+          answeredRef.current = true;
           setAnswered(true);
+          setIsCorrect(false);
+          clearInterval(interval);
           setTimeout(() => onTimeout(), 100);
           return 0;
         }
@@ -45,11 +102,19 @@ export default function Question({
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [answered, onTimeout, question.id]);
+  }, [onTimeout, question.id]);
 
   const handleAnswer = (answer: 'A' | 'B' | 'C' | 'D') => {
-    if (answered) return;
+    if (answeredRef.current) return;
+    
+    // Immediately stop timer and disable buttons
+    answeredRef.current = true;
     setAnswered(true);
+    setSelectedAnswer(answer);
+    const correct = answer === question.correctAnswer;
+    setIsCorrect(correct);
+    
+    // Call the parent handler
     onAnswer(answer, timeRemaining);
   };
 
@@ -57,74 +122,164 @@ export default function Question({
     return `0:${seconds.toString().padStart(2, '0')}`;
   };
 
+  // Determine which icon to show based on metadata priority: ability > item > hero
+  const getQuestionIconUrl = (): { primary: string | null; fallback: string | null } => {
+    if (question.abilityId) {
+      return {
+        primary: getAbilityIconUrl(question.abilityId),
+        fallback: getAbilityIconFallbackUrl(question.abilityId),
+      };
+    }
+    if (question.itemId) {
+      return {
+        primary: getItemIconUrl(question.itemId),
+        fallback: getItemIconFallbackUrl(question.itemId),
+      };
+    }
+    if (question.heroId) {
+      return {
+        primary: getHeroIconUrl(question.heroId),
+        fallback: getHeroIconFallbackUrl(question.heroId),
+      };
+    }
+    return { primary: null, fallback: null };
+  };
+
+  const { primary: questionIconUrl, fallback: questionIconFallbackUrl } = getQuestionIconUrl();
+
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* Top Banner */}
-      <div className="bg-purple-900 px-6 py-4">
-        <div className="mx-auto flex max-w-4xl items-center justify-between">
-          <h2 className="text-xl font-semibold text-white">QUEUE TIME TRIVIA</h2>
-          <div className="text-xl font-semibold text-white">
-            Question {questionNumber}/{totalQuestions}
-          </div>
-        </div>
-      </div>
-
-      {/* Question Area - Centered with lots of space */}
-      <div className="flex flex-1 items-center justify-center px-4 py-12">
-        {/* Glossy Card Container */}
-        <div className="relative w-full max-w-2xl">
-          <div
-            className="rounded-2xl border border-purple-500/20 bg-gradient-to-b from-purple-900/90 to-purple-950/90 p-8 shadow-2xl backdrop-blur-sm"
-            style={{
-              boxShadow:
-                '0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3), inset 0 1px 0 0 rgba(255, 255, 255, 0.1)',
-            }}
-          >
-            <div className="space-y-6">
-              {/* Question Text */}
-              <h3 className="text-center text-xl font-medium text-white">
-                {question.question}
-              </h3>
-
-              {/* Lore Box (if present) */}
-              {question.lore && (
-                <div className="rounded-lg bg-black/30 px-4 py-3 backdrop-blur-sm">
-                  <p className="text-center text-sm italic text-white/90">
-                    {question.lore}
-                  </p>
+    <div 
+      className="flex min-h-screen flex-col items-center justify-center px-4 py-8"
+      style={{
+        backgroundImage: 'url(/images/backgrounds/background_4.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}
+    >
+      {/* Slim Pop-up Window Container */}
+      <div className="w-full max-w-md rounded-lg border border-slate-700/50 bg-slate-900/90 shadow-2xl backdrop-blur-sm">
+        {/* Window Content */}
+        <div className="p-5 space-y-5">
+          {/* Question Text - Centered */}
+          <div className="text-center">
+            {questionIconUrl ? (
+              <div className="flex flex-col items-center gap-4">
+                <h3 className="text-base font-medium text-white">{question.question}</h3>
+                <div className="flex items-center justify-center">
+                  <AssetImage
+                    src={questionIconUrl}
+                    alt="Question"
+                    className="h-20 w-20 object-contain"
+                    fallbackSrc={questionIconFallbackUrl}
+                  />
                 </div>
-              )}
+              </div>
+            ) : (
+              <h3 className="text-base font-medium text-white">{question.question}</h3>
+            )}
+          </div>
 
-              {/* Answer Options - 2x2 Grid */}
-              <div className="grid grid-cols-2 gap-3">
-                {(['A', 'B', 'C', 'D'] as const).map((option) => (
+          {/* Lore Box - Black rectangular box, no rounded corners */}
+          {question.lore && (
+            <div className="bg-black px-4 py-3">
+              <p className="text-center text-sm italic text-white">{question.lore}</p>
+            </div>
+          )}
+
+          {/* Answer Options - 2x2 Grid, compact */}
+          <div className="grid grid-cols-2 gap-2">
+              {(['A', 'B', 'C', 'D'] as const).map((option) => {
+                const isSelected = selectedAnswer === option;
+                const isCorrectAnswer = option === question.correctAnswer;
+                // Only show celebration animation if user got it correct
+                const showCorrect = answered && isCorrect === true && isCorrectAnswer;
+                // Show correct answer (without celebration) on timeout
+                const showCorrectAnswer = answered && isCorrect === false && isCorrectAnswer;
+                const showWrong = answered && isSelected && !isCorrectAnswer;
+                
+                return (
                   <button
                     key={option}
-                    onClick={() => handleAnswer(option)}
-                    disabled={answered}
-                    className="group relative flex items-center gap-3 rounded-lg border border-purple-600/40 bg-purple-900/40 p-3 text-left backdrop-blur-sm transition-all hover:border-purple-400/60 hover:bg-purple-800/50 disabled:cursor-not-allowed disabled:opacity-50"
-                    style={{
-                      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.3)',
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (!answered) {
+                        handleAnswer(option);
+                      }
                     }}
+                    disabled={answered}
+                    style={showCorrect ? { animation: 'correct-pulse 1s ease-in-out infinite' } : undefined}
+                    className={`group relative flex flex-col items-center justify-center rounded border p-2.5 ${
+                      answered && !showCorrect && !showCorrectAnswer ? 'pointer-events-none cursor-not-allowed opacity-60 transition-opacity' : showCorrect ? '' : 'transition-all cursor-pointer'
+                    } ${
+                      showCorrect
+                        ? 'border-green-500 bg-green-900/60 shadow-lg shadow-green-500/50 animate-correct-pulse'
+                        : showCorrectAnswer
+                        ? 'border-green-600/50 bg-green-900/30'
+                        : showWrong
+                        ? 'border-red-500 bg-red-900/40 shadow-lg shadow-red-500/30'
+                        : isSelected
+                        ? 'border-slate-400 bg-slate-700/70'
+                        : 'border-slate-600/40 bg-slate-800/60 hover:border-slate-500/60 hover:bg-slate-700/70 hover:shadow-lg'
+                    }`}
                   >
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-purple-600 text-sm font-bold text-white shadow-md group-hover:bg-purple-500">
+                    {/* Letter Label - Top-left corner, subtle */}
+                    <span className={`absolute left-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded text-xs font-semibold text-white/70 ${
+                      showCorrect ? 'bg-green-600' : showWrong ? 'bg-red-600' : 'bg-slate-700/50'
+                    }`}>
                       {option}
                     </span>
-                    <span className="flex-1 text-base text-white">
+                    
+                    {/* Checkmark or X overlay */}
+                    {showCorrect && (
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <div className="text-4xl text-green-400 font-bold animate-bounce drop-shadow-lg" style={{ textShadow: '0 0 10px rgba(34, 197, 94, 0.8)' }}>
+                          ✓
+                        </div>
+                      </div>
+                    )}
+                    {showWrong && (
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <div className="text-4xl text-red-400 font-bold animate-bounce drop-shadow-lg">✗</div>
+                      </div>
+                    )}
+                    
+                    {/* Answer Image - Centered, square */}
+                    <div className={`h-16 w-16 flex items-center justify-center bg-slate-900/80 border rounded mb-2 ${
+                      showCorrect ? 'border-green-500/80 animate-correct-glow' : showCorrectAnswer ? 'border-green-600/50' : showWrong ? 'border-red-500/50' : 'border-slate-600/30'
+                    }`}>
+                      {question.optionImages?.[option] ? (
+                        <img
+                          src={question.optionImages[option]}
+                          alt={`Option ${option}`}
+                          className={`h-full w-full object-contain ${showWrong ? 'opacity-50' : ''}`}
+                        />
+                      ) : (
+                        <img
+                          src="/images/Queen_of_Pain_Shadow_Strike_abilityicon_dota2_gameasset.png"
+                          alt="Placeholder"
+                          className={`h-full w-full object-contain ${showWrong ? 'opacity-30' : 'opacity-60'}`}
+                        />
+                      )}
+                    </div>
+                    
+                    {/* Answer Text - Below image */}
+                    <div className={`text-center text-sm font-medium ${
+                      showCorrect ? 'text-green-200' : showCorrectAnswer ? 'text-green-300' : showWrong ? 'text-red-300' : 'text-white'
+                    }`}>
                       {question.options[option]}
-                    </span>
+                    </div>
                   </button>
-                ))}
-              </div>
+                );
+              })}
             </div>
-          </div>
 
-          {/* Timer - Outside card but centered */}
-          <div className="mt-6 flex flex-col items-center gap-1">
-            <div className="text-3xl font-bold text-purple-400">
+          {/* Timer - Centered below answers */}
+          <div className="flex flex-col items-center gap-1 pt-1">
+            <div className="text-3xl font-bold text-slate-300">
               {formatTime(timeRemaining)}
             </div>
-            <div className="text-xs text-gray-400">TIME REMAINING</div>
+            <div className="text-xs text-gray-400 uppercase tracking-wide">TIME REMAINING</div>
           </div>
         </div>
       </div>

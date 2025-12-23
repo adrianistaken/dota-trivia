@@ -19,12 +19,12 @@ export default function Results({ finalScore, onNewRun }: ResultsProps) {
 
         <div className="space-y-4">
           <div>
-            <div className="text-lg text-purple-200">Final Score</div>
+            <div className="text-lg text-gray-300">Final Score</div>
             <div className="text-5xl font-bold text-white">{finalScore.toLocaleString()}</div>
           </div>
 
           <div>
-            <div className="text-lg text-purple-200">Best Score</div>
+            <div className="text-lg text-gray-300">Best Score</div>
             <div className="text-3xl font-bold text-white">
               {bestScore.toLocaleString()}
             </div>
@@ -36,7 +36,7 @@ export default function Results({ finalScore, onNewRun }: ResultsProps) {
 
         <button
           onClick={onNewRun}
-          className="rounded-lg bg-purple-600 px-8 py-4 text-xl font-semibold text-white transition-all hover:bg-purple-500 hover:shadow-lg active:scale-95"
+          className="rounded-lg bg-slate-700 px-8 py-4 text-xl font-semibold text-white transition-all hover:bg-slate-600 hover:shadow-lg active:scale-95"
         >
           Start New Run
         </button>

@@ -15,27 +15,29 @@ export default function Game({ questions, onComplete }: GameProps) {
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
   const [answers, setAnswers] = useState<AnswerResult[]>([]);
+  const [pointsEarned, setPointsEarned] = useState(0);
 
   const currentQuestion = questions[currentQuestionIndex];
   const isLastQuestion = currentQuestionIndex === questions.length - 1;
 
   const handleAnswer = (selectedAnswer: 'A' | 'B' | 'C' | 'D', timeRemaining: number) => {
     const correct = selectedAnswer === currentQuestion.correctAnswer;
-    const pointsEarned = calculatePoints(correct, timeRemaining, streak);
+    const earned = calculatePoints(correct, timeRemaining, streak);
 
     const answerResult: AnswerResult = {
       questionId: currentQuestion.id,
       selectedAnswer,
       correct,
       timeRemaining,
-      pointsEarned,
+      pointsEarned: earned,
     };
 
     const newAnswers = [...answers, answerResult];
     setAnswers(newAnswers);
+    setPointsEarned(earned);
 
     if (correct) {
-      setScore((prev) => prev + pointsEarned);
+      setScore((prev) => prev + earned);
       setStreak((prev) => prev + 1);
     } else {
       setStreak(0);
@@ -44,12 +46,13 @@ export default function Game({ questions, onComplete }: GameProps) {
     // Move to next question or complete
     if (isLastQuestion) {
       setTimeout(() => {
-        onComplete(newAnswers, score + pointsEarned);
-      }, 500);
+        onComplete(newAnswers, score + earned);
+      }, 3500);
     } else {
       setTimeout(() => {
         setCurrentQuestionIndex((prev) => prev + 1);
-      }, 500);
+        setPointsEarned(0);
+      }, 3500);
     }
   };
 
@@ -65,16 +68,18 @@ export default function Game({ questions, onComplete }: GameProps) {
     const newAnswers = [...answers, answerResult];
     setAnswers(newAnswers);
     setStreak(0);
+    setPointsEarned(0);
 
     // Move to next question or complete
     if (isLastQuestion) {
       setTimeout(() => {
         onComplete(newAnswers, score);
-      }, 500);
+      }, 3500);
     } else {
       setTimeout(() => {
         setCurrentQuestionIndex((prev) => prev + 1);
-      }, 500);
+        setPointsEarned(0);
+      }, 3500);
     }
   };
 
@@ -84,6 +89,7 @@ export default function Game({ questions, onComplete }: GameProps) {
     setScore(0);
     setStreak(0);
     setAnswers([]);
+    setPointsEarned(0);
   }, [questions]);
 
   return (
@@ -91,6 +97,8 @@ export default function Game({ questions, onComplete }: GameProps) {
       question={currentQuestion}
       questionNumber={currentQuestionIndex + 1}
       totalQuestions={questions.length}
+      currentScore={score}
+      pointsEarned={pointsEarned}
       onAnswer={handleAnswer}
       onTimeout={handleTimeout}
     />
