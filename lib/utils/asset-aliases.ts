@@ -8,21 +8,21 @@
 export type AssetType = 'hero' | 'item' | 'ability';
 
 interface AliasMap {
-  heroes: Record<string, string>;
-  items: Record<string, string>;
-  abilities: Record<string, string>;
+    heroes: Record<string, string>;
+    items: Record<string, string>;
+    abilities: Record<string, string>;
 }
 
 const ALIASES: AliasMap = {
-  heroes: {
-    'io': 'wisp',
-  },
-  items: {
-    'blink_dagger': 'blink',
-  },
-  abilities: {
-    // Add ability aliases here as needed
-  },
+    heroes: {
+        'io': 'wisp',
+    },
+    items: {
+        'blink_dagger': 'blink',
+    },
+    abilities: {
+        // Add ability aliases here as needed
+    },
 };
 
 /**
@@ -33,13 +33,13 @@ const ALIASES: AliasMap = {
  * @returns The asset key to use for Valve CDN (alias if exists, otherwise original)
  */
 export function getAssetKey(type: AssetType, idOrName: string): string {
-  const normalizedKey = idOrName.toLowerCase();
-  const aliasMap = ALIASES[`${type}s` as keyof AliasMap];
-  
-  if (aliasMap && aliasMap[normalizedKey]) {
-    return aliasMap[normalizedKey];
-  }
-  
-  return normalizedKey;
+    const normalizedKey = idOrName.toLowerCase();
+    const aliasMap = ALIASES[`${type}s` as keyof AliasMap];
+
+    if (aliasMap && aliasMap[normalizedKey]) {
+        return aliasMap[normalizedKey];
+    }
+
+    return normalizedKey;
 }
 
