@@ -129,8 +129,8 @@ export function generateAbilityManaCostQuestion(context: GeneratorContext): Ques
         return null;
     }
 
-    const abilityName = formatAbilityName(ability.name);
     const heroName = hero.displayName;
+    const abilityName = formatAbilityName(ability.name, heroName);
 
     // Generate distractors
     const distractors = generateDistractors(manaCost, context, abilityId);

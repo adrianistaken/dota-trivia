@@ -245,23 +245,17 @@ export default function Question({
                     )}
                     
                     {/* Answer Image - Centered, square */}
-                    <div className={`h-16 w-16 flex items-center justify-center bg-slate-900/80 border rounded mb-2 ${
-                      showCorrect ? 'border-green-500/80 animate-correct-glow' : showCorrectAnswer ? 'border-green-600/50' : showWrong ? 'border-red-500/50' : 'border-slate-600/30'
-                    }`}>
-                      {question.optionImages?.[option] ? (
+                    {question.optionImages?.[option] && (
+                      <div className={`h-16 w-16 flex items-center justify-center bg-slate-900/80 border rounded mb-2 ${
+                        showCorrect ? 'border-green-500/80 animate-correct-glow' : showCorrectAnswer ? 'border-green-600/50' : showWrong ? 'border-red-500/50' : 'border-slate-600/30'
+                      }`}>
                         <img
                           src={question.optionImages[option]}
                           alt={`Option ${option}`}
                           className={`h-full w-full object-contain ${showWrong ? 'opacity-50' : ''}`}
                         />
-                      ) : (
-                        <img
-                          src="/images/Queen_of_Pain_Shadow_Strike_abilityicon_dota2_gameasset.png"
-                          alt="Placeholder"
-                          className={`h-full w-full object-contain ${showWrong ? 'opacity-30' : 'opacity-60'}`}
-                        />
-                      )}
-                    </div>
+                      </div>
+                    )}
                     
                     {/* Answer Text - Below image */}
                     <div className={`text-center text-sm font-medium ${
