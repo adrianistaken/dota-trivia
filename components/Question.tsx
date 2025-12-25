@@ -39,14 +39,17 @@ export default function Question({
   const [displayScore, setDisplayScore] = useState(currentScore);
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const answeredRef = useRef(false);
+  const questionIdRef = useRef(question.id);
 
   // Reset timer when question changes
   useEffect(() => {
+    // Immediately reset all state when question changes
     setTimeRemaining(TIMER_DURATION);
     setAnswered(false);
     setSelectedAnswer(null);
     setIsCorrect(null);
     answeredRef.current = false;
+    questionIdRef.current = question.id;
   }, [question.id]);
 
   // Update display score without resetting other state
@@ -188,19 +191,21 @@ export default function Question({
           )}
 
           {/* Answer Options - 2x2 Grid, compact */}
-          <div className="grid grid-cols-2 gap-2">
+          <div key={question.id} className="grid grid-cols-2 gap-2">
               {(['A', 'B', 'C', 'D'] as const).map((option) => {
-                const isSelected = selectedAnswer === option;
+                // Only show visual feedback if we're still on the same question
+                const isCurrentQuestion = questionIdRef.current === question.id;
+                const isSelected = isCurrentQuestion && selectedAnswer === option;
                 const isCorrectAnswer = option === question.correctAnswer;
-                // Only show celebration animation if user got it correct
-                const showCorrect = answered && isCorrect === true && isCorrectAnswer;
-                // Show correct answer (without celebration) on timeout
-                const showCorrectAnswer = answered && isCorrect === false && isCorrectAnswer;
-                const showWrong = answered && isSelected && !isCorrectAnswer;
+                // Only show celebration animation if user got it correct and on current question
+                const showCorrect = isCurrentQuestion && answered && isCorrect === true && isCorrectAnswer;
+                // Show correct answer (without celebration) on timeout and on current question
+                const showCorrectAnswer = isCurrentQuestion && answered && isCorrect === false && isCorrectAnswer;
+                const showWrong = isCurrentQuestion && answered && isSelected && !isCorrectAnswer;
                 
                 return (
                   <button
-                    key={option}
+                    key={`${question.id}-${option}`}
                     onClick={(e) => {
                       e.preventDefault();
                       if (!answered) {
