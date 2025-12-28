@@ -13,8 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Queue Time Trivia - Dota 2 Trivia Game",
+  title: "Dota 2 Trivia",
   description: "Test your Dota 2 knowledge with quick-fire trivia questions. Answer 10 questions as fast as you can to maximize your score!",
+  icons: {
+    icon: [
+      { url: "/images/dota2trivialogo.png", type: "image/png" },
+    ],
+    shortcut: "/images/dota2trivialogo.png",
+    apple: "/images/dota2trivialogo.png",
+  },
 };
 
 export default function RootLayout({
