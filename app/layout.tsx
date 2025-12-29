@@ -43,7 +43,7 @@ export default function RootLayout({
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'fixed',
-            filter: 'blur(2px)',
+            filter: 'blur(1.4px)',
             transform: 'scale(1.05)',
           }}
         />

@@ -1,6 +1,7 @@
 [
   {
     "id": 1,
+    "shortName": "blink",
     "displayName": "Blink Dagger",
     "cost": 2250,
     "shopTags": "teleport;mobility;escape",
@@ -20,6 +21,7 @@
   },
   {
     "id": 2,
+    "shortName": "blades_of_attack",
     "displayName": "Blades of Attack",
     "cost": 450,
     "shopTags": "damage;tutorial",
@@ -35,6 +37,7 @@
   },
   {
     "id": 3,
+    "shortName": "broadsword",
     "displayName": "Broadsword",
     "cost": 1000,
     "shopTags": "damage",
@@ -50,6 +53,7 @@
   },
   {
     "id": 4,
+    "shortName": "chainmail",
     "displayName": "Chainmail",
     "cost": 550,
     "shopTags": "armor",
@@ -65,6 +69,7 @@
   },
   {
     "id": 5,
+    "shortName": "claymore",
     "displayName": "Claymore",
     "cost": 1350,
     "shopTags": "damage",
@@ -80,6 +85,7 @@
   },
   {
     "id": 6,
+    "shortName": "helm_of_iron_will",
     "displayName": "Helm of Iron Will",
     "cost": 975,
     "shopTags": "armor;regen_health",
@@ -95,6 +101,7 @@
   },
   {
     "id": 7,
+    "shortName": "javelin",
     "displayName": "Javelin",
     "cost": 900,
     "shopTags": "damage",
@@ -110,6 +117,7 @@
   },
   {
     "id": 8,
+    "shortName": "mithril_hammer",
     "displayName": "Mithril Hammer",
     "cost": 1600,
     "shopTags": "damage",
@@ -125,6 +133,7 @@
   },
   {
     "id": 9,
+    "shortName": "platemail",
     "displayName": "Platemail",
     "cost": 1400,
     "shopTags": "armor",
@@ -140,6 +149,7 @@
   },
   {
     "id": 10,
+    "shortName": "quarterstaff",
     "displayName": "Quarterstaff",
     "cost": 875,
     "shopTags": "damage;attack_speed",
@@ -155,6 +165,7 @@
   },
   {
     "id": 11,
+    "shortName": "quelling_blade",
     "displayName": "Quelling Blade",
     "cost": 100,
     "shopTags": "damage",
@@ -174,6 +185,7 @@
   },
   {
     "id": 12,
+    "shortName": "ring_of_protection",
     "displayName": "Ring of Protection",
     "cost": 175,
     "shopTags": "armor",
@@ -189,6 +201,7 @@
   },
   {
     "id": 13,
+    "shortName": "gauntlets",
     "displayName": "Gauntlets of Strength",
     "cost": 140,
     "shopTags": "str",
@@ -204,6 +217,7 @@
   },
   {
     "id": 14,
+    "shortName": "slippers",
     "displayName": "Slippers of Agility",
     "cost": 140,
     "shopTags": "agi",
@@ -219,6 +233,7 @@
   },
   {
     "id": 15,
+    "shortName": "mantle",
     "displayName": "Mantle of Intelligence",
     "cost": 140,
     "shopTags": "int",
@@ -234,6 +249,7 @@
   },
   {
     "id": 16,
+    "shortName": "branches",
     "displayName": "Iron Branch",
     "cost": 55,
     "shopTags": "agi;int;str",
@@ -251,6 +267,7 @@
   },
   {
     "id": 17,
+    "shortName": "belt_of_strength",
     "displayName": "Belt of Strength",
     "cost": 450,
     "shopTags": "str",
@@ -266,6 +283,7 @@
   },
   {
     "id": 18,
+    "shortName": "boots_of_elves",
     "displayName": "Band of Elvenskin",
     "cost": 450,
     "shopTags": "agi",
@@ -281,6 +299,7 @@
   },
   {
     "id": 19,
+    "shortName": "robe",
     "displayName": "Robe of the Magi",
     "cost": 450,
     "shopTags": "int",
@@ -296,6 +315,7 @@
   },
   {
     "id": 20,
+    "shortName": "circlet",
     "displayName": "Circlet",
     "cost": 155,
     "shopTags": "agi;int;str",
@@ -311,6 +331,7 @@
   },
   {
     "id": 21,
+    "shortName": "ogre_axe",
     "displayName": "Ogre Axe",
     "cost": 1000,
     "shopTags": "str",
@@ -326,6 +347,7 @@
   },
   {
     "id": 22,
+    "shortName": "blade_of_alacrity",
     "displayName": "Blade of Alacrity",
     "cost": 1000,
     "shopTags": "agi",
@@ -341,6 +363,7 @@
   },
   {
     "id": 23,
+    "shortName": "staff_of_wizardry",
     "displayName": "Staff of Wizardry",
     "cost": 1000,
     "shopTags": "int",
@@ -356,6 +379,7 @@
   },
   {
     "id": 24,
+    "shortName": "ultimate_orb",
     "displayName": "Ultimate Orb",
     "cost": 2800,
     "shopTags": "agi;int;str",
@@ -371,6 +395,7 @@
   },
   {
     "id": 25,
+    "shortName": "gloves",
     "displayName": "Gloves of Haste",
     "cost": 450,
     "shopTags": "attack_speed",
@@ -386,6 +411,7 @@
   },
   {
     "id": 26,
+    "shortName": "lifesteal",
     "displayName": "Morbid Mask",
     "cost": 900,
     "shopTags": "unique",
@@ -401,6 +427,7 @@
   },
   {
     "id": 27,
+    "shortName": "ring_of_regen",
     "displayName": "Ring of Regen",
     "cost": 175,
     "shopTags": "regen_health",
@@ -416,6 +443,7 @@
   },
   {
     "id": 28,
+    "shortName": "sobi_mask",
     "displayName": "Sage's Mask",
     "cost": 175,
     "shopTags": "regen_mana",
@@ -431,6 +459,7 @@
   },
   {
     "id": 29,
+    "shortName": "boots",
     "displayName": "Boots of Speed",
     "cost": 500,
     "shopTags": "move_speed;mobility;laning",
@@ -446,6 +475,7 @@
   },
   {
     "id": 30,
+    "shortName": "gem",
     "displayName": "Gem of True Sight",
     "cost": 900,
     "shopTags": "see_invis",
@@ -463,6 +493,7 @@
   },
   {
     "id": 31,
+    "shortName": "cloak",
     "displayName": "Cloak",
     "cost": 800,
     "shopTags": "magic_resist",
@@ -478,6 +509,7 @@
   },
   {
     "id": 32,
+    "shortName": "talisman_of_evasion",
     "displayName": "Talisman of Evasion",
     "cost": 1300,
     "shopTags": "evasion",
@@ -493,6 +525,7 @@
   },
   {
     "id": 33,
+    "shortName": "cheese",
     "displayName": "Cheese",
     "cost": 1000,
     "shopTags": "",
@@ -508,6 +541,7 @@
   },
   {
     "id": 34,
+    "shortName": "magic_stick",
     "displayName": "Magic Stick",
     "cost": 200,
     "shopTags": "regen_health;regen_mana;boost_health;boost_mana;laning;regen_mana",
@@ -523,6 +557,7 @@
   },
   {
     "id": 35,
+    "shortName": "recipe_magic_wand",
     "displayName": "Magic Wand Recipe",
     "cost": 150,
     "shopTags": "",
@@ -538,6 +573,7 @@
   },
   {
     "id": 36,
+    "shortName": "magic_wand",
     "displayName": "Magic Wand",
     "cost": 460,
     "shopTags": "regen_health;regen_mana;boost_health;boost_mana;int;agi;str;laning;regen_mana",
@@ -553,6 +589,7 @@
   },
   {
     "id": 37,
+    "shortName": "ghost",
     "displayName": "Ghost Scepter",
     "cost": 1500,
     "shopTags": "int;agi;str;hard_to_tag;escape",
@@ -568,6 +605,7 @@
   },
   {
     "id": 38,
+    "shortName": "clarity",
     "displayName": "Clarity",
     "cost": 60,
     "shopTags": "consumable;laning",
@@ -585,6 +623,7 @@
   },
   {
     "id": 39,
+    "shortName": "flask",
     "displayName": "Healing Salve",
     "cost": 100,
     "shopTags": "consumable;laning",
@@ -602,6 +641,7 @@
   },
   {
     "id": 40,
+    "shortName": "dust",
     "displayName": "Dust of Appearance",
     "cost": 80,
     "shopTags": "consumable;see_invis;laning",
@@ -621,6 +661,7 @@
   },
   {
     "id": 41,
+    "shortName": "bottle",
     "displayName": "Bottle",
     "cost": 675,
     "shopTags": "consumable;laning",
@@ -638,6 +679,7 @@
   },
   {
     "id": 42,
+    "shortName": "ward_observer",
     "displayName": "Observer Ward",
     "cost": 0,
     "shopTags": "consumable;laning",
@@ -655,6 +697,7 @@
   },
   {
     "id": 43,
+    "shortName": "ward_sentry",
     "displayName": "Sentry Ward",
     "cost": 50,
     "shopTags": "consumable;see_invis;laning",
@@ -672,6 +715,7 @@
   },
   {
     "id": 44,
+    "shortName": "tango",
     "displayName": "Tango",
     "cost": 90,
     "shopTags": "consumable;laning",
@@ -689,6 +733,7 @@
   },
   {
     "id": 45,
+    "shortName": "courier",
     "displayName": "Animal Courier",
     "cost": 50,
     "shopTags": "consumable",
@@ -704,6 +749,7 @@
   },
   {
     "id": 46,
+    "shortName": "tpscroll",
     "displayName": "Town Portal Scroll",
     "cost": 100,
     "shopTags": "consumable;laning;tutorial",
@@ -725,6 +771,7 @@
   },
   {
     "id": 47,
+    "shortName": "recipe_travel_boots",
     "displayName": "Boots of Travel Recipe",
     "cost": 2000,
     "shopTags": "",
@@ -740,6 +787,7 @@
   },
   {
     "id": 48,
+    "shortName": "travel_boots",
     "displayName": "Boots of Travel",
     "cost": 2500,
     "shopTags": "teleport;move_speed;mobility",
@@ -755,6 +803,7 @@
   },
   {
     "id": 49,
+    "shortName": "recipe_phase_boots",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -770,6 +819,7 @@
   },
   {
     "id": 50,
+    "shortName": "phase_boots",
     "displayName": "Phase Boots",
     "cost": 1500,
     "shopTags": "damage;move_speed;hard_to_tag;mobility",
@@ -785,6 +835,7 @@
   },
   {
     "id": 51,
+    "shortName": "demon_edge",
     "displayName": "Demon Edge",
     "cost": 2200,
     "shopTags": "damage",
@@ -800,6 +851,7 @@
   },
   {
     "id": 52,
+    "shortName": "eagle",
     "displayName": "Eaglesong",
     "cost": 2800,
     "shopTags": "agi",
@@ -815,6 +867,7 @@
   },
   {
     "id": 53,
+    "shortName": "reaver",
     "displayName": "Reaver",
     "cost": 2800,
     "shopTags": "str",
@@ -830,6 +883,7 @@
   },
   {
     "id": 54,
+    "shortName": "relic",
     "displayName": "Sacred Relic",
     "cost": 3400,
     "shopTags": "damage",
@@ -845,6 +899,7 @@
   },
   {
     "id": 55,
+    "shortName": "hyperstone",
     "displayName": "Hyperstone",
     "cost": 2000,
     "shopTags": "attack_speed",
@@ -860,6 +915,7 @@
   },
   {
     "id": 56,
+    "shortName": "ring_of_health",
     "displayName": "Ring of Health",
     "cost": 700,
     "shopTags": "regen_health",
@@ -875,6 +931,7 @@
   },
   {
     "id": 57,
+    "shortName": "void_stone",
     "displayName": "Void Stone",
     "cost": 700,
     "shopTags": "regen_mana",
@@ -890,6 +947,7 @@
   },
   {
     "id": 58,
+    "shortName": "mystic_staff",
     "displayName": "Mystic Staff",
     "cost": 2800,
     "shopTags": "int",
@@ -905,6 +963,7 @@
   },
   {
     "id": 59,
+    "shortName": "energy_booster",
     "displayName": "Energy Booster",
     "cost": 800,
     "shopTags": "mana_pool",
@@ -920,6 +979,7 @@
   },
   {
     "id": 60,
+    "shortName": "point_booster",
     "displayName": "Point Booster",
     "cost": 1200,
     "shopTags": "mana_pool;health_pool",
@@ -935,6 +995,7 @@
   },
   {
     "id": 61,
+    "shortName": "vitality_booster",
     "displayName": "Vitality Booster",
     "cost": 1000,
     "shopTags": "health_pool",
@@ -950,6 +1011,7 @@
   },
   {
     "id": 62,
+    "shortName": "recipe_power_treads",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -965,6 +1027,7 @@
   },
   {
     "id": 63,
+    "shortName": "power_treads",
     "displayName": "Power Treads",
     "cost": 1400,
     "shopTags": "attack_speed;move_speed;int;agi;str;mobility",
@@ -980,6 +1043,7 @@
   },
   {
     "id": 64,
+    "shortName": "recipe_hand_of_midas",
     "displayName": "Hand of Midas Recipe",
     "cost": 1750,
     "shopTags": "",
@@ -995,6 +1059,7 @@
   },
   {
     "id": 65,
+    "shortName": "hand_of_midas",
     "displayName": "Hand of Midas",
     "cost": 2200,
     "shopTags": "attack_speed;hard_to_tag;farming",
@@ -1014,6 +1079,7 @@
   },
   {
     "id": 66,
+    "shortName": "recipe_oblivion_staff",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -1029,6 +1095,7 @@
   },
   {
     "id": 67,
+    "shortName": "oblivion_staff",
     "displayName": "Oblivion Staff",
     "cost": 1625,
     "shopTags": "damage;int;attack_speed;regen_mana",
@@ -1044,6 +1111,7 @@
   },
   {
     "id": 68,
+    "shortName": "recipe_pers",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -1059,6 +1127,7 @@
   },
   {
     "id": 69,
+    "shortName": "pers",
     "displayName": "Perseverance",
     "cost": 1400,
     "shopTags": "regen_health;regen_mana",
@@ -1074,6 +1143,7 @@
   },
   {
     "id": 70,
+    "shortName": "recipe_poor_mans_shield",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -1089,6 +1159,7 @@
   },
   {
     "id": 71,
+    "shortName": "poor_mans_shield",
     "displayName": "Poor Man's Shield",
     "cost": 0,
     "shopTags": "agi;block",
@@ -1104,6 +1175,7 @@
   },
   {
     "id": 72,
+    "shortName": "recipe_bracer",
     "displayName": "Bracer Recipe",
     "cost": 210,
     "shopTags": "",
@@ -1119,6 +1191,7 @@
   },
   {
     "id": 73,
+    "shortName": "bracer",
     "displayName": "Bracer",
     "cost": 505,
     "shopTags": "damage;int;agi;str",
@@ -1134,6 +1207,7 @@
   },
   {
     "id": 74,
+    "shortName": "recipe_wraith_band",
     "displayName": "Wraith Band Recipe",
     "cost": 210,
     "shopTags": "",
@@ -1149,6 +1223,7 @@
   },
   {
     "id": 75,
+    "shortName": "wraith_band",
     "displayName": "Wraith Band",
     "cost": 505,
     "shopTags": "damage;int;agi;str",
@@ -1164,6 +1239,7 @@
   },
   {
     "id": 76,
+    "shortName": "recipe_null_talisman",
     "displayName": "Null Talisman Recipe",
     "cost": 210,
     "shopTags": "",
@@ -1179,6 +1255,7 @@
   },
   {
     "id": 77,
+    "shortName": "null_talisman",
     "displayName": "Null Talisman",
     "cost": 505,
     "shopTags": "damage;int;agi;str",
@@ -1194,6 +1271,7 @@
   },
   {
     "id": 78,
+    "shortName": "recipe_mekansm",
     "displayName": "Mekansm Recipe",
     "cost": 800,
     "shopTags": "",
@@ -1209,6 +1287,7 @@
   },
   {
     "id": 79,
+    "shortName": "mekansm",
     "displayName": "Mekansm",
     "cost": 1775,
     "shopTags": "agi;int;str;armor;boost_health;teamfight;save;tank",
@@ -1228,6 +1307,7 @@
   },
   {
     "id": 80,
+    "shortName": "recipe_vladmir",
     "displayName": "Vladmir's Offering Recipe",
     "cost": 0,
     "shopTags": "",
@@ -1243,6 +1323,7 @@
   },
   {
     "id": 81,
+    "shortName": "vladmir",
     "displayName": "Vladmir's Offering",
     "cost": 2200,
     "shopTags": "damage;armor;regen_mana;teamfight",
@@ -1260,13 +1341,14 @@
   },
   {
     "id": 84,
+    "shortName": "flying_courier",
     "displayName": "Flying Courier",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -1275,6 +1357,7 @@
   },
   {
     "id": 85,
+    "shortName": "recipe_buckler",
     "displayName": "Buckler Recipe",
     "cost": 250,
     "shopTags": "",
@@ -1290,6 +1373,7 @@
   },
   {
     "id": 86,
+    "shortName": "buckler",
     "displayName": "Buckler",
     "cost": 425,
     "shopTags": "armor;boost_armor",
@@ -1307,6 +1391,7 @@
   },
   {
     "id": 87,
+    "shortName": "recipe_ring_of_basilius",
     "displayName": "Ring of Basilius Recipe",
     "cost": 250,
     "shopTags": "",
@@ -1322,6 +1407,7 @@
   },
   {
     "id": 88,
+    "shortName": "ring_of_basilius",
     "displayName": "Ring of Basilius",
     "cost": 425,
     "shopTags": "regen_mana",
@@ -1339,6 +1425,7 @@
   },
   {
     "id": 89,
+    "shortName": "recipe_pipe",
     "displayName": "Pipe of Insight Recipe",
     "cost": 800,
     "shopTags": "",
@@ -1354,6 +1441,7 @@
   },
   {
     "id": 90,
+    "shortName": "pipe",
     "displayName": "Pipe of Insight",
     "cost": 3725,
     "shopTags": "regen_health;boost_magic_resist;teamfight;tank;magic_resist",
@@ -1373,6 +1461,7 @@
   },
   {
     "id": 91,
+    "shortName": "recipe_urn_of_shadows",
     "displayName": "Urn of Shadows Recipe",
     "cost": 320,
     "shopTags": "",
@@ -1388,6 +1477,7 @@
   },
   {
     "id": 92,
+    "shortName": "urn_of_shadows",
     "displayName": "Urn of Shadows",
     "cost": 825,
     "shopTags": "regen_mana;str;boost_health;teamfight",
@@ -1405,6 +1495,7 @@
   },
   {
     "id": 93,
+    "shortName": "recipe_headdress",
     "displayName": "Headdress Recipe",
     "cost": 250,
     "shopTags": "",
@@ -1420,6 +1511,7 @@
   },
   {
     "id": 94,
+    "shortName": "headdress",
     "displayName": "Headdress",
     "cost": 425,
     "shopTags": "str;int;agi;regen_health",
@@ -1437,6 +1529,7 @@
   },
   {
     "id": 95,
+    "shortName": "recipe_sheepstick",
     "displayName": "Scythe of Vyse Recipe",
     "cost": 700,
     "shopTags": "",
@@ -1452,6 +1545,7 @@
   },
   {
     "id": 96,
+    "shortName": "sheepstick",
     "displayName": "Scythe of Vyse",
     "cost": 5200,
     "shopTags": "int;regen_mana;agi;hard_to_tag;disable",
@@ -1471,6 +1565,7 @@
   },
   {
     "id": 97,
+    "shortName": "recipe_orchid",
     "displayName": "Orchid Malevolence Recipe",
     "cost": 450,
     "shopTags": "",
@@ -1486,6 +1581,7 @@
   },
   {
     "id": 98,
+    "shortName": "orchid",
     "displayName": "Orchid Malevolence",
     "cost": 3275,
     "shopTags": "attack_speed;damage;regen_mana;hard_to_tag;dps;disable",
@@ -1505,6 +1601,7 @@
   },
   {
     "id": 99,
+    "shortName": "recipe_cyclone",
     "displayName": "Eul's Scepter Recipe",
     "cost": 675,
     "shopTags": "",
@@ -1520,6 +1617,7 @@
   },
   {
     "id": 100,
+    "shortName": "cyclone",
     "displayName": "Eul's Scepter of Divinity",
     "cost": 2600,
     "shopTags": "int;regen_mana;move_speed;hard_to_tag;escape;disable",
@@ -1539,6 +1637,7 @@
   },
   {
     "id": 101,
+    "shortName": "recipe_force_staff",
     "displayName": "Force Staff Recipe",
     "cost": 950,
     "shopTags": "",
@@ -1554,6 +1653,7 @@
   },
   {
     "id": 102,
+    "shortName": "force_staff",
     "displayName": "Force Staff",
     "cost": 2200,
     "shopTags": "int;damage;hard_to_tag;mobility;escape;save",
@@ -1573,6 +1673,7 @@
   },
   {
     "id": 103,
+    "shortName": "recipe_dagon",
     "displayName": "Dagon Recipe",
     "cost": 1150,
     "shopTags": "",
@@ -1588,6 +1689,7 @@
   },
   {
     "id": 104,
+    "shortName": "dagon",
     "displayName": "Dagon",
     "cost": 2800,
     "shopTags": "damage;int;str;agi;hard_to_tag;magic_dmg",
@@ -1615,6 +1717,7 @@
   },
   {
     "id": 105,
+    "shortName": "recipe_necronomicon",
     "displayName": "Necronomicon Recipe",
     "cost": 1250,
     "shopTags": "",
@@ -1630,6 +1733,7 @@
   },
   {
     "id": 106,
+    "shortName": "necronomicon",
     "displayName": "Necronomicon",
     "cost": 2050,
     "shopTags": "int;str;hard_to_tag;see_invis",
@@ -1647,6 +1751,7 @@
   },
   {
     "id": 107,
+    "shortName": "recipe_ultimate_scepter",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -1662,6 +1767,7 @@
   },
   {
     "id": 108,
+    "shortName": "ultimate_scepter",
     "displayName": "Aghanim's Scepter",
     "cost": 4200,
     "shopTags": "int;str;agi;mana_pool;health_pool;hard_to_tag",
@@ -1677,6 +1783,7 @@
   },
   {
     "id": 109,
+    "shortName": "recipe_refresher",
     "displayName": "Refresher Orb Recipe",
     "cost": 1600,
     "shopTags": "",
@@ -1692,6 +1799,7 @@
   },
   {
     "id": 110,
+    "shortName": "refresher",
     "displayName": "Refresher Orb",
     "cost": 5000,
     "shopTags": "regen_health;regen_mana;hard_to_tag;teamfight",
@@ -1709,6 +1817,7 @@
   },
   {
     "id": 111,
+    "shortName": "recipe_assault",
     "displayName": "Assault Cuirass Recipe",
     "cost": 1300,
     "shopTags": "",
@@ -1724,6 +1833,7 @@
   },
   {
     "id": 112,
+    "shortName": "assault",
     "displayName": "Assault Cuirass",
     "cost": 5125,
     "shopTags": "attack_speed;armor;hard_to_tag;teamfight;tank",
@@ -1741,6 +1851,7 @@
   },
   {
     "id": 113,
+    "shortName": "recipe_heart",
     "displayName": "Heart of Tarrasque Recipe",
     "cost": 600,
     "shopTags": "",
@@ -1756,6 +1867,7 @@
   },
   {
     "id": 114,
+    "shortName": "heart",
     "displayName": "Heart of Tarrasque",
     "cost": 5100,
     "shopTags": "str;regen_health;health_pool;tank",
@@ -1771,6 +1883,7 @@
   },
   {
     "id": 115,
+    "shortName": "recipe_black_king_bar",
     "displayName": "Black King Bar Recipe",
     "cost": 1450,
     "shopTags": "",
@@ -1786,6 +1899,7 @@
   },
   {
     "id": 116,
+    "shortName": "black_king_bar",
     "displayName": "Black King Bar",
     "cost": 4050,
     "shopTags": "str;damage;hard_to_tag;teamfight;escape;tank",
@@ -1803,6 +1917,7 @@
   },
   {
     "id": 117,
+    "shortName": "aegis",
     "displayName": "Aegis of the Immortal",
     "cost": 0,
     "shopTags": "",
@@ -1818,6 +1933,7 @@
   },
   {
     "id": 118,
+    "shortName": "recipe_shivas_guard",
     "displayName": "Shiva's Guard Recipe",
     "cost": 2050,
     "shopTags": "",
@@ -1833,6 +1949,7 @@
   },
   {
     "id": 119,
+    "shortName": "shivas_guard",
     "displayName": "Shiva's Guard",
     "cost": 5175,
     "shopTags": "int;armor;hard_to_tag;teamfight;tank;magic_dmg",
@@ -1850,6 +1967,7 @@
   },
   {
     "id": 120,
+    "shortName": "recipe_bloodstone",
     "displayName": "Bloodstone Recipe",
     "cost": 0,
     "shopTags": "",
@@ -1865,6 +1983,7 @@
   },
   {
     "id": 121,
+    "shortName": "bloodstone",
     "displayName": "Bloodstone",
     "cost": 4350,
     "shopTags": "regen_health;regen_mana;mana_pool;health_pool;tank",
@@ -1882,6 +2001,7 @@
   },
   {
     "id": 122,
+    "shortName": "recipe_sphere",
     "displayName": "Linken's Sphere Recipe",
     "cost": 600,
     "shopTags": "",
@@ -1897,6 +2017,7 @@
   },
   {
     "id": 123,
+    "shortName": "sphere",
     "displayName": "Linken's Sphere",
     "cost": 4800,
     "shopTags": "regen_health;regen_mana;str;agi;int;hard_to_tag;teamfight;save",
@@ -1914,6 +2035,7 @@
   },
   {
     "id": 124,
+    "shortName": "recipe_vanguard",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -1929,6 +2051,7 @@
   },
   {
     "id": 125,
+    "shortName": "vanguard",
     "displayName": "Vanguard",
     "cost": 1700,
     "shopTags": "regen_health;block;health_pool;tank",
@@ -1944,6 +2067,7 @@
   },
   {
     "id": 126,
+    "shortName": "recipe_blade_mail",
     "displayName": "Blade Mail Recipe",
     "cost": 750,
     "shopTags": "",
@@ -1959,6 +2083,7 @@
   },
   {
     "id": 127,
+    "shortName": "blade_mail",
     "displayName": "Blade Mail",
     "cost": 2300,
     "shopTags": "damage;armor;int;hard_to_tag;tank",
@@ -1976,6 +2101,7 @@
   },
   {
     "id": 128,
+    "shortName": "recipe_soul_booster",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -1991,6 +2117,7 @@
   },
   {
     "id": 129,
+    "shortName": "soul_booster",
     "displayName": "Soul Booster",
     "cost": 3000,
     "shopTags": "regen_health;regen_mana;health_pool;mana_pool",
@@ -2006,6 +2133,7 @@
   },
   {
     "id": 130,
+    "shortName": "recipe_hood_of_defiance",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -2021,6 +2149,7 @@
   },
   {
     "id": 131,
+    "shortName": "hood_of_defiance",
     "displayName": "Hood of Defiance",
     "cost": 0,
     "shopTags": "regen_health;magic_resist;tank",
@@ -2038,6 +2167,7 @@
   },
   {
     "id": 132,
+    "shortName": "recipe_rapier",
     "displayName": "Divine Rapier Recipe",
     "cost": 0,
     "shopTags": "",
@@ -2053,6 +2183,7 @@
   },
   {
     "id": 133,
+    "shortName": "rapier",
     "displayName": "Divine Rapier",
     "cost": 5600,
     "shopTags": "damage;dps;magic_dmg",
@@ -2068,6 +2199,7 @@
   },
   {
     "id": 134,
+    "shortName": "recipe_monkey_king_bar",
     "displayName": "Monkey King Bar Recipe",
     "cost": 600,
     "shopTags": "",
@@ -2083,6 +2215,7 @@
   },
   {
     "id": 135,
+    "shortName": "monkey_king_bar",
     "displayName": "Monkey King Bar",
     "cost": 4700,
     "shopTags": "damage;attack_speed;hard_to_tag;dps",
@@ -2098,6 +2231,7 @@
   },
   {
     "id": 136,
+    "shortName": "recipe_radiance",
     "displayName": "Radiance Recipe",
     "cost": 0,
     "shopTags": "",
@@ -2113,6 +2247,7 @@
   },
   {
     "id": 137,
+    "shortName": "radiance",
     "displayName": "Radiance",
     "cost": 4700,
     "shopTags": "damage;farming;dps",
@@ -2128,6 +2263,7 @@
   },
   {
     "id": 138,
+    "shortName": "recipe_butterfly",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -2143,6 +2279,7 @@
   },
   {
     "id": 139,
+    "shortName": "butterfly",
     "displayName": "Butterfly",
     "cost": 5450,
     "shopTags": "agi;damage;evasion;attack_speed;dps;tank",
@@ -2158,6 +2295,7 @@
   },
   {
     "id": 140,
+    "shortName": "recipe_greater_crit",
     "displayName": "Daedalus Recipe",
     "cost": 900,
     "shopTags": "",
@@ -2173,6 +2311,7 @@
   },
   {
     "id": 141,
+    "shortName": "greater_crit",
     "displayName": "Daedalus",
     "cost": 5100,
     "shopTags": "damage;crit;dps",
@@ -2188,6 +2327,7 @@
   },
   {
     "id": 142,
+    "shortName": "recipe_basher",
     "displayName": "Skull Basher Recipe",
     "cost": 825,
     "shopTags": "",
@@ -2203,6 +2343,7 @@
   },
   {
     "id": 143,
+    "shortName": "basher",
     "displayName": "Skull Basher",
     "cost": 2875,
     "shopTags": "damage;str;hard_to_tag",
@@ -2218,6 +2359,7 @@
   },
   {
     "id": 144,
+    "shortName": "recipe_bfury",
     "displayName": "Battle Fury Recipe",
     "cost": 600,
     "shopTags": "",
@@ -2233,6 +2375,7 @@
   },
   {
     "id": 145,
+    "shortName": "bfury",
     "displayName": "Battle Fury",
     "cost": 3900,
     "shopTags": "damage;health_regen;mana_regen;hard_to_tag;farming;dps",
@@ -2250,6 +2393,7 @@
   },
   {
     "id": 146,
+    "shortName": "recipe_manta",
     "displayName": "Manta Style Recipe",
     "cost": 1550,
     "shopTags": "",
@@ -2265,6 +2409,7 @@
   },
   {
     "id": 147,
+    "shortName": "manta",
     "displayName": "Manta Style",
     "cost": 4650,
     "shopTags": "agi;str;int;attack_speed;move_speed;hard_to_tag;farming",
@@ -2282,6 +2427,7 @@
   },
   {
     "id": 148,
+    "shortName": "recipe_lesser_crit",
     "displayName": "Crystalys Recipe",
     "cost": 200,
     "shopTags": "",
@@ -2297,6 +2443,7 @@
   },
   {
     "id": 149,
+    "shortName": "lesser_crit",
     "displayName": "Crystalys",
     "cost": 2000,
     "shopTags": "damage;crit;dps",
@@ -2312,6 +2459,7 @@
   },
   {
     "id": 150,
+    "shortName": "recipe_armlet",
     "displayName": "Armlet of Mordiggian Recipe",
     "cost": 625,
     "shopTags": "",
@@ -2327,6 +2475,7 @@
   },
   {
     "id": 151,
+    "shortName": "armlet",
     "displayName": "Armlet of Mordiggian",
     "cost": 2500,
     "shopTags": "damage;attack_speed;armor;regen_health;hard_to_tag;dps;tank",
@@ -2342,6 +2491,7 @@
   },
   {
     "id": 152,
+    "shortName": "invis_sword",
     "displayName": "Shadow Blade",
     "cost": 3250,
     "shopTags": "damage;attack_speed;movespeed;hard_to_tag;dps",
@@ -2359,6 +2509,7 @@
   },
   {
     "id": 153,
+    "shortName": "recipe_sange_and_yasha",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -2374,6 +2525,7 @@
   },
   {
     "id": 154,
+    "shortName": "sange_and_yasha",
     "displayName": "Sange and Yasha",
     "cost": 4200,
     "shopTags": "damage;str;agi;attack_speed;unique;dps",
@@ -2389,6 +2541,7 @@
   },
   {
     "id": 155,
+    "shortName": "recipe_satanic",
     "displayName": "Satanic Recipe",
     "cost": 0,
     "shopTags": "",
@@ -2404,6 +2557,7 @@
   },
   {
     "id": 156,
+    "shortName": "satanic",
     "displayName": "Satanic",
     "cost": 5050,
     "shopTags": "damage;str;armor;unique;hard_to_tag;dps",
@@ -2419,6 +2573,7 @@
   },
   {
     "id": 157,
+    "shortName": "recipe_mjollnir",
     "displayName": "Mjollnir Recipe",
     "cost": 550,
     "shopTags": "",
@@ -2434,6 +2589,7 @@
   },
   {
     "id": 158,
+    "shortName": "mjollnir",
     "displayName": "Mjollnir",
     "cost": 5500,
     "shopTags": "damage;attack_speed;unique;farming;dps",
@@ -2453,6 +2609,7 @@
   },
   {
     "id": 159,
+    "shortName": "recipe_skadi",
     "displayName": "Eye of Skadi Recipe",
     "cost": 0,
     "shopTags": "",
@@ -2468,6 +2625,7 @@
   },
   {
     "id": 160,
+    "shortName": "skadi",
     "displayName": "Eye of Skadi",
     "cost": 5900,
     "shopTags": "agi;str;int;hard_to_tag;mana_pool;health_pool;unique;tank",
@@ -2483,6 +2641,7 @@
   },
   {
     "id": 161,
+    "shortName": "recipe_sange",
     "displayName": "Sange Recipe",
     "cost": 650,
     "shopTags": "",
@@ -2498,6 +2657,7 @@
   },
   {
     "id": 162,
+    "shortName": "sange",
     "displayName": "Sange",
     "cost": 2100,
     "shopTags": "damage;str;unique",
@@ -2513,6 +2673,7 @@
   },
   {
     "id": 163,
+    "shortName": "recipe_helm_of_the_dominator",
     "displayName": "Helm of the Dominator Recipe",
     "cost": 1125,
     "shopTags": "",
@@ -2528,6 +2689,7 @@
   },
   {
     "id": 164,
+    "shortName": "helm_of_the_dominator",
     "displayName": "Helm of the Dominator",
     "cost": 2550,
     "shopTags": "damage;armor;unique;hard_to_tag",
@@ -2547,6 +2709,7 @@
   },
   {
     "id": 165,
+    "shortName": "recipe_maelstrom",
     "displayName": "Maelstrom Recipe",
     "cost": 0,
     "shopTags": "farming",
@@ -2562,6 +2725,7 @@
   },
   {
     "id": 166,
+    "shortName": "maelstrom",
     "displayName": "Maelstrom",
     "cost": 2950,
     "shopTags": "damage;attack_speed;unique;farming;dps",
@@ -2577,6 +2741,7 @@
   },
   {
     "id": 167,
+    "shortName": "recipe_desolator",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -2592,6 +2757,7 @@
   },
   {
     "id": 168,
+    "shortName": "desolator",
     "displayName": "Desolator",
     "cost": 3500,
     "shopTags": "damage;unique;dps",
@@ -2607,6 +2773,7 @@
   },
   {
     "id": 169,
+    "shortName": "recipe_yasha",
     "displayName": "Yasha Recipe",
     "cost": 650,
     "shopTags": "",
@@ -2622,6 +2789,7 @@
   },
   {
     "id": 170,
+    "shortName": "yasha",
     "displayName": "Yasha",
     "cost": 2100,
     "shopTags": "agi;attack_speed;move_speed",
@@ -2637,6 +2805,7 @@
   },
   {
     "id": 171,
+    "shortName": "recipe_mask_of_madness",
     "displayName": "Mask of Madness Recipe",
     "cost": 0,
     "shopTags": "",
@@ -2652,6 +2821,7 @@
   },
   {
     "id": 172,
+    "shortName": "mask_of_madness",
     "displayName": "Mask of Madness",
     "cost": 1900,
     "shopTags": "unique;hard_to_tag;farming;dps",
@@ -2669,6 +2839,7 @@
   },
   {
     "id": 173,
+    "shortName": "recipe_diffusal_blade",
     "displayName": "Diffusal Blade Recipe",
     "cost": 1050,
     "shopTags": "",
@@ -2684,6 +2855,7 @@
   },
   {
     "id": 174,
+    "shortName": "diffusal_blade",
     "displayName": "Diffusal Blade",
     "cost": 2500,
     "shopTags": "agi;int;unique;hard_to_tag",
@@ -2703,6 +2875,7 @@
   },
   {
     "id": 175,
+    "shortName": "recipe_ethereal_blade",
     "displayName": "Ethereal Blade Recipe",
     "cost": 900,
     "shopTags": "",
@@ -2718,6 +2891,7 @@
   },
   {
     "id": 176,
+    "shortName": "ethereal_blade",
     "displayName": "Ethereal Blade",
     "cost": 5200,
     "shopTags": "agi;str;int;hard_to_tag;escape;save;magic_dmg",
@@ -2737,6 +2911,7 @@
   },
   {
     "id": 177,
+    "shortName": "recipe_soul_ring",
     "displayName": "Soul Ring Recipe",
     "cost": 350,
     "shopTags": "",
@@ -2752,6 +2927,7 @@
   },
   {
     "id": 178,
+    "shortName": "soul_ring",
     "displayName": "Soul Ring",
     "cost": 805,
     "shopTags": "regen_health;boost_mana;mana;regen_mana",
@@ -2767,6 +2943,7 @@
   },
   {
     "id": 179,
+    "shortName": "recipe_arcane_boots",
     "displayName": "Arcane Boots Recipe",
     "cost": 475,
     "shopTags": "",
@@ -2782,6 +2959,7 @@
   },
   {
     "id": 180,
+    "shortName": "arcane_boots",
     "displayName": "Arcane Boots",
     "cost": 1400,
     "shopTags": "move_speed;boost_mana;mana_pool;mana;regen_mana",
@@ -2799,6 +2977,7 @@
   },
   {
     "id": 181,
+    "shortName": "orb_of_venom",
     "displayName": "Orb of Venom",
     "cost": 350,
     "shopTags": "hard_to_tag",
@@ -2814,6 +2993,7 @@
   },
   {
     "id": 182,
+    "shortName": "stout_shield",
     "displayName": "Stout Shield",
     "cost": 100,
     "shopTags": "block",
@@ -2829,6 +3009,7 @@
   },
   {
     "id": 183,
+    "shortName": "recipe_invis_sword",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -2844,6 +3025,7 @@
   },
   {
     "id": 184,
+    "shortName": "recipe_ancient_janggo",
     "displayName": "Drum of Endurance Recipe",
     "cost": 500,
     "shopTags": "",
@@ -2859,6 +3041,7 @@
   },
   {
     "id": 185,
+    "shortName": "ancient_janggo",
     "displayName": "Drum of Endurance",
     "cost": 1625,
     "shopTags": "str;int;damage;move_speed;attack_speed;hard_to_tag;teamfight",
@@ -2874,6 +3057,7 @@
   },
   {
     "id": 186,
+    "shortName": "recipe_medallion_of_courage",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -2889,6 +3073,7 @@
   },
   {
     "id": 187,
+    "shortName": "medallion_of_courage",
     "displayName": "Medallion of Courage",
     "cost": 1025,
     "shopTags": "armor;regen_mana;hard_to_tag",
@@ -2906,6 +3091,7 @@
   },
   {
     "id": 188,
+    "shortName": "smoke_of_deceit",
     "displayName": "Smoke of Deceit",
     "cost": 50,
     "shopTags": "consumable;teamfight",
@@ -2923,6 +3109,7 @@
   },
   {
     "id": 189,
+    "shortName": "recipe_veil_of_discord",
     "displayName": "Veil of Discord Recipe",
     "cost": 320,
     "shopTags": "",
@@ -2938,6 +3125,7 @@
   },
   {
     "id": 190,
+    "shortName": "veil_of_discord",
     "displayName": "Veil of Discord",
     "cost": 1725,
     "shopTags": "int;armor;regen_health;hard_to_tag;magic_dmg",
@@ -2957,6 +3145,7 @@
   },
   {
     "id": 191,
+    "shortName": "recipe_necronomicon_2",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -2972,6 +3161,7 @@
   },
   {
     "id": 192,
+    "shortName": "recipe_necronomicon_3",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -2987,6 +3177,7 @@
   },
   {
     "id": 193,
+    "shortName": "necronomicon_2",
     "displayName": "Necronomicon",
     "cost": 3300,
     "shopTags": "int;str;hard_to_tag;see_invis",
@@ -3004,6 +3195,7 @@
   },
   {
     "id": 194,
+    "shortName": "necronomicon_3",
     "displayName": "Necronomicon",
     "cost": 4550,
     "shopTags": "int;str;hard_to_tag;see_invis",
@@ -3021,13 +3213,14 @@
   },
   {
     "id": 195,
+    "shortName": "recipe_diffusal_blade_2",
     "displayName": "Recipe: Diffusal Blade (level 2)",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -3036,13 +3229,14 @@
   },
   {
     "id": 196,
+    "shortName": "diffusal_blade_2",
     "displayName": "Diffusal Blade (level 2)",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -3051,6 +3245,7 @@
   },
   {
     "id": 197,
+    "shortName": "recipe_dagon_2",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -3066,6 +3261,7 @@
   },
   {
     "id": 198,
+    "shortName": "recipe_dagon_3",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -3081,6 +3277,7 @@
   },
   {
     "id": 199,
+    "shortName": "recipe_dagon_4",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -3096,6 +3293,7 @@
   },
   {
     "id": 200,
+    "shortName": "recipe_dagon_5",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -3111,6 +3309,7 @@
   },
   {
     "id": 201,
+    "shortName": "dagon_2",
     "displayName": "Dagon",
     "cost": 3950,
     "shopTags": "damage;int;str;agi;hard_to_tag;magic_dmg",
@@ -3138,6 +3337,7 @@
   },
   {
     "id": 202,
+    "shortName": "dagon_3",
     "displayName": "Dagon",
     "cost": 5100,
     "shopTags": "damage;int;str;agi;hard_to_tag;magic_dmg",
@@ -3165,6 +3365,7 @@
   },
   {
     "id": 203,
+    "shortName": "dagon_4",
     "displayName": "Dagon",
     "cost": 6250,
     "shopTags": "damage;int;str;agi;hard_to_tag;magic_dmg",
@@ -3192,6 +3393,7 @@
   },
   {
     "id": 204,
+    "shortName": "dagon_5",
     "displayName": "Dagon",
     "cost": 7400,
     "shopTags": "damage;int;str;agi;hard_to_tag;magic_dmg",
@@ -3219,6 +3421,7 @@
   },
   {
     "id": 205,
+    "shortName": "recipe_rod_of_atos",
     "displayName": "Rod of Atos Recipe",
     "cost": 250,
     "shopTags": "",
@@ -3234,6 +3437,7 @@
   },
   {
     "id": 206,
+    "shortName": "rod_of_atos",
     "displayName": "Rod of Atos",
     "cost": 2250,
     "shopTags": "int;regen_health;disable",
@@ -3253,6 +3457,7 @@
   },
   {
     "id": 207,
+    "shortName": "recipe_abyssal_blade",
     "displayName": "Abyssal Blade Recipe",
     "cost": 1275,
     "shopTags": "",
@@ -3268,6 +3473,7 @@
   },
   {
     "id": 208,
+    "shortName": "abyssal_blade",
     "displayName": "Abyssal Blade",
     "cost": 6250,
     "shopTags": "damage;str;hard_to_tag;disable",
@@ -3287,6 +3493,7 @@
   },
   {
     "id": 209,
+    "shortName": "recipe_heavens_halberd",
     "displayName": "Heaven's Halberd Recipe",
     "cost": 450,
     "shopTags": "",
@@ -3302,6 +3509,7 @@
   },
   {
     "id": 210,
+    "shortName": "heavens_halberd",
     "displayName": "Heaven's Halberd",
     "cost": 2600,
     "shopTags": "regen_health;block;health_pool;save;teamfight;tank",
@@ -3321,6 +3529,7 @@
   },
   {
     "id": 211,
+    "shortName": "recipe_ring_of_aquila",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -3336,6 +3545,7 @@
   },
   {
     "id": 212,
+    "shortName": "ring_of_aquila",
     "displayName": "Ring of Aquila",
     "cost": 0,
     "shopTags": "",
@@ -3353,6 +3563,7 @@
   },
   {
     "id": 213,
+    "shortName": "recipe_tranquil_boots",
     "displayName": "Tranquil Boots Recipe",
     "cost": 0,
     "shopTags": "",
@@ -3368,6 +3579,7 @@
   },
   {
     "id": 214,
+    "shortName": "tranquil_boots",
     "displayName": "Tranquil Boots",
     "cost": 900,
     "shopTags": "move_speed;regen_health;armor",
@@ -3385,6 +3597,7 @@
   },
   {
     "id": 215,
+    "shortName": "shadow_amulet",
     "displayName": "Shadow Amulet",
     "cost": 900,
     "shopTags": "",
@@ -3404,6 +3617,7 @@
   },
   {
     "id": 216,
+    "shortName": "enchanted_mango",
     "displayName": "Enchanted Mango",
     "cost": 65,
     "shopTags": "consumable",
@@ -3421,6 +3635,7 @@
   },
   {
     "id": 217,
+    "shortName": "recipe_ward_dispenser",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -3436,6 +3651,7 @@
   },
   {
     "id": 218,
+    "shortName": "ward_dispenser",
     "displayName": "Observer and Sentry Wards",
     "cost": 50,
     "shopTags": null,
@@ -3453,6 +3669,7 @@
   },
   {
     "id": 219,
+    "shortName": "recipe_travel_boots_2",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -3468,6 +3685,7 @@
   },
   {
     "id": 220,
+    "shortName": "travel_boots_2",
     "displayName": "Boots of Travel 2",
     "cost": 4500,
     "shopTags": "teleport;move_speed;mobility",
@@ -3483,6 +3701,7 @@
   },
   {
     "id": 221,
+    "shortName": "recipe_lotus_orb",
     "displayName": "Lotus Orb Recipe",
     "cost": 250,
     "shopTags": "",
@@ -3498,6 +3717,7 @@
   },
   {
     "id": 222,
+    "shortName": "recipe_meteor_hammer",
     "displayName": "Meteor Hammer Recipe",
     "cost": 300,
     "shopTags": "",
@@ -3513,6 +3733,7 @@
   },
   {
     "id": 223,
+    "shortName": "meteor_hammer",
     "displayName": "Meteor Hammer",
     "cost": 2850,
     "shopTags": "farming;magic_dmg;disable",
@@ -3534,6 +3755,7 @@
   },
   {
     "id": 224,
+    "shortName": "recipe_nullifier",
     "displayName": "Nullifier Recipe",
     "cost": 0,
     "shopTags": "",
@@ -3549,6 +3771,7 @@
   },
   {
     "id": 225,
+    "shortName": "nullifier",
     "displayName": "Nullifier",
     "cost": 4375,
     "shopTags": "teamfight;disable",
@@ -3568,6 +3791,7 @@
   },
   {
     "id": 226,
+    "shortName": "lotus_orb",
     "displayName": "Lotus Orb",
     "cost": 3850,
     "shopTags": "regen_health;regen_mana;str;agi;int;hard_to_tag;teamfight;save",
@@ -3587,6 +3811,7 @@
   },
   {
     "id": 227,
+    "shortName": "recipe_solar_crest",
     "displayName": "Solar Crest Recipe",
     "cost": 500,
     "shopTags": "",
@@ -3602,6 +3827,7 @@
   },
   {
     "id": 228,
+    "shortName": "recipe_octarine_core",
     "displayName": "Octarine Core Recipe",
     "cost": 200,
     "shopTags": "",
@@ -3617,6 +3843,7 @@
   },
   {
     "id": 229,
+    "shortName": "solar_crest",
     "displayName": "Solar Crest",
     "cost": 2575,
     "shopTags": "armor;regen_mana;hard_to_tag;teamfight;save;tank",
@@ -3636,6 +3863,7 @@
   },
   {
     "id": 230,
+    "shortName": "recipe_guardian_greaves",
     "displayName": "Guardian Greaves Recipe",
     "cost": 1125,
     "shopTags": "",
@@ -3651,6 +3879,7 @@
   },
   {
     "id": 231,
+    "shortName": "guardian_greaves",
     "displayName": "Guardian Greaves",
     "cost": 4300,
     "shopTags": "int;armor;regen_health;hard_to_tag;teamfight;save;tank;regen_mana",
@@ -3668,6 +3897,7 @@
   },
   {
     "id": 232,
+    "shortName": "aether_lens",
     "displayName": "Aether Lens",
     "cost": 2275,
     "shopTags": "int;regen_mana;hard_to_tag",
@@ -3683,6 +3913,7 @@
   },
   {
     "id": 233,
+    "shortName": "recipe_aether_lens",
     "displayName": "Aether Lens Recipe",
     "cost": 775,
     "shopTags": "",
@@ -3698,6 +3929,7 @@
   },
   {
     "id": 234,
+    "shortName": "recipe_dragon_lance",
     "displayName": "Dragon Lance Recipe",
     "cost": 450,
     "shopTags": "",
@@ -3713,6 +3945,7 @@
   },
   {
     "id": 235,
+    "shortName": "octarine_core",
     "displayName": "Octarine Core",
     "cost": 4900,
     "shopTags": "move_speed;boost_mana;mana_pool;mana",
@@ -3728,6 +3961,7 @@
   },
   {
     "id": 236,
+    "shortName": "dragon_lance",
     "displayName": "Dragon Lance",
     "cost": 1900,
     "shopTags": "damage",
@@ -3743,6 +3977,7 @@
   },
   {
     "id": 237,
+    "shortName": "faerie_fire",
     "displayName": "Faerie Fire",
     "cost": 65,
     "shopTags": "damage",
@@ -3758,6 +3993,7 @@
   },
   {
     "id": 238,
+    "shortName": "recipe_iron_talon",
     "displayName": "Iron Talon Recipe",
     "cost": 1,
     "shopTags": "",
@@ -3773,6 +4009,7 @@
   },
   {
     "id": 239,
+    "shortName": "iron_talon",
     "displayName": "Iron Talon",
     "cost": 0,
     "shopTags": "damage",
@@ -3792,6 +4029,7 @@
   },
   {
     "id": 240,
+    "shortName": "blight_stone",
     "displayName": "Orb of Blight",
     "cost": 300,
     "shopTags": "hard_to_tag",
@@ -3807,6 +4045,7 @@
   },
   {
     "id": 241,
+    "shortName": "tango_single",
     "displayName": "Tango (Shared)",
     "cost": 30,
     "shopTags": "consumable;laning",
@@ -3824,6 +4063,7 @@
   },
   {
     "id": 242,
+    "shortName": "crimson_guard",
     "displayName": "Crimson Guard",
     "cost": 3725,
     "shopTags": "armor;boost_armor;regen_health;block;health_pool;teamfight;tank",
@@ -3843,6 +4083,7 @@
   },
   {
     "id": 243,
+    "shortName": "recipe_crimson_guard",
     "displayName": "Crimson Guard Recipe",
     "cost": 1050,
     "shopTags": "",
@@ -3858,6 +4099,7 @@
   },
   {
     "id": 244,
+    "shortName": "wind_lace",
     "displayName": "Wind Lace",
     "cost": 225,
     "shopTags": "armor;laning",
@@ -3873,6 +4115,7 @@
   },
   {
     "id": 245,
+    "shortName": "recipe_bloodthorn",
     "displayName": "Bloodthorn Recipe",
     "cost": 450,
     "shopTags": "",
@@ -3888,6 +4131,7 @@
   },
   {
     "id": 246,
+    "shortName": "recipe_moon_shard",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -3903,6 +4147,7 @@
   },
   {
     "id": 247,
+    "shortName": "moon_shard",
     "displayName": "Moon Shard",
     "cost": 4000,
     "shopTags": "attack_speed",
@@ -3918,6 +4163,7 @@
   },
   {
     "id": 248,
+    "shortName": "recipe_silver_edge",
     "displayName": "Silver Edge Recipe",
     "cost": 250,
     "shopTags": "",
@@ -3933,6 +4179,7 @@
   },
   {
     "id": 249,
+    "shortName": "silver_edge",
     "displayName": "Silver Edge",
     "cost": 5700,
     "shopTags": "damage;attack_speed;movespeed;hard_to_tag;dps",
@@ -3950,6 +4197,7 @@
   },
   {
     "id": 250,
+    "shortName": "bloodthorn",
     "displayName": "Bloodthorn",
     "cost": 6625,
     "shopTags": "int;attack_speed;damage;regen_mana;damage;hard_to_tag;dps;disable",
@@ -3969,6 +4217,7 @@
   },
   {
     "id": 251,
+    "shortName": "recipe_echo_sabre",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -3984,6 +4233,7 @@
   },
   {
     "id": 252,
+    "shortName": "echo_sabre",
     "displayName": "Echo Sabre",
     "cost": 2700,
     "shopTags": "attack_speed;damage;regen_mana;damage;hard_to_tag;farming;dps",
@@ -4001,6 +4251,7 @@
   },
   {
     "id": 253,
+    "shortName": "recipe_glimmer_cape",
     "displayName": "Glimmer Cape Recipe",
     "cost": 450,
     "shopTags": "",
@@ -4016,6 +4267,7 @@
   },
   {
     "id": 254,
+    "shortName": "glimmer_cape",
     "displayName": "Glimmer Cape",
     "cost": 2150,
     "shopTags": "teamfight;escape;save;magic_resist",
@@ -4035,6 +4287,7 @@
   },
   {
     "id": 255,
+    "shortName": "recipe_aeon_disk",
     "displayName": "Aeon Disk Recipe",
     "cost": 1200,
     "shopTags": "",
@@ -4050,6 +4303,7 @@
   },
   {
     "id": 256,
+    "shortName": "aeon_disk",
     "displayName": "Aeon Disk",
     "cost": 3000,
     "shopTags": "str;regen_health;health_pool;escape;tank",
@@ -4065,6 +4319,7 @@
   },
   {
     "id": 257,
+    "shortName": "tome_of_knowledge",
     "displayName": "Tome of Knowledge",
     "cost": 75,
     "shopTags": "consumable",
@@ -4080,6 +4335,7 @@
   },
   {
     "id": 258,
+    "shortName": "recipe_kaya",
     "displayName": "Kaya Recipe",
     "cost": 650,
     "shopTags": "",
@@ -4095,6 +4351,7 @@
   },
   {
     "id": 259,
+    "shortName": "kaya",
     "displayName": "Kaya",
     "cost": 2100,
     "shopTags": "int;mana;magic_dmg",
@@ -4110,6 +4367,7 @@
   },
   {
     "id": 260,
+    "shortName": "refresher_shard",
     "displayName": "Refresher Shard",
     "cost": 1000,
     "shopTags": "",
@@ -4127,6 +4385,7 @@
   },
   {
     "id": 261,
+    "shortName": "crown",
     "displayName": "Crown",
     "cost": 450,
     "shopTags": "agi;int;str",
@@ -4142,6 +4401,7 @@
   },
   {
     "id": 262,
+    "shortName": "recipe_hurricane_pike",
     "displayName": "Hurricane Pike Recipe",
     "cost": 350,
     "shopTags": "",
@@ -4157,6 +4417,7 @@
   },
   {
     "id": 263,
+    "shortName": "hurricane_pike",
     "displayName": "Hurricane Pike",
     "cost": 4450,
     "shopTags": "int;damage;attack_speed;hard_to_tag;mobility;escape;save",
@@ -4176,6 +4437,7 @@
   },
   {
     "id": 265,
+    "shortName": "infused_raindrop",
     "displayName": "Infused Raindrops",
     "cost": 225,
     "shopTags": "armor;laning",
@@ -4191,6 +4453,7 @@
   },
   {
     "id": 266,
+    "shortName": "recipe_spirit_vessel",
     "displayName": "Spirit Vessel Recipe",
     "cost": 900,
     "shopTags": "",
@@ -4206,6 +4469,7 @@
   },
   {
     "id": 267,
+    "shortName": "spirit_vessel",
     "displayName": "Spirit Vessel",
     "cost": 2725,
     "shopTags": "teamfight",
@@ -4223,6 +4487,7 @@
   },
   {
     "id": 268,
+    "shortName": "recipe_holy_locket",
     "displayName": "Holy Locket Recipe",
     "cost": 1340,
     "shopTags": "",
@@ -4238,6 +4503,7 @@
   },
   {
     "id": 269,
+    "shortName": "holy_locket",
     "displayName": "Holy Locket",
     "cost": 2250,
     "shopTags": "teamfight;save",
@@ -4255,6 +4521,7 @@
   },
   {
     "id": 270,
+    "shortName": "recipe_ultimate_scepter_2",
     "displayName": "Aghanim's Blessing Recipe",
     "cost": 1600,
     "shopTags": "",
@@ -4270,6 +4537,7 @@
   },
   {
     "id": 271,
+    "shortName": "ultimate_scepter_2",
     "displayName": "Aghanim's Blessing",
     "cost": 5800,
     "shopTags": "int;str;agi;mana_pool;health_pool;hard_to_tag",
@@ -4285,6 +4553,7 @@
   },
   {
     "id": 272,
+    "shortName": "recipe_kaya_and_sange",
     "displayName": "Kaya and Sange Recipe",
     "cost": 0,
     "shopTags": "",
@@ -4300,6 +4569,7 @@
   },
   {
     "id": 273,
+    "shortName": "kaya_and_sange",
     "displayName": "Kaya and Sange",
     "cost": 4200,
     "shopTags": "damage;str;agi;unique;magic_dmg",
@@ -4315,6 +4585,7 @@
   },
   {
     "id": 274,
+    "shortName": "recipe_yasha_and_kaya",
     "displayName": "Yasha and Kaya Recipe",
     "cost": 0,
     "shopTags": "",
@@ -4330,6 +4601,7 @@
   },
   {
     "id": 275,
+    "shortName": "recipe_trident",
     "displayName": "Trident Recipe",
     "cost": 1,
     "shopTags": "",
@@ -4345,6 +4617,7 @@
   },
   {
     "id": 276,
+    "shortName": "combo_breaker",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -4360,6 +4633,7 @@
   },
   {
     "id": 277,
+    "shortName": "yasha_and_kaya",
     "displayName": "Yasha and Kaya",
     "cost": 4200,
     "shopTags": "damage;str;agi;attack_speed;unique;dps;magic_dmg",
@@ -4375,6 +4649,7 @@
   },
   {
     "id": 279,
+    "shortName": "ring_of_tarrasque",
     "displayName": "Ring of Tarrasque",
     "cost": 1700,
     "shopTags": "regen_health",
@@ -4390,6 +4665,7 @@
   },
   {
     "id": 286,
+    "shortName": "flying_courier",
     "displayName": "Flying Courier",
     "cost": 100,
     "shopTags": "consumable",
@@ -4405,6 +4681,7 @@
   },
   {
     "id": 287,
+    "shortName": "keen_optic",
     "displayName": "Keen Optic",
     "cost": 0,
     "shopTags": null,
@@ -4420,6 +4697,7 @@
   },
   {
     "id": 288,
+    "shortName": "grove_bow",
     "displayName": "Grove Bow",
     "cost": 0,
     "shopTags": null,
@@ -4435,6 +4713,7 @@
   },
   {
     "id": 289,
+    "shortName": "quickening_charm",
     "displayName": "Quickening Charm",
     "cost": 0,
     "shopTags": null,
@@ -4450,6 +4729,7 @@
   },
   {
     "id": 290,
+    "shortName": "philosophers_stone",
     "displayName": "Philosopher's Stone",
     "cost": 0,
     "shopTags": null,
@@ -4465,6 +4745,7 @@
   },
   {
     "id": 291,
+    "shortName": "force_boots",
     "displayName": "Force Boots",
     "cost": 0,
     "shopTags": null,
@@ -4484,6 +4765,7 @@
   },
   {
     "id": 292,
+    "shortName": "desolator_2",
     "displayName": "Stygian Desolator",
     "cost": 0,
     "shopTags": null,
@@ -4499,6 +4781,7 @@
   },
   {
     "id": 293,
+    "shortName": "phoenix_ash",
     "displayName": "Phoenix Ash",
     "cost": 0,
     "shopTags": null,
@@ -4514,6 +4797,7 @@
   },
   {
     "id": 294,
+    "shortName": "seer_stone",
     "displayName": "Seer Stone",
     "cost": 0,
     "shopTags": null,
@@ -4531,6 +4815,7 @@
   },
   {
     "id": 295,
+    "shortName": "greater_mango",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -4546,6 +4831,7 @@
   },
   {
     "id": 297,
+    "shortName": "vampire_fangs",
     "displayName": "Vampire Fangs",
     "cost": 0,
     "shopTags": null,
@@ -4561,6 +4847,7 @@
   },
   {
     "id": 298,
+    "shortName": "craggy_coat",
     "displayName": "Craggy Coat",
     "cost": 0,
     "shopTags": null,
@@ -4576,6 +4863,7 @@
   },
   {
     "id": 299,
+    "shortName": "greater_faerie_fire",
     "displayName": "Greater Faerie Fire",
     "cost": 0,
     "shopTags": "consumable;laning",
@@ -4591,6 +4879,7 @@
   },
   {
     "id": 300,
+    "shortName": "timeless_relic",
     "displayName": "Timeless Relic",
     "cost": 0,
     "shopTags": null,
@@ -4606,6 +4895,7 @@
   },
   {
     "id": 301,
+    "shortName": "mirror_shield",
     "displayName": "Mirror Shield",
     "cost": 0,
     "shopTags": null,
@@ -4621,6 +4911,7 @@
   },
   {
     "id": 302,
+    "shortName": "elixer",
     "displayName": "Elixir",
     "cost": 0,
     "shopTags": null,
@@ -4638,13 +4929,14 @@
   },
   {
     "id": 303,
+    "shortName": "recipe_ironwood_tree",
     "displayName": "Ironwood Tree Recipe",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -4653,6 +4945,7 @@
   },
   {
     "id": 304,
+    "shortName": "ironwood_tree",
     "displayName": "Ironwood Tree",
     "cost": 0,
     "shopTags": null,
@@ -4670,6 +4963,7 @@
   },
   {
     "id": 305,
+    "shortName": "royal_jelly",
     "displayName": "Royal Jelly",
     "cost": 0,
     "shopTags": null,
@@ -4687,6 +4981,7 @@
   },
   {
     "id": 306,
+    "shortName": "pupils_gift",
     "displayName": "Pupil's Gift",
     "cost": 0,
     "shopTags": null,
@@ -4702,6 +4997,7 @@
   },
   {
     "id": 307,
+    "shortName": "tome_of_aghanim",
     "displayName": "Tome of Aghanim",
     "cost": 0,
     "shopTags": null,
@@ -4719,6 +5015,7 @@
   },
   {
     "id": 308,
+    "shortName": "repair_kit",
     "displayName": "Repair Kit",
     "cost": 0,
     "shopTags": null,
@@ -4736,6 +5033,7 @@
   },
   {
     "id": 309,
+    "shortName": "mind_breaker",
     "displayName": "Mind Breaker",
     "cost": 0,
     "shopTags": null,
@@ -4751,6 +5049,7 @@
   },
   {
     "id": 310,
+    "shortName": "third_eye",
     "displayName": "Third Eye",
     "cost": 0,
     "shopTags": null,
@@ -4766,6 +5065,7 @@
   },
   {
     "id": 311,
+    "shortName": "spell_prism",
     "displayName": "Spell Prism",
     "cost": 0,
     "shopTags": null,
@@ -4781,6 +5081,7 @@
   },
   {
     "id": 312,
+    "shortName": "horizon",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -4798,6 +5099,7 @@
   },
   {
     "id": 313,
+    "shortName": "fusion_rune",
     "displayName": "Fusion Rune",
     "cost": 0,
     "shopTags": null,
@@ -4815,6 +5117,7 @@
   },
   {
     "id": 317,
+    "shortName": "recipe_fallen_sky",
     "displayName": "Recipe: Fallen Sky",
     "cost": 0,
     "shopTags": "",
@@ -4830,6 +5133,7 @@
   },
   {
     "id": 325,
+    "shortName": "princes_knife",
     "displayName": "Prince's Knife",
     "cost": 0,
     "shopTags": null,
@@ -4845,6 +5149,7 @@
   },
   {
     "id": 326,
+    "shortName": "spider_legs",
     "displayName": "Spider Legs",
     "cost": 0,
     "shopTags": null,
@@ -4860,6 +5165,7 @@
   },
   {
     "id": 327,
+    "shortName": "helm_of_the_undying",
     "displayName": "Helm of the Undying",
     "cost": 0,
     "shopTags": null,
@@ -4875,6 +5181,7 @@
   },
   {
     "id": 328,
+    "shortName": "mango_tree",
     "displayName": "Mango Tree",
     "cost": 0,
     "shopTags": "consumable;laning",
@@ -4892,13 +5199,14 @@
   },
   {
     "id": 329,
+    "shortName": "recipe_vambrace",
     "displayName": "Vambrace Recipe",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -4907,6 +5215,7 @@
   },
   {
     "id": 330,
+    "shortName": "witless_shako",
     "displayName": "Witless Shako",
     "cost": 0,
     "shopTags": null,
@@ -4922,6 +5231,7 @@
   },
   {
     "id": 331,
+    "shortName": "vambrace",
     "displayName": "Vambrace",
     "cost": 0,
     "shopTags": "damage;int;agi;str",
@@ -4937,6 +5247,7 @@
   },
   {
     "id": 334,
+    "shortName": "imp_claw",
     "displayName": "Imp Claw",
     "cost": 0,
     "shopTags": null,
@@ -4952,6 +5263,7 @@
   },
   {
     "id": 335,
+    "shortName": "flicker",
     "displayName": "Flicker",
     "cost": 0,
     "shopTags": null,
@@ -4967,6 +5279,7 @@
   },
   {
     "id": 336,
+    "shortName": "spy_gadget",
     "displayName": "Telescope",
     "cost": 0,
     "shopTags": null,
@@ -4982,6 +5295,7 @@
   },
   {
     "id": 349,
+    "shortName": "arcane_ring",
     "displayName": "Arcane Ring",
     "cost": 0,
     "shopTags": null,
@@ -4997,6 +5311,7 @@
   },
   {
     "id": 354,
+    "shortName": "ocean_heart",
     "displayName": "Ocean Heart",
     "cost": 0,
     "shopTags": null,
@@ -5012,6 +5327,7 @@
   },
   {
     "id": 355,
+    "shortName": "broom_handle",
     "displayName": "Broom Handle",
     "cost": 0,
     "shopTags": null,
@@ -5027,6 +5343,7 @@
   },
   {
     "id": 356,
+    "shortName": "trusty_shovel",
     "displayName": "Trusty Shovel",
     "cost": 0,
     "shopTags": null,
@@ -5046,6 +5363,7 @@
   },
   {
     "id": 357,
+    "shortName": "nether_shawl",
     "displayName": "Nether Shawl",
     "cost": 0,
     "shopTags": null,
@@ -5061,6 +5379,7 @@
   },
   {
     "id": 358,
+    "shortName": "dragon_scale",
     "displayName": "Dragon Scale",
     "cost": 0,
     "shopTags": null,
@@ -5076,6 +5395,7 @@
   },
   {
     "id": 359,
+    "shortName": "essence_ring",
     "displayName": "Essence Ring",
     "cost": 0,
     "shopTags": null,
@@ -5093,6 +5413,7 @@
   },
   {
     "id": 360,
+    "shortName": "clumsy_net",
     "displayName": "Clumsy Net",
     "cost": 0,
     "shopTags": null,
@@ -5110,6 +5431,7 @@
   },
   {
     "id": 361,
+    "shortName": "enchanted_quiver",
     "displayName": "Enchanted Quiver",
     "cost": 0,
     "shopTags": null,
@@ -5125,6 +5447,7 @@
   },
   {
     "id": 362,
+    "shortName": "ninja_gear",
     "displayName": "Ninja Gear",
     "cost": 0,
     "shopTags": null,
@@ -5142,6 +5465,7 @@
   },
   {
     "id": 363,
+    "shortName": "illusionsts_cape",
     "displayName": "Illusionist's Cape",
     "cost": 0,
     "shopTags": null,
@@ -5157,6 +5481,7 @@
   },
   {
     "id": 364,
+    "shortName": "havoc_hammer",
     "displayName": "Havoc Hammer",
     "cost": 0,
     "shopTags": null,
@@ -5172,6 +5497,7 @@
   },
   {
     "id": 365,
+    "shortName": "panic_button",
     "displayName": "Magic Lamp",
     "cost": 0,
     "shopTags": null,
@@ -5187,6 +5513,7 @@
   },
   {
     "id": 366,
+    "shortName": "apex",
     "displayName": "Apex",
     "cost": 0,
     "shopTags": null,
@@ -5202,6 +5529,7 @@
   },
   {
     "id": 367,
+    "shortName": "ballista",
     "displayName": "Ballista",
     "cost": 0,
     "shopTags": null,
@@ -5217,6 +5545,7 @@
   },
   {
     "id": 368,
+    "shortName": "woodland_striders",
     "displayName": "Woodland Striders",
     "cost": 0,
     "shopTags": null,
@@ -5232,6 +5561,7 @@
   },
   {
     "id": 369,
+    "shortName": "trident",
     "displayName": "Trident",
     "cost": 6301,
     "shopTags": null,
@@ -5247,6 +5577,7 @@
   },
   {
     "id": 370,
+    "shortName": "demonicon",
     "displayName": "Book of the Dead",
     "cost": 0,
     "shopTags": null,
@@ -5262,6 +5593,7 @@
   },
   {
     "id": 371,
+    "shortName": "fallen_sky",
     "displayName": "Fallen Sky",
     "cost": 0,
     "shopTags": null,
@@ -5279,6 +5611,7 @@
   },
   {
     "id": 372,
+    "shortName": "pirate_hat",
     "displayName": "Pirate Hat",
     "cost": 0,
     "shopTags": null,
@@ -5294,6 +5627,7 @@
   },
   {
     "id": 373,
+    "shortName": "dimensional_doorway",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -5309,6 +5643,7 @@
   },
   {
     "id": 374,
+    "shortName": "ex_machina",
     "displayName": "Ex Machina",
     "cost": 0,
     "shopTags": null,
@@ -5326,6 +5661,7 @@
   },
   {
     "id": 375,
+    "shortName": "faded_broach",
     "displayName": "Faded Broach",
     "cost": 0,
     "shopTags": null,
@@ -5341,6 +5677,7 @@
   },
   {
     "id": 376,
+    "shortName": "paladin_sword",
     "displayName": "Paladin Sword",
     "cost": 0,
     "shopTags": null,
@@ -5356,6 +5693,7 @@
   },
   {
     "id": 377,
+    "shortName": "minotaur_horn",
     "displayName": "Minotaur Horn",
     "cost": 0,
     "shopTags": null,
@@ -5371,6 +5709,7 @@
   },
   {
     "id": 378,
+    "shortName": "orb_of_destruction",
     "displayName": "Orb of Destruction",
     "cost": 0,
     "shopTags": null,
@@ -5386,6 +5725,7 @@
   },
   {
     "id": 379,
+    "shortName": "the_leveller",
     "displayName": "The Leveller",
     "cost": 0,
     "shopTags": null,
@@ -5401,6 +5741,7 @@
   },
   {
     "id": 381,
+    "shortName": "titan_sliver",
     "displayName": "Titan Sliver",
     "cost": 0,
     "shopTags": null,
@@ -5416,6 +5757,7 @@
   },
   {
     "id": 473,
+    "shortName": "voodoo_mask",
     "displayName": "Voodoo Mask",
     "cost": 650,
     "shopTags": "unique",
@@ -5431,6 +5773,7 @@
   },
   {
     "id": 485,
+    "shortName": "blitz_knuckles",
     "displayName": "Blitz Knuckles",
     "cost": 1000,
     "shopTags": "attack_speed",
@@ -5446,6 +5789,7 @@
   },
   {
     "id": 533,
+    "shortName": "recipe_witch_blade",
     "displayName": "Witch Blade Recipe",
     "cost": 250,
     "shopTags": "",
@@ -5461,6 +5805,7 @@
   },
   {
     "id": 534,
+    "shortName": "witch_blade",
     "displayName": "Witch Blade",
     "cost": 2775,
     "shopTags": "damage;int;attack_speed;regen_mana;dps;magic_dmg",
@@ -5476,6 +5821,7 @@
   },
   {
     "id": 565,
+    "shortName": "chipped_vest",
     "displayName": "Chipped Vest",
     "cost": 0,
     "shopTags": null,
@@ -5491,6 +5837,7 @@
   },
   {
     "id": 566,
+    "shortName": "wizard_glass",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -5506,6 +5853,7 @@
   },
   {
     "id": 569,
+    "shortName": "orb_of_corrosion",
     "displayName": "Orb of Corrosion",
     "cost": 1050,
     "shopTags": "hard_to_tag",
@@ -5521,6 +5869,7 @@
   },
   {
     "id": 570,
+    "shortName": "gloves_of_travel",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -5536,6 +5885,7 @@
   },
   {
     "id": 571,
+    "shortName": "trickster_cloak",
     "displayName": "Trickster Cloak",
     "cost": 0,
     "shopTags": null,
@@ -5551,6 +5901,7 @@
   },
   {
     "id": 573,
+    "shortName": "elven_tunic",
     "displayName": "Elven Tunic",
     "cost": 0,
     "shopTags": null,
@@ -5566,6 +5917,7 @@
   },
   {
     "id": 574,
+    "shortName": "cloak_of_flames",
     "displayName": "Cloak of Flames",
     "cost": 0,
     "shopTags": null,
@@ -5581,6 +5933,7 @@
   },
   {
     "id": 575,
+    "shortName": "venom_gland",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -5596,6 +5949,7 @@
   },
   {
     "id": 576,
+    "shortName": "gladiator_helm",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -5611,6 +5965,7 @@
   },
   {
     "id": 577,
+    "shortName": "possessed_mask",
     "displayName": "Possessed Mask",
     "cost": 0,
     "shopTags": null,
@@ -5626,6 +5981,7 @@
   },
   {
     "id": 578,
+    "shortName": "ancient_perseverance",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -5641,6 +5997,7 @@
   },
   {
     "id": 582,
+    "shortName": "oakheart",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -5660,6 +6017,7 @@
   },
   {
     "id": 585,
+    "shortName": "stormcrafter",
     "displayName": "Stormcrafter",
     "cost": 0,
     "shopTags": null,
@@ -5675,6 +6033,7 @@
   },
   {
     "id": 588,
+    "shortName": "overflowing_elixir",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -5690,6 +6049,7 @@
   },
   {
     "id": 589,
+    "shortName": "mysterious_hat",
     "displayName": "Fairy's Trinket",
     "cost": 0,
     "shopTags": null,
@@ -5705,6 +6065,7 @@
   },
   {
     "id": 593,
+    "shortName": "fluffy_hat",
     "displayName": "Fluffy Hat",
     "cost": 250,
     "shopTags": "health_pool",
@@ -5720,6 +6081,7 @@
   },
   {
     "id": 596,
+    "shortName": "falcon_blade",
     "displayName": "Falcon Blade",
     "cost": 1125,
     "shopTags": "hard_to_tag",
@@ -5735,6 +6097,7 @@
   },
   {
     "id": 597,
+    "shortName": "recipe_mage_slayer",
     "displayName": "Mage Slayer Recipe",
     "cost": 0,
     "shopTags": "",
@@ -5750,6 +6113,7 @@
   },
   {
     "id": 598,
+    "shortName": "mage_slayer",
     "displayName": "Mage Slayer",
     "cost": 2800,
     "shopTags": "hard_to_tag;dps;magic_resist",
@@ -5765,6 +6129,7 @@
   },
   {
     "id": 599,
+    "shortName": "recipe_falcon_blade",
     "displayName": "Falcon Blade Recipe",
     "cost": 250,
     "shopTags": "",
@@ -5780,6 +6145,7 @@
   },
   {
     "id": 600,
+    "shortName": "overwhelming_blink",
     "displayName": "Overwhelming Blink",
     "cost": 6800,
     "shopTags": "teleport;mobility;escape",
@@ -5799,6 +6165,7 @@
   },
   {
     "id": 603,
+    "shortName": "swift_blink",
     "displayName": "Swift Blink",
     "cost": 6800,
     "shopTags": "teleport;mobility;escape",
@@ -5818,6 +6185,7 @@
   },
   {
     "id": 604,
+    "shortName": "arcane_blink",
     "displayName": "Arcane Blink",
     "cost": 6800,
     "shopTags": "teleport;mobility;escape;magic_dmg",
@@ -5837,6 +6205,7 @@
   },
   {
     "id": 606,
+    "shortName": "recipe_arcane_blink",
     "displayName": "Arcane Blink Recipe",
     "cost": 1750,
     "shopTags": "",
@@ -5852,6 +6221,7 @@
   },
   {
     "id": 607,
+    "shortName": "recipe_swift_blink",
     "displayName": "Swift Blink Recipe",
     "cost": 1750,
     "shopTags": "",
@@ -5867,6 +6237,7 @@
   },
   {
     "id": 608,
+    "shortName": "recipe_overwhelming_blink",
     "displayName": "Overwhelming Blink Recipe",
     "cost": 1750,
     "shopTags": "",
@@ -5882,6 +6253,7 @@
   },
   {
     "id": 609,
+    "shortName": "aghanims_shard",
     "displayName": "Aghanim's Shard",
     "cost": 1400,
     "shopTags": "int;str;agi;mana_pool;health_pool;hard_to_tag",
@@ -5897,6 +6269,7 @@
   },
   {
     "id": 610,
+    "shortName": "wind_waker",
     "displayName": "Wind Waker",
     "cost": 6800,
     "shopTags": "int;regen_mana;move_speed;hard_to_tag;escape;save;disable",
@@ -5916,6 +6289,7 @@
   },
   {
     "id": 612,
+    "shortName": "recipe_wind_waker",
     "displayName": "Wind Waker Recipe",
     "cost": 1400,
     "shopTags": "",
@@ -5931,6 +6305,7 @@
   },
   {
     "id": 633,
+    "shortName": "recipe_helm_of_the_overlord",
     "displayName": "Helm of the Overlord Recipe",
     "cost": 300,
     "shopTags": "",
@@ -5946,6 +6321,7 @@
   },
   {
     "id": 635,
+    "shortName": "helm_of_the_overlord",
     "displayName": "Helm of the Overlord",
     "cost": 5650,
     "shopTags": "damage;armor;unique;hard_to_tag",
@@ -5965,6 +6341,7 @@
   },
   {
     "id": 637,
+    "shortName": "star_mace",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -5980,6 +6357,7 @@
   },
   {
     "id": 638,
+    "shortName": "penta_edged_sword",
     "displayName": "Penta-Edged Sword",
     "cost": 0,
     "shopTags": null,
@@ -5995,6 +6373,7 @@
   },
   {
     "id": 640,
+    "shortName": "recipe_orb_of_corrosion",
     "displayName": "Orb of Corrosion Recipe",
     "cost": 0,
     "shopTags": "",
@@ -6010,6 +6389,7 @@
   },
   {
     "id": 653,
+    "shortName": "recipe_grandmasters_glaive",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -6025,6 +6405,7 @@
   },
   {
     "id": 655,
+    "shortName": "grandmasters_glaive",
     "displayName": "",
     "cost": 5000,
     "shopTags": "attack_speed;move_speed;int;agi;str",
@@ -6040,6 +6421,7 @@
   },
   {
     "id": 674,
+    "shortName": "warhammer",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6057,6 +6439,7 @@
   },
   {
     "id": 675,
+    "shortName": "psychic_headband",
     "displayName": "Psychic Headband",
     "cost": 0,
     "shopTags": null,
@@ -6074,6 +6457,7 @@
   },
   {
     "id": 676,
+    "shortName": "ceremonial_robe",
     "displayName": "Ceremonial Robe",
     "cost": 0,
     "shopTags": null,
@@ -6089,6 +6473,7 @@
   },
   {
     "id": 677,
+    "shortName": "book_of_shadows",
     "displayName": "Book of Shadows",
     "cost": 0,
     "shopTags": null,
@@ -6106,6 +6491,7 @@
   },
   {
     "id": 678,
+    "shortName": "giants_ring",
     "displayName": "Giant's Ring",
     "cost": 0,
     "shopTags": null,
@@ -6121,6 +6507,7 @@
   },
   {
     "id": 679,
+    "shortName": "vengeances_shadow",
     "displayName": "Shadow of Vengeance",
     "cost": 0,
     "shopTags": null,
@@ -6136,6 +6523,7 @@
   },
   {
     "id": 680,
+    "shortName": "bullwhip",
     "displayName": "Bullwhip",
     "cost": 0,
     "shopTags": null,
@@ -6153,6 +6541,7 @@
   },
   {
     "id": 686,
+    "shortName": "quicksilver_amulet",
     "displayName": "Quicksilver Amulet",
     "cost": 0,
     "shopTags": null,
@@ -6168,6 +6557,7 @@
   },
   {
     "id": 691,
+    "shortName": "recipe_eternal_shroud",
     "displayName": "Eternal Shroud Recipe",
     "cost": 900,
     "shopTags": "",
@@ -6183,6 +6573,7 @@
   },
   {
     "id": 692,
+    "shortName": "eternal_shroud",
     "displayName": "Eternal Shroud",
     "cost": 3700,
     "shopTags": "regen_health;magic_resist;tank",
@@ -6198,6 +6589,7 @@
   },
   {
     "id": 725,
+    "shortName": "aghanims_shard_roshan",
     "displayName": "Aghanim's Shard - Consumable",
     "cost": 1400,
     "shopTags": "",
@@ -6213,6 +6605,7 @@
   },
   {
     "id": 727,
+    "shortName": "ultimate_scepter_roshan",
     "displayName": "Aghanim's Blessing - Roshan",
     "cost": 5800,
     "shopTags": "",
@@ -6228,6 +6621,7 @@
   },
   {
     "id": 731,
+    "shortName": "satchel",
     "displayName": "",
     "cost": 0,
     "shopTags": "agi;block",
@@ -6243,6 +6637,7 @@
   },
   {
     "id": 824,
+    "shortName": "assassins_dagger",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6258,6 +6653,7 @@
   },
   {
     "id": 825,
+    "shortName": "ascetic_cap",
     "displayName": "Ascetic's Cap",
     "cost": 0,
     "shopTags": null,
@@ -6275,6 +6671,7 @@
   },
   {
     "id": 826,
+    "shortName": "sample_picker",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6292,6 +6689,7 @@
   },
   {
     "id": 827,
+    "shortName": "icarus_wings",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6309,6 +6707,7 @@
   },
   {
     "id": 828,
+    "shortName": "misericorde",
     "displayName": "Brigand's Blade",
     "cost": 0,
     "shopTags": null,
@@ -6324,6 +6723,7 @@
   },
   {
     "id": 829,
+    "shortName": "force_field",
     "displayName": "Arcanist's Armor",
     "cost": 0,
     "shopTags": null,
@@ -6339,13 +6739,14 @@
   },
   {
     "id": 833,
+    "shortName": "recipe_tenderizer",
     "displayName": "Bruiser's Maul Recipe",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -6354,6 +6755,7 @@
   },
   {
     "id": 834,
+    "shortName": "black_powder_bag",
     "displayName": "Blast Rig",
     "cost": 0,
     "shopTags": null,
@@ -6369,6 +6771,7 @@
   },
   {
     "id": 835,
+    "shortName": "paintball",
     "displayName": "Fae Grenade",
     "cost": 0,
     "shopTags": null,
@@ -6388,6 +6791,7 @@
   },
   {
     "id": 836,
+    "shortName": "light_robes",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6403,6 +6807,7 @@
   },
   {
     "id": 837,
+    "shortName": "heavy_blade",
     "displayName": "Witchbane",
     "cost": 0,
     "shopTags": null,
@@ -6428,6 +6833,7 @@
   },
   {
     "id": 838,
+    "shortName": "unstable_wand",
     "displayName": "Pig Pole",
     "cost": 0,
     "shopTags": null,
@@ -6445,6 +6851,7 @@
   },
   {
     "id": 839,
+    "shortName": "fortitude_ring",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6462,6 +6869,7 @@
   },
   {
     "id": 840,
+    "shortName": "pogo_stick",
     "displayName": "Tumbler's Toy",
     "cost": 0,
     "shopTags": null,
@@ -6477,6 +6885,7 @@
   },
   {
     "id": 849,
+    "shortName": "mechanical_arm",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6492,13 +6901,14 @@
   },
   {
     "id": 859,
+    "shortName": "recipe_voidwalker_scythe",
     "displayName": "Voidwalker Scythe Recipe",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -6507,13 +6917,14 @@
   },
   {
     "id": 904,
+    "shortName": "voidwalker_scythe",
     "displayName": "Voidwalker Scythe",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -6522,13 +6933,14 @@
   },
   {
     "id": 906,
+    "shortName": "tenderizer",
     "displayName": "Bruiser's Maul",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -6537,6 +6949,7 @@
   },
   {
     "id": 907,
+    "shortName": "recipe_wraith_pact",
     "displayName": "",
     "cost": 400,
     "shopTags": "",
@@ -6552,6 +6965,7 @@
   },
   {
     "id": 908,
+    "shortName": "wraith_pact",
     "displayName": "Wraith Pact",
     "cost": 3800,
     "shopTags": "damage;armor;regen_mana",
@@ -6571,6 +6985,7 @@
   },
   {
     "id": 910,
+    "shortName": "recipe_revenants_brooch",
     "displayName": "Revenant's Brooch Recipe",
     "cost": 650,
     "shopTags": "",
@@ -6586,6 +7001,7 @@
   },
   {
     "id": 911,
+    "shortName": "revenants_brooch",
     "displayName": "Revenant's Brooch",
     "cost": 3300,
     "shopTags": "int;hard_to_tag;crit;dps",
@@ -6601,13 +7017,14 @@
   },
   {
     "id": 928,
+    "shortName": "recipe_eagle_eye",
     "displayName": "\u0000",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -6616,13 +7033,14 @@
   },
   {
     "id": 929,
+    "shortName": "eagle_eye",
     "displayName": "Eagle Eye",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -6631,6 +7049,7 @@
   },
   {
     "id": 930,
+    "shortName": "recipe_boots_of_bearing",
     "displayName": "Boots of Bearing Recipe",
     "cost": 0,
     "shopTags": "",
@@ -6646,6 +7065,7 @@
   },
   {
     "id": 931,
+    "shortName": "boots_of_bearing",
     "displayName": "Boots of Bearing",
     "cost": 4225,
     "shopTags": "str;int;damage;move_speed;attack_speed;hard_to_tag;mobility;teamfight",
@@ -6661,6 +7081,7 @@
   },
   {
     "id": 938,
+    "shortName": "slime_vial",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6678,6 +7099,7 @@
   },
   {
     "id": 939,
+    "shortName": "harpoon",
     "displayName": "Harpoon",
     "cost": 4700,
     "shopTags": null,
@@ -6697,6 +7119,7 @@
   },
   {
     "id": 940,
+    "shortName": "wand_of_the_brine",
     "displayName": "Wand of the Brine",
     "cost": 0,
     "shopTags": null,
@@ -6716,6 +7139,7 @@
   },
   {
     "id": 945,
+    "shortName": "seeds_of_serenity",
     "displayName": "Seeds of Serenity",
     "cost": 0,
     "shopTags": null,
@@ -6733,6 +7157,7 @@
   },
   {
     "id": 946,
+    "shortName": "lance_of_pursuit",
     "displayName": "Lance of Pursuit",
     "cost": 0,
     "shopTags": null,
@@ -6748,6 +7173,7 @@
   },
   {
     "id": 947,
+    "shortName": "occult_bracelet",
     "displayName": "Occult Bracelet",
     "cost": 0,
     "shopTags": null,
@@ -6763,6 +7189,7 @@
   },
   {
     "id": 948,
+    "shortName": "tome_of_omniscience",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6778,6 +7205,7 @@
   },
   {
     "id": 949,
+    "shortName": "ogre_seal_totem",
     "displayName": "Ogre Seal Totem",
     "cost": 0,
     "shopTags": null,
@@ -6795,6 +7223,7 @@
   },
   {
     "id": 950,
+    "shortName": "defiant_shell",
     "displayName": "Defiant Shell",
     "cost": 0,
     "shopTags": null,
@@ -6810,13 +7239,14 @@
   },
   {
     "id": 964,
+    "shortName": "diffusal_blade_2",
     "displayName": "Diffusal Blade",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -6825,13 +7255,14 @@
   },
   {
     "id": 965,
+    "shortName": "recipe_diffusal_blade_2",
     "displayName": "\u0000",
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -6840,6 +7271,7 @@
   },
   {
     "id": 968,
+    "shortName": "arcane_scout",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6855,6 +7287,7 @@
   },
   {
     "id": 969,
+    "shortName": "barricade",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6872,6 +7305,7 @@
   },
   {
     "id": 990,
+    "shortName": "eye_of_the_vizier",
     "displayName": "Eye of the Vizier",
     "cost": 0,
     "shopTags": null,
@@ -6887,6 +7321,7 @@
   },
   {
     "id": 998,
+    "shortName": "manacles_of_power",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6904,6 +7339,7 @@
   },
   {
     "id": 1000,
+    "shortName": "bottomless_chalice",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6921,6 +7357,7 @@
   },
   {
     "id": 1017,
+    "shortName": "wand_of_sanctitude",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -6938,6 +7375,7 @@
   },
   {
     "id": 1021,
+    "shortName": "river_painter",
     "displayName": "River Vial: Chrome",
     "cost": 0,
     "shopTags": null,
@@ -6955,6 +7393,7 @@
   },
   {
     "id": 1022,
+    "shortName": "river_painter2",
     "displayName": "River Vial: Dry",
     "cost": 0,
     "shopTags": null,
@@ -6972,6 +7411,7 @@
   },
   {
     "id": 1023,
+    "shortName": "river_painter3",
     "displayName": "River Vial: Slime",
     "cost": 0,
     "shopTags": null,
@@ -6989,6 +7429,7 @@
   },
   {
     "id": 1024,
+    "shortName": "river_painter4",
     "displayName": "River Vial: Oil",
     "cost": 0,
     "shopTags": null,
@@ -7006,6 +7447,7 @@
   },
   {
     "id": 1025,
+    "shortName": "river_painter5",
     "displayName": "River Vial: Electrified",
     "cost": 0,
     "shopTags": null,
@@ -7023,6 +7465,7 @@
   },
   {
     "id": 1026,
+    "shortName": "river_painter6",
     "displayName": "River Vial: Potion",
     "cost": 0,
     "shopTags": null,
@@ -7040,6 +7483,7 @@
   },
   {
     "id": 1027,
+    "shortName": "river_painter7",
     "displayName": "River Vial: Blood",
     "cost": 0,
     "shopTags": null,
@@ -7057,6 +7501,7 @@
   },
   {
     "id": 1028,
+    "shortName": "mutation_tombstone",
     "displayName": "Tombstone",
     "cost": 0,
     "shopTags": "consumable",
@@ -7074,6 +7519,7 @@
   },
   {
     "id": 1029,
+    "shortName": "super_blink",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -7093,6 +7539,7 @@
   },
   {
     "id": 1030,
+    "shortName": "pocket_tower",
     "displayName": "Pocket Tower",
     "cost": 0,
     "shopTags": null,
@@ -7112,6 +7559,7 @@
   },
   {
     "id": 1032,
+    "shortName": "pocket_roshan",
     "displayName": "Pocket Roshan",
     "cost": 1000,
     "shopTags": null,
@@ -7129,6 +7577,7 @@
   },
   {
     "id": 1076,
+    "shortName": "specialists_array",
     "displayName": "Specialist's Array",
     "cost": 2650,
     "shopTags": "int;damage;hard_to_tag;mobility;escape;save",
@@ -7146,6 +7595,7 @@
   },
   {
     "id": 1077,
+    "shortName": "dagger_of_ristul",
     "displayName": "Dagger of Ristul",
     "cost": 0,
     "shopTags": null,
@@ -7161,6 +7611,7 @@
   },
   {
     "id": 1090,
+    "shortName": "muertas_gun",
     "displayName": "Mercy & Grace",
     "cost": 0,
     "shopTags": null,
@@ -7178,6 +7629,7 @@
   },
   {
     "id": 1091,
+    "shortName": "samurai_tabi",
     "displayName": "",
     "cost": 5250,
     "shopTags": "attack_speed;move_speed;int;agi;str;mobility",
@@ -7193,6 +7645,7 @@
   },
   {
     "id": 1092,
+    "shortName": "recipe_hermes_sandals",
     "displayName": "",
     "cost": 500,
     "shopTags": "",
@@ -7208,6 +7661,7 @@
   },
   {
     "id": 1093,
+    "shortName": "hermes_sandals",
     "displayName": "",
     "cost": 4800,
     "shopTags": "damage;move_speed;hard_to_tag",
@@ -7223,6 +7677,7 @@
   },
   {
     "id": 1094,
+    "shortName": "recipe_lunar_crest",
     "displayName": "",
     "cost": 250,
     "shopTags": "",
@@ -7238,6 +7693,7 @@
   },
   {
     "id": 1095,
+    "shortName": "lunar_crest",
     "displayName": "Lunar Crest",
     "cost": 2275,
     "shopTags": "regen_health;magic_resist",
@@ -7255,6 +7711,7 @@
   },
   {
     "id": 1096,
+    "shortName": "recipe_disperser",
     "displayName": "Disperser Recipe",
     "cost": 800,
     "shopTags": "",
@@ -7270,6 +7727,7 @@
   },
   {
     "id": 1097,
+    "shortName": "disperser",
     "displayName": "Disperser",
     "cost": 6100,
     "shopTags": "agi;int;unique;hard_to_tag",
@@ -7289,6 +7747,7 @@
   },
   {
     "id": 1098,
+    "shortName": "recipe_samurai_tabi",
     "displayName": "",
     "cost": 1100,
     "shopTags": "",
@@ -7304,6 +7763,7 @@
   },
   {
     "id": 1099,
+    "shortName": "recipe_witches_switch",
     "displayName": "",
     "cost": 625,
     "shopTags": "",
@@ -7319,6 +7779,7 @@
   },
   {
     "id": 1100,
+    "shortName": "witches_switch",
     "displayName": "",
     "cost": 1900,
     "shopTags": "armor;regen_health",
@@ -7334,6 +7795,7 @@
   },
   {
     "id": 1101,
+    "shortName": "recipe_harpoon",
     "displayName": "Harpoon Recipe",
     "cost": 1000,
     "shopTags": "",
@@ -7349,6 +7811,7 @@
   },
   {
     "id": 1106,
+    "shortName": "recipe_phylactery",
     "displayName": "Phylactery Recipe",
     "cost": 200,
     "shopTags": "",
@@ -7364,6 +7827,7 @@
   },
   {
     "id": 1107,
+    "shortName": "phylactery",
     "displayName": "Phylactery",
     "cost": 2600,
     "shopTags": "hard_to_tag",
@@ -7379,6 +7843,7 @@
   },
   {
     "id": 1122,
+    "shortName": "diadem",
     "displayName": "Diadem",
     "cost": 1000,
     "shopTags": "agi;int;str",
@@ -7394,6 +7859,7 @@
   },
   {
     "id": 1123,
+    "shortName": "blood_grenade",
     "displayName": "Blood Grenade",
     "cost": 50,
     "shopTags": "consumable;laning",
@@ -7411,6 +7877,7 @@
   },
   {
     "id": 1124,
+    "shortName": "spark_of_courage",
     "displayName": "Spark of Courage",
     "cost": 0,
     "shopTags": null,
@@ -7426,6 +7893,7 @@
   },
   {
     "id": 1125,
+    "shortName": "cornucopia",
     "displayName": "Cornucopia",
     "cost": 1200,
     "shopTags": "regen_health;regen_mana",
@@ -7441,6 +7909,7 @@
   },
   {
     "id": 1127,
+    "shortName": "recipe_pavise",
     "displayName": "Pavise Recipe",
     "cost": 175,
     "shopTags": "",
@@ -7456,6 +7925,7 @@
   },
   {
     "id": 1128,
+    "shortName": "pavise",
     "displayName": "Pavise",
     "cost": 1400,
     "shopTags": "armor;regen_mana;hard_to_tag;teamfight;save;tank",
@@ -7475,6 +7945,7 @@
   },
   {
     "id": 1154,
+    "shortName": "royale_with_cheese",
     "displayName": "Block of Cheese",
     "cost": 2,
     "shopTags": "",
@@ -7490,6 +7961,7 @@
   },
   {
     "id": 1156,
+    "shortName": "ancient_guardian",
     "displayName": "Ancient Guardian",
     "cost": 0,
     "shopTags": null,
@@ -7505,6 +7977,7 @@
   },
   {
     "id": 1157,
+    "shortName": "safety_bubble",
     "displayName": "Safety Bubble",
     "cost": 0,
     "shopTags": null,
@@ -7520,6 +7993,7 @@
   },
   {
     "id": 1158,
+    "shortName": "whisper_of_the_dread",
     "displayName": "Whisper of the Dread",
     "cost": 0,
     "shopTags": null,
@@ -7535,6 +8009,7 @@
   },
   {
     "id": 1159,
+    "shortName": "nemesis_curse",
     "displayName": "Nemesis Curse",
     "cost": 0,
     "shopTags": null,
@@ -7550,6 +8025,7 @@
   },
   {
     "id": 1160,
+    "shortName": "avianas_feather",
     "displayName": "Aviana's Feather",
     "cost": 0,
     "shopTags": null,
@@ -7565,6 +8041,7 @@
   },
   {
     "id": 1161,
+    "shortName": "unwavering_condition",
     "displayName": "Unwavering Condition",
     "cost": 0,
     "shopTags": null,
@@ -7580,13 +8057,14 @@
   },
   {
     "id": 1163,
+    "shortName": "recipe_aetherial_halo",
     "displayName": null,
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -7595,6 +8073,7 @@
   },
   {
     "id": 1164,
+    "shortName": "aetherial_halo",
     "displayName": "",
     "cost": 5900,
     "shopTags": "hard_to_tag;magic_dmg",
@@ -7616,6 +8095,7 @@
   },
   {
     "id": 1167,
+    "shortName": "light_collector",
     "displayName": "Light Collector",
     "cost": 0,
     "shopTags": null,
@@ -7631,6 +8111,7 @@
   },
   {
     "id": 1168,
+    "shortName": "rattlecage",
     "displayName": "Rattlecage",
     "cost": 0,
     "shopTags": null,
@@ -7646,6 +8127,7 @@
   },
   {
     "id": 1440,
+    "shortName": "black_grimoire",
     "displayName": "Black Grimoire",
     "cost": 0,
     "shopTags": null,
@@ -7661,6 +8143,7 @@
   },
   {
     "id": 1441,
+    "shortName": "grisgris",
     "displayName": "Gris-Gris",
     "cost": 0,
     "shopTags": null,
@@ -7676,6 +8159,7 @@
   },
   {
     "id": 1466,
+    "shortName": "gungir",
     "displayName": "Gleipnir",
     "cost": 4550,
     "shopTags": "damage;attack_speed;unique;magic_dmg;disable",
@@ -7695,6 +8179,7 @@
   },
   {
     "id": 1565,
+    "shortName": "recipe_gungir",
     "displayName": "Gleipnir Recipe",
     "cost": 1100,
     "shopTags": "",
@@ -7710,6 +8195,7 @@
   },
   {
     "id": 1575,
+    "shortName": "orb_of_frost",
     "displayName": "Orb of Frost",
     "cost": 300,
     "shopTags": "hard_to_tag",
@@ -7725,6 +8211,7 @@
   },
   {
     "id": 1576,
+    "shortName": "enhancement_vast",
     "displayName": "Vast",
     "cost": 0,
     "shopTags": null,
@@ -7740,6 +8227,7 @@
   },
   {
     "id": 1577,
+    "shortName": "enhancement_quickened",
     "displayName": "Quickened",
     "cost": 0,
     "shopTags": null,
@@ -7755,6 +8243,7 @@
   },
   {
     "id": 1578,
+    "shortName": "cursed_circlet",
     "displayName": "Accursed",
     "cost": 0,
     "shopTags": null,
@@ -7770,6 +8259,7 @@
   },
   {
     "id": 1579,
+    "shortName": "ogre_heart",
     "displayName": "Restorative",
     "cost": 0,
     "shopTags": null,
@@ -7785,6 +8275,7 @@
   },
   {
     "id": 1580,
+    "shortName": "neutral_tabi",
     "displayName": "Elusive",
     "cost": 0,
     "shopTags": null,
@@ -7800,6 +8291,7 @@
   },
   {
     "id": 1581,
+    "shortName": "enhancement_audacious",
     "displayName": "Audacious",
     "cost": 0,
     "shopTags": null,
@@ -7815,6 +8307,7 @@
   },
   {
     "id": 1582,
+    "shortName": "hellbear_totem",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -7830,6 +8323,7 @@
   },
   {
     "id": 1583,
+    "shortName": "enhancement_mystical",
     "displayName": "Mystical",
     "cost": 0,
     "shopTags": null,
@@ -7845,6 +8339,7 @@
   },
   {
     "id": 1584,
+    "shortName": "enhancement_alert",
     "displayName": "Alert",
     "cost": 0,
     "shopTags": null,
@@ -7860,6 +8355,7 @@
   },
   {
     "id": 1585,
+    "shortName": "enhancement_brawny",
     "displayName": "Brawny",
     "cost": 0,
     "shopTags": null,
@@ -7875,6 +8371,7 @@
   },
   {
     "id": 1586,
+    "shortName": "enhancement_tough",
     "displayName": "Tough",
     "cost": 0,
     "shopTags": null,
@@ -7890,6 +8387,7 @@
   },
   {
     "id": 1587,
+    "shortName": "enhancement_feverish",
     "displayName": "Feverish",
     "cost": 0,
     "shopTags": null,
@@ -7905,6 +8403,7 @@
   },
   {
     "id": 1588,
+    "shortName": "enhancement_fleetfooted",
     "displayName": "Fleetfooted",
     "cost": 0,
     "shopTags": null,
@@ -7920,6 +8419,7 @@
   },
   {
     "id": 1589,
+    "shortName": "enhancement_crude",
     "displayName": "Crude",
     "cost": 0,
     "shopTags": null,
@@ -7935,6 +8435,7 @@
   },
   {
     "id": 1590,
+    "shortName": "enhancement_boundless",
     "displayName": "Boundless",
     "cost": 0,
     "shopTags": null,
@@ -7950,6 +8451,7 @@
   },
   {
     "id": 1591,
+    "shortName": "enhancement_wise",
     "displayName": "Wise",
     "cost": 0,
     "shopTags": null,
@@ -7965,6 +8467,7 @@
   },
   {
     "id": 1592,
+    "shortName": "enhancement_timeless",
     "displayName": "Timeless",
     "cost": 0,
     "shopTags": null,
@@ -7980,6 +8483,7 @@
   },
   {
     "id": 1593,
+    "shortName": "enhancement_greedy",
     "displayName": "Greedy",
     "cost": 0,
     "shopTags": null,
@@ -7995,6 +8499,7 @@
   },
   {
     "id": 1594,
+    "shortName": "enhancement_vampiric",
     "displayName": "Vampiric",
     "cost": 0,
     "shopTags": null,
@@ -8010,6 +8515,7 @@
   },
   {
     "id": 1595,
+    "shortName": "enhancement_keen_eyed",
     "displayName": "Keen-eyed",
     "cost": 0,
     "shopTags": null,
@@ -8025,6 +8531,7 @@
   },
   {
     "id": 1596,
+    "shortName": "enhancement_evolved",
     "displayName": "Evolved",
     "cost": 0,
     "shopTags": null,
@@ -8040,6 +8547,7 @@
   },
   {
     "id": 1597,
+    "shortName": "enhancement_titanic",
     "displayName": "Titanic",
     "cost": 0,
     "shopTags": null,
@@ -8055,6 +8563,7 @@
   },
   {
     "id": 1598,
+    "shortName": "unrelenting_eye",
     "displayName": "Unrelenting Eye",
     "cost": 0,
     "shopTags": null,
@@ -8070,6 +8579,7 @@
   },
   {
     "id": 1599,
+    "shortName": "mana_draught",
     "displayName": "Mana Draught",
     "cost": 0,
     "shopTags": null,
@@ -8087,6 +8597,7 @@
   },
   {
     "id": 1600,
+    "shortName": "rippers_lash",
     "displayName": "Ripper's Lash",
     "cost": 0,
     "shopTags": null,
@@ -8106,6 +8617,7 @@
   },
   {
     "id": 1601,
+    "shortName": "crippling_crossbow",
     "displayName": "Crippling Crossbow",
     "cost": 0,
     "shopTags": null,
@@ -8125,6 +8637,7 @@
   },
   {
     "id": 1602,
+    "shortName": "gale_guard",
     "displayName": "Gale Guard",
     "cost": 0,
     "shopTags": null,
@@ -8140,6 +8653,7 @@
   },
   {
     "id": 1603,
+    "shortName": "gunpowder_gauntlets",
     "displayName": "Gunpowder Gauntlet",
     "cost": 0,
     "shopTags": null,
@@ -8155,6 +8669,7 @@
   },
   {
     "id": 1604,
+    "shortName": "searing_signet",
     "displayName": "Searing Signet",
     "cost": 0,
     "shopTags": null,
@@ -8170,6 +8685,7 @@
   },
   {
     "id": 1605,
+    "shortName": "serrated_shiv",
     "displayName": "Serrated Shiv",
     "cost": 0,
     "shopTags": null,
@@ -8185,6 +8701,7 @@
   },
   {
     "id": 1606,
+    "shortName": "polliwog_charm",
     "displayName": "Pollywog Charm",
     "cost": 0,
     "shopTags": null,
@@ -8202,6 +8719,7 @@
   },
   {
     "id": 1607,
+    "shortName": "magnifying_monocle",
     "displayName": "Magnifying Monocle",
     "cost": 0,
     "shopTags": null,
@@ -8221,6 +8739,7 @@
   },
   {
     "id": 1608,
+    "shortName": "pyrrhic_cloak",
     "displayName": "Pyrrhic Cloak",
     "cost": 0,
     "shopTags": null,
@@ -8240,6 +8759,7 @@
   },
   {
     "id": 1609,
+    "shortName": "madstone_bundle",
     "displayName": "Madstone Bundle",
     "cost": 0,
     "shopTags": "consumable",
@@ -8257,6 +8777,7 @@
   },
   {
     "id": 1610,
+    "shortName": "miniboss_minion_summoner",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -8274,6 +8795,7 @@
   },
   {
     "id": 1636,
+    "shortName": "crystal_raindrop",
     "displayName": "Crystal Raindrop",
     "cost": 0,
     "shopTags": null,
@@ -8289,6 +8811,7 @@
   },
   {
     "id": 1637,
+    "shortName": "kobold_cup",
     "displayName": "Kobold Cup",
     "cost": 0,
     "shopTags": null,
@@ -8306,6 +8829,7 @@
   },
   {
     "id": 1638,
+    "shortName": "dormant_curio",
     "displayName": "Dormant Curio",
     "cost": 0,
     "shopTags": null,
@@ -8321,6 +8845,7 @@
   },
   {
     "id": 1639,
+    "shortName": "sisters_shroud",
     "displayName": "Sister's Shroud",
     "cost": 0,
     "shopTags": null,
@@ -8336,6 +8861,7 @@
   },
   {
     "id": 1640,
+    "shortName": "jidi_pollen_bag",
     "displayName": "Jidi Pollen Bag",
     "cost": 0,
     "shopTags": null,
@@ -8351,6 +8877,7 @@
   },
   {
     "id": 1641,
+    "shortName": "outworld_staff",
     "displayName": "Outworld Staff",
     "cost": 0,
     "shopTags": null,
@@ -8368,6 +8895,7 @@
   },
   {
     "id": 1642,
+    "shortName": "dezun_bloodrite",
     "displayName": "Dezun Bloodrite",
     "cost": 0,
     "shopTags": null,
@@ -8383,6 +8911,7 @@
   },
   {
     "id": 1643,
+    "shortName": "giant_maul",
     "displayName": "Giant's Maul",
     "cost": 0,
     "shopTags": null,
@@ -8398,6 +8927,7 @@
   },
   {
     "id": 1644,
+    "shortName": "divine_regalia",
     "displayName": "Divine Regalia",
     "cost": 0,
     "shopTags": null,
@@ -8413,6 +8943,7 @@
   },
   {
     "id": 1645,
+    "shortName": "divine_regalia_broken",
     "displayName": "Disgraced Regalia",
     "cost": 0,
     "shopTags": null,
@@ -8428,6 +8959,7 @@
   },
   {
     "id": 1646,
+    "shortName": "circlet_of_the_flayed_twins",
     "displayName": "Circlet of the Flayed Twins",
     "cost": 0,
     "shopTags": null,
@@ -8443,6 +8975,7 @@
   },
   {
     "id": 1647,
+    "shortName": "enhancement_fierce",
     "displayName": "Fierce",
     "cost": 0,
     "shopTags": null,
@@ -8458,6 +8991,7 @@
   },
   {
     "id": 1648,
+    "shortName": "enhancement_dominant",
     "displayName": "Dominant",
     "cost": 0,
     "shopTags": null,
@@ -8473,6 +9007,7 @@
   },
   {
     "id": 1649,
+    "shortName": "enhancement_restorative",
     "displayName": "Restorative",
     "cost": 0,
     "shopTags": null,
@@ -8488,6 +9023,7 @@
   },
   {
     "id": 1650,
+    "shortName": "enhancement_thick",
     "displayName": "Thick",
     "cost": 0,
     "shopTags": null,
@@ -8503,6 +9039,7 @@
   },
   {
     "id": 1651,
+    "shortName": "enhancement_curious",
     "displayName": "Unleashed",
     "cost": 0,
     "shopTags": null,
@@ -8518,6 +9055,7 @@
   },
   {
     "id": 1652,
+    "shortName": "furion_gold_bag",
     "displayName": "Bag of Gold",
     "cost": 0,
     "shopTags": null,
@@ -8535,6 +9073,7 @@
   },
   {
     "id": 1715,
+    "shortName": "recipe_specialists_array",
     "displayName": "",
     "cost": 650,
     "shopTags": "",
@@ -8550,6 +9089,7 @@
   },
   {
     "id": 1716,
+    "shortName": "weighted_dice",
     "displayName": "Weighted Dice",
     "cost": 0,
     "shopTags": null,
@@ -8565,6 +9105,7 @@
   },
   {
     "id": 1717,
+    "shortName": "ash_legion_shield",
     "displayName": "Ash Legion Shield",
     "cost": 0,
     "shopTags": null,
@@ -8580,6 +9121,7 @@
   },
   {
     "id": 1718,
+    "shortName": "riftshadow_prism",
     "displayName": "Riftshadow Prism",
     "cost": 0,
     "shopTags": null,
@@ -8595,6 +9137,7 @@
   },
   {
     "id": 1719,
+    "shortName": "metamorphic_mandible",
     "displayName": "Metamorphic Mandible",
     "cost": 0,
     "shopTags": null,
@@ -8610,6 +9153,7 @@
   },
   {
     "id": 1720,
+    "shortName": "idol_of_screeauk",
     "displayName": "Idol of Scree'Auk",
     "cost": 0,
     "shopTags": null,
@@ -8625,6 +9169,7 @@
   },
   {
     "id": 1721,
+    "shortName": "flayers_bota",
     "displayName": "Flayer's Bota",
     "cost": 0,
     "shopTags": null,
@@ -8640,13 +9185,14 @@
   },
   {
     "id": 1800,
+    "shortName": "recipe_caster_rapier",
     "displayName": null,
     "cost": null,
     "shopTags": null,
     "quality": null,
-    "isPurchasable": null,
-    "isSupport": null,
-    "isSideShop": null,
+    "isPurchasable": false,
+    "isSupport": false,
+    "isSideShop": false,
     "castRange": null,
     "manaCost": null,
     "channelTime": null,
@@ -8655,6 +9201,7 @@
   },
   {
     "id": 1801,
+    "shortName": "caster_rapier",
     "displayName": "",
     "cost": 5600,
     "shopTags": "int;regen_mana;agi;hard_to_tag",
@@ -8670,6 +9217,7 @@
   },
   {
     "id": 1802,
+    "shortName": "tiara_of_selemene",
     "displayName": "Tiara of Selemene",
     "cost": 1700,
     "shopTags": "regen_mana",
@@ -8685,6 +9233,7 @@
   },
   {
     "id": 1803,
+    "shortName": "doubloon",
     "displayName": "Doubloon",
     "cost": 0,
     "shopTags": null,
@@ -8700,6 +9249,7 @@
   },
   {
     "id": 1804,
+    "shortName": "roshans_banner",
     "displayName": "Roshan's Banner",
     "cost": 0,
     "shopTags": null,
@@ -8717,6 +9267,7 @@
   },
   {
     "id": 1805,
+    "shortName": "recipe_devastator",
     "displayName": "Parasma Recipe",
     "cost": 400,
     "shopTags": "",
@@ -8732,6 +9283,7 @@
   },
   {
     "id": 1806,
+    "shortName": "devastator",
     "displayName": "Parasma",
     "cost": 5975,
     "shopTags": "int;hard_to_tag;dps;magic_dmg",
@@ -8747,6 +9299,7 @@
   },
   {
     "id": 1807,
+    "shortName": "recipe_angels_demise",
     "displayName": "Khanda Recipe",
     "cost": 0,
     "shopTags": "",
@@ -8762,6 +9315,7 @@
   },
   {
     "id": 1808,
+    "shortName": "angels_demise",
     "displayName": "Khanda",
     "cost": 5600,
     "shopTags": "hard_to_tag;magic_dmg",
@@ -8777,6 +9331,7 @@
   },
   {
     "id": 2091,
+    "shortName": "tier1_token",
     "displayName": "Tier 1 Token",
     "cost": 0,
     "shopTags": null,
@@ -8792,6 +9347,7 @@
   },
   {
     "id": 2092,
+    "shortName": "tier2_token",
     "displayName": "Tier 2 Token",
     "cost": 0,
     "shopTags": null,
@@ -8807,6 +9363,7 @@
   },
   {
     "id": 2093,
+    "shortName": "tier3_token",
     "displayName": "Tier 3 Token",
     "cost": 0,
     "shopTags": null,
@@ -8822,6 +9379,7 @@
   },
   {
     "id": 2094,
+    "shortName": "tier4_token",
     "displayName": "Tier 4 Token",
     "cost": 0,
     "shopTags": null,
@@ -8837,6 +9395,7 @@
   },
   {
     "id": 2095,
+    "shortName": "tier5_token",
     "displayName": "Tier 5 Token",
     "cost": 0,
     "shopTags": null,
@@ -8852,6 +9411,7 @@
   },
   {
     "id": 2096,
+    "shortName": "vindicators_axe",
     "displayName": "Vindicator's Axe",
     "cost": 0,
     "shopTags": null,
@@ -8867,6 +9427,7 @@
   },
   {
     "id": 2097,
+    "shortName": "duelist_gloves",
     "displayName": "Duelist Gloves",
     "cost": 0,
     "shopTags": null,
@@ -8882,6 +9443,7 @@
   },
   {
     "id": 2098,
+    "shortName": "horizons_equilibrium",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -8897,6 +9459,7 @@
   },
   {
     "id": 2099,
+    "shortName": "blighted_spirit",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -8912,6 +9475,7 @@
   },
   {
     "id": 2190,
+    "shortName": "dandelion_amulet",
     "displayName": "Dandelion Amulet",
     "cost": 0,
     "shopTags": null,
@@ -8927,6 +9491,7 @@
   },
   {
     "id": 2191,
+    "shortName": "turtle_shell",
     "displayName": "",
     "cost": 0,
     "shopTags": null,
@@ -8942,6 +9507,7 @@
   },
   {
     "id": 2192,
+    "shortName": "martyrs_plate",
     "displayName": "Martyr's Plate",
     "cost": 0,
     "shopTags": null,
@@ -8957,6 +9523,7 @@
   },
   {
     "id": 2193,
+    "shortName": "gossamer_cape",
     "displayName": "Gossamer Cape",
     "cost": 0,
     "shopTags": null,
@@ -8972,6 +9539,7 @@
   },
   {
     "id": 4204,
+    "shortName": "famango",
     "displayName": "Healing Lotus",
     "cost": 0,
     "shopTags": "consumable",
@@ -8989,6 +9557,7 @@
   },
   {
     "id": 4205,
+    "shortName": "great_famango",
     "displayName": "Great Healing Lotus",
     "cost": 0,
     "shopTags": "consumable",
@@ -9006,6 +9575,7 @@
   },
   {
     "id": 4206,
+    "shortName": "greater_famango",
     "displayName": "Greater Healing Lotus",
     "cost": 0,
     "shopTags": "consumable",
@@ -9023,6 +9593,7 @@
   },
   {
     "id": 4207,
+    "shortName": "recipe_great_famango",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -9038,6 +9609,7 @@
   },
   {
     "id": 4208,
+    "shortName": "recipe_greater_famango",
     "displayName": "",
     "cost": 0,
     "shopTags": "",
@@ -9053,6 +9625,7 @@
   },
   {
     "id": 4300,
+    "shortName": "ofrenda",
     "displayName": "Beloved Memory",
     "cost": 0,
     "shopTags": null,
@@ -9072,6 +9645,7 @@
   },
   {
     "id": 4301,
+    "shortName": "ofrenda_shovel",
     "displayName": "Scrying Shovel",
     "cost": 0,
     "shopTags": null,
@@ -9093,6 +9667,7 @@
   },
   {
     "id": 4302,
+    "shortName": "ofrenda_pledge",
     "displayName": "Forebearer's Fortune",
     "cost": 0,
     "shopTags": null,

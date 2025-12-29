@@ -48,6 +48,7 @@ export interface Ability {
 
 export interface Item {
     id: number;
+    shortName: string;
     displayName: string;
     cost: number;
     shopTags: string;

@@ -115,7 +115,7 @@ export function getItemIconUrl(itemId: number): string | null {
     const item = getItemById(itemId);
     if (!item) return null;
 
-    const assetKey = getAssetKey('item', normalizeToAssetKey(item.displayName));
+    const assetKey = getAssetKey('item', item.shortName);
     return `https://courier.spectral.gg/images/dota/items/${assetKey}`;
 }
 
@@ -129,8 +129,8 @@ export function getItemIconFallbackUrl(itemId: number): string | null {
     const item = getItemById(itemId);
     if (!item) return null;
 
-    const originalKey = getOriginalAssetKey('item', item.displayName);
-    const aliasKey = getAssetKey('item', normalizeToAssetKey(item.displayName));
+    const originalKey = item.shortName.toLowerCase();
+    const aliasKey = getAssetKey('item', item.shortName);
 
     // Only return fallback if alias was applied (keys differ)
     if (originalKey !== aliasKey) {
