@@ -12,13 +12,22 @@ export default function Home() {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [finalScore, setFinalScore] = useState(0);
   const [answers, setAnswers] = useState<AnswerResult[]>([]);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const handleStartRun = () => {
     const randomQuestions = getRandomQuestions();
     setQuestions(randomQuestions);
-    setGameState('playing');
     setFinalScore(0);
     setAnswers([]);
+    
+    // Start transition animation
+    setIsTransitioning(true);
+    
+    // After transition completes, switch to playing state
+    setTimeout(() => {
+      setGameState('playing');
+      setIsTransitioning(false);
+    }, 700); // Match transition duration
   };
 
   const handleGameComplete = (finalAnswers: AnswerResult[], score: number) => {
@@ -29,10 +38,11 @@ export default function Home() {
 
   const handleNewRun = () => {
     setGameState('landing');
+    setIsTransitioning(false);
   };
 
   if (gameState === 'landing') {
-    return <Landing onStartRun={handleStartRun} />;
+    return <Landing onStartRun={handleStartRun} isTransitioning={isTransitioning} />;
   }
 
   if (gameState === 'playing') {

@@ -2,7 +2,7 @@
 
 import { Question as QuestionType, AnswerResult, RunState } from '@/lib/types/game';
 import { calculatePoints } from '@/lib/utils/scoring';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Question from './Question';
 
 interface GameProps {
@@ -16,6 +16,8 @@ export default function Game({ questions, onComplete }: GameProps) {
   const [streak, setStreak] = useState(0);
   const [answers, setAnswers] = useState<AnswerResult[]>([]);
   const [pointsEarned, setPointsEarned] = useState(0);
+  const [startTimer, setStartTimer] = useState(false);
+  const gameContainerRef = useRef<HTMLDivElement>(null);
 
   const currentQuestion = questions[currentQuestionIndex];
   const isLastQuestion = currentQuestionIndex === questions.length - 1;
@@ -90,18 +92,36 @@ export default function Game({ questions, onComplete }: GameProps) {
     setStreak(0);
     setAnswers([]);
     setPointsEarned(0);
+    setStartTimer(false);
   }, [questions]);
 
+  // Start timer when component is mounted and visible (after transition)
+  // This ensures the timer only starts after the screen transition completes
+  useEffect(() => {
+    // Small delay to ensure transition has completed and content is visible
+    const timer = setTimeout(() => {
+      setStartTimer(true);
+    }, 50); // Small delay to ensure DOM is ready and transition is complete
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <Question
-      question={currentQuestion}
-      questionNumber={currentQuestionIndex + 1}
-      totalQuestions={questions.length}
-      currentScore={score}
-      pointsEarned={pointsEarned}
-      onAnswer={handleAnswer}
-      onTimeout={handleTimeout}
-    />
+    <div 
+      ref={gameContainerRef}
+      className="animate-fade-in"
+    >
+      <Question
+        question={currentQuestion}
+        questionNumber={currentQuestionIndex + 1}
+        totalQuestions={questions.length}
+        currentScore={score}
+        pointsEarned={pointsEarned}
+        onAnswer={handleAnswer}
+        onTimeout={handleTimeout}
+        startTimer={startTimer}
+      />
+    </div>
   );
 }
 

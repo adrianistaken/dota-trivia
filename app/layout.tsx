@@ -32,8 +32,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#1a1a1a]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative min-h-screen`}
       >
+        {/* Blurred background */}
+        <div 
+          className="fixed inset-0 -z-10"
+          style={{
+            backgroundImage: 'url(/images/backgrounds/largo_wallpaper_3_desktop.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundAttachment: 'fixed',
+            filter: 'blur(2px)',
+            transform: 'scale(1.05)',
+          }}
+        />
+        {/* Dark overlay for better text readability */}
+        <div className="fixed inset-0 -z-10 bg-black/20" />
         {children}
       </body>
     </html>

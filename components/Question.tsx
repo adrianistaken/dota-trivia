@@ -20,6 +20,7 @@ interface QuestionProps {
   pointsEarned: number;
   onAnswer: (answer: 'A' | 'B' | 'C' | 'D', timeRemaining: number) => void;
   onTimeout: () => void;
+  startTimer?: boolean;
 }
 
 const TIMER_DURATION = 10; // seconds
@@ -32,6 +33,7 @@ export default function Question({
   pointsEarned,
   onAnswer,
   onTimeout,
+  startTimer = true,
 }: QuestionProps) {
   const [timeRemaining, setTimeRemaining] = useState(TIMER_DURATION);
   const [answered, setAnswered] = useState(false);
@@ -40,6 +42,7 @@ export default function Question({
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const answeredRef = useRef(false);
   const questionIdRef = useRef(question.id);
+  const timerStartedRef = useRef(false);
 
   // Reset timer when question changes
   useEffect(() => {
@@ -50,6 +53,7 @@ export default function Question({
     setIsCorrect(null);
     answeredRef.current = false;
     questionIdRef.current = question.id;
+    timerStartedRef.current = false;
   }, [question.id]);
 
   // Update display score without resetting other state
@@ -83,7 +87,10 @@ export default function Question({
   }, [pointsEarned, currentScore]);
 
   useEffect(() => {
-    if (answeredRef.current) return;
+    // Only start timer if startTimer is true and timer hasn't been started yet
+    if (!startTimer || answeredRef.current || timerStartedRef.current) return;
+
+    timerStartedRef.current = true;
 
     const interval = setInterval(() => {
       if (answeredRef.current) {
@@ -105,7 +112,7 @@ export default function Question({
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [onTimeout, question.id]);
+  }, [onTimeout, question.id, startTimer]);
 
   const handleAnswer = (answer: 'A' | 'B' | 'C' | 'D') => {
     if (answeredRef.current) return;
@@ -152,13 +159,7 @@ export default function Question({
 
   return (
     <div 
-      className="flex min-h-screen flex-col items-center justify-center px-4 py-8"
-      style={{
-        backgroundImage: 'url(/images/backgrounds/background_4.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}
+      className="relative flex min-h-screen flex-col items-center justify-center px-4 py-8"
     >
       {/* Slim Pop-up Window Container */}
       <div className="w-full max-w-md rounded-lg border border-slate-700/50 bg-slate-900/90 shadow-2xl backdrop-blur-sm">
