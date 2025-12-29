@@ -218,7 +218,7 @@ export default function Question({
 
     return (
       <div className="flex flex-col items-center gap-4">
-        <h3 className="text-base font-medium text-white flex items-center justify-center flex-wrap gap-1">
+        <h3 className="text-base font-medium text-white block items-center justify-center flex-wrap gap-1">
           {beforeIcon && <span>{beforeIcon}</span>}
           <img 
             src={iconSrc} 
