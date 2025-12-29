@@ -157,6 +157,91 @@ export default function Question({
 
   const { primary: questionIconUrl, fallback: questionIconFallbackUrl } = getQuestionIconUrl();
 
+  // Parse question text to render icons inline
+  const renderQuestionWithIcon = () => {
+    const questionText = question.question;
+    const iconPlaceholder = '{icon}';
+    
+    if (!questionText.includes(iconPlaceholder)) {
+      // No icon placeholder, render normally
+      if (questionIconUrl) {
+        return (
+          <div className="flex flex-col items-center gap-4">
+            <h3 className="text-base font-medium text-white">{questionText}</h3>
+            <div className="flex items-center justify-center">
+              <AssetImage
+                src={questionIconUrl}
+                alt="Question"
+                className="h-20 w-20 object-contain"
+                fallbackSrc={questionIconFallbackUrl}
+              />
+            </div>
+          </div>
+        );
+      }
+      return <h3 className="text-base font-medium text-white">{questionText}</h3>;
+    }
+
+    // Split by icon placeholder
+    const parts = questionText.split(iconPlaceholder);
+    const beforeIcon = parts[0];
+    const afterIcon = parts[1] || '';
+
+    // Split afterIcon to get only the first word for coloring
+    const afterIconWords = afterIcon.trim().split(/\s+/);
+    const firstWord = afterIconWords[0] || '';
+    const restOfText = afterIconWords.slice(1).join(' ');
+
+    // Determine icon and color based on category
+    let iconSrc: string;
+    let textColorStyle: React.CSSProperties;
+    
+    if (question.category === 'ability') {
+      iconSrc = '/images/icons/mana.png';
+      textColorStyle = {
+        background: 'linear-gradient(to right, #60a5fa, #93c5fd)',
+        WebkitBackgroundClip: 'text',
+        WebkitTextFillColor: 'transparent',
+        backgroundClip: 'text',
+      };
+    } else if (question.category === 'item') {
+      iconSrc = '/images/icons/gold.png';
+      textColorStyle = { color: '#fbbf24' }; // gold-400
+    } else if (question.category === 'cooldown') {
+      iconSrc = '/images/icons/cooldown.png';
+      textColorStyle = { color: '#6b7280' }; // gray-500
+    } else {
+      // Fallback
+      iconSrc = '/images/icons/mana.png';
+      textColorStyle = { color: '#ffffff' };
+    }
+
+    return (
+      <div className="flex flex-col items-center gap-4">
+        <h3 className="text-base font-medium text-white flex items-center justify-center flex-wrap gap-1">
+          {beforeIcon && <span>{beforeIcon}</span>}
+          <img 
+            src={iconSrc} 
+            alt="" 
+            className="inline-block h-5 w-5 mx-1 align-middle"
+          />
+          {firstWord && <span style={textColorStyle}>{firstWord}</span>}
+          {restOfText && <span> {restOfText}</span>}
+        </h3>
+        {questionIconUrl && (
+          <div className="flex items-center justify-center">
+            <AssetImage
+              src={questionIconUrl}
+              alt="Question"
+              className="h-20 w-20 object-contain"
+              fallbackSrc={questionIconFallbackUrl}
+            />
+          </div>
+        )}
+      </div>
+    );
+  };
+
   return (
     <div 
       className="relative flex min-h-screen flex-col items-center justify-center px-4 py-8"
@@ -167,21 +252,7 @@ export default function Question({
         <div className="p-5 space-y-5">
           {/* Question Text - Centered */}
           <div className="text-center">
-            {questionIconUrl ? (
-              <div className="flex flex-col items-center gap-4">
-                <h3 className="text-base font-medium text-white">{question.question}</h3>
-                <div className="flex items-center justify-center">
-                  <AssetImage
-                    src={questionIconUrl}
-                    alt="Question"
-                    className="h-20 w-20 object-contain"
-                    fallbackSrc={questionIconFallbackUrl}
-                  />
-                </div>
-              </div>
-            ) : (
-              <h3 className="text-base font-medium text-white">{question.question}</h3>
-            )}
+            {renderQuestionWithIcon()}
           </div>
 
           {/* Lore Box - Black rectangular box, no rounded corners */}

@@ -156,7 +156,7 @@ export function generateAbilityCooldownQuestion(context: GeneratorContext): Ques
 
     return {
         id: `cooldown-${abilityId}-${level}-${Date.now()}`,
-        question: `What is the cooldown of ${heroName}'s ${abilityName} at level ${level}?`,
+        question: `What is the {icon} cooldown of ${heroName}'s ${abilityName} at level ${level}?`,
         options: {
             A: formatAnswer(shuffled[0]),
             B: formatAnswer(shuffled[1]),

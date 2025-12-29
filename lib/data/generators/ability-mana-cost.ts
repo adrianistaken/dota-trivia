@@ -151,7 +151,7 @@ export function generateAbilityManaCostQuestion(context: GeneratorContext): Ques
 
     return {
         id: `ability-${abilityId}-${level}-${Date.now()}`,
-        question: `How much mana does ${heroName}'s ${abilityName} cost at level ${level}?`,
+        question: `How much {icon} mana does ${heroName}'s ${abilityName} cost at level ${level}?`,
         options: {
             A: shuffled[0].toString(),
             B: shuffled[1].toString(),
