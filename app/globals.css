@@ -26,6 +26,53 @@ body {
   transition-duration: 150ms;
 }
 
+/* Smooth container size transitions */
+.question-container {
+  transition: height 0.3s ease-in-out, width 0.3s ease-in-out;
+}
+
+/* Smooth image/icon transitions */
+.question-icon-container {
+  transition: height 0.3s ease-in-out, min-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.question-icon {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Slide animations for question content (text + image together) */
+@keyframes slide-out-down {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
+
+@keyframes slide-in-from-up {
+  from {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-out-down {
+  animation: slide-out-down 0.4s ease-in-out forwards;
+}
+
+.animate-slide-in-from-up {
+  animation: slide-in-from-up 0.4s ease-in-out forwards;
+}
+
 /* Animations */
 @keyframes fade-in {
   from {
@@ -37,6 +84,24 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.animate-fade-out {
+  animation: fade-out 0.3s ease-in-out forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out forwards;
 }
 
 @keyframes correct-pulse {
