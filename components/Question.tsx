@@ -203,18 +203,51 @@ export default function Question({
         WebkitBackgroundClip: 'text',
         WebkitTextFillColor: 'transparent',
         backgroundClip: 'text',
+        fontWeight: 'bold',
       };
     } else if (question.category === 'item') {
       iconSrc = '/images/icons/gold.png';
-      textColorStyle = { color: '#fbbf24' }; // gold-400
+      textColorStyle = { color: '#fbbf24', fontWeight: 'bold' }; // gold-400
     } else if (question.category === 'cooldown') {
       iconSrc = '/images/icons/cooldown.png';
-      textColorStyle = { color: '#6b7280' }; // gray-500
+      textColorStyle = { color: '#6b7280', fontWeight: 'bold' }; // gray-500
     } else {
       // Fallback
       iconSrc = '/images/icons/mana.png';
-      textColorStyle = { color: '#ffffff' };
+      textColorStyle = { color: '#ffffff', fontWeight: 'bold' };
     }
+
+    // Parse restOfText to find and bold level numbers (e.g., "at level 1")
+    const renderTextWithBoldLevel = (text: string) => {
+      // Match "at level X" pattern where X is a number
+      const levelPattern = /(at )(level )(\d+)/gi;
+      const parts: (string | React.ReactElement)[] = [];
+      let lastIndex = 0;
+      let match;
+
+      while ((match = levelPattern.exec(text)) !== null) {
+        // Add text before the match
+        if (match.index > lastIndex) {
+          parts.push(text.substring(lastIndex, match.index));
+        }
+        // Add "at " as normal text
+        parts.push(match[1]);
+        // Add "level" and the number as bold
+        parts.push(
+          <strong key={`level-${match.index}`}>
+            {match[2]}{match[3]}
+          </strong>
+        );
+        lastIndex = match.index + match[0].length;
+      }
+
+      // Add remaining text
+      if (lastIndex < text.length) {
+        parts.push(text.substring(lastIndex));
+      }
+
+      return parts.length > 0 ? parts : text;
+    };
 
     return (
       <div className="flex flex-col items-center gap-4">
@@ -226,7 +259,7 @@ export default function Question({
             className="inline-block h-5 w-5 mx-1 align-middle"
           />
           {firstWord && <span style={textColorStyle}>{firstWord}</span>}
-          {restOfText && <span> {restOfText}</span>}
+          {restOfText && <span> {renderTextWithBoldLevel(restOfText)}</span>}
         </h3>
         {questionIconUrl && (
           <div className="flex items-center justify-center">
@@ -247,7 +280,7 @@ export default function Question({
       className="relative flex min-h-screen flex-col items-center justify-center px-4 py-8"
     >
       {/* Slim Pop-up Window Container */}
-      <div className="w-full max-w-md rounded-lg border border-slate-700/50 bg-slate-900/90 shadow-2xl backdrop-blur-sm">
+      <div className="w-full max-w-md rounded-lg border border-amber-900/60 shadow-2xl backdrop-blur-sm" style={{ backgroundColor: 'rgb(59 46 22)' }}>
         {/* Window Content */}
         <div className="p-5 space-y-5">
           {/* Question Text - Centered */}
@@ -255,9 +288,9 @@ export default function Question({
             {renderQuestionWithIcon()}
           </div>
 
-          {/* Lore Box - Black rectangular box, no rounded corners */}
+          {/* Lore Box - Dark brown rectangular box, no rounded corners */}
           {question.lore && (
-            <div className="bg-black px-4 py-3">
+            <div className="px-4 py-3 border border-amber-900/40" style={{ backgroundColor: 'rgb(45 34 18)' }}>
               <p className="text-center text-sm italic text-white">{question.lore}</p>
             </div>
           )}
@@ -285,7 +318,10 @@ export default function Question({
                       }
                     }}
                     disabled={answered}
-                    style={showCorrect ? { animation: 'correct-pulse 1s ease-in-out infinite' } : undefined}
+                    style={{
+                      ...(showCorrect ? { animation: 'correct-pulse 1s ease-in-out infinite' } : {}),
+                      ...(!showCorrect && !showCorrectAnswer && !showWrong && !isSelected ? { backgroundColor: 'rgb(45 34 18)' } : {}),
+                    }}
                     className={`group relative flex flex-col items-center justify-center rounded border p-2.5 ${
                       answered && !showCorrect && !showCorrectAnswer ? 'pointer-events-none cursor-not-allowed opacity-60 transition-opacity' : showCorrect ? '' : 'transition-all cursor-pointer'
                     } ${
@@ -296,14 +332,16 @@ export default function Question({
                         : showWrong
                         ? 'border-red-500 bg-red-900/40 shadow-lg shadow-red-500/30'
                         : isSelected
-                        ? 'border-slate-400 bg-slate-700/70'
-                        : 'border-slate-600/40 bg-slate-800/60 hover:border-slate-500/60 hover:bg-slate-700/70 hover:shadow-lg'
+                        ? 'border-amber-700 bg-amber-950/70'
+                        : 'border-amber-900/50 hover:border-amber-800/70 hover:shadow-lg'
                     }`}
                   >
                     {/* Letter Label - Top-left corner, subtle */}
                     <span className={`absolute left-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded text-xs font-semibold text-white/70 ${
-                      showCorrect ? 'bg-green-600' : showWrong ? 'bg-red-600' : 'bg-slate-700/50'
-                    }`}>
+                      showCorrect ? 'bg-green-600' : showWrong ? 'bg-red-600' : ''
+                    }`}
+                    style={!showCorrect && !showWrong ? { backgroundColor: 'rgb(68 52 24)' } : undefined}
+                    >
                       {option}
                     </span>
                     
@@ -323,9 +361,11 @@ export default function Question({
                     
                     {/* Answer Image - Centered, square */}
                     {question.optionImages?.[option] && (
-                      <div className={`h-16 w-16 flex items-center justify-center bg-slate-900/80 border rounded mb-2 ${
-                        showCorrect ? 'border-green-500/80 animate-correct-glow' : showCorrectAnswer ? 'border-green-600/50' : showWrong ? 'border-red-500/50' : 'border-slate-600/30'
-                      }`}>
+                      <div className={`h-16 w-16 flex items-center justify-center border rounded mb-2 ${
+                        showCorrect ? 'border-green-500/80 animate-correct-glow' : showCorrectAnswer ? 'border-green-600/50' : showWrong ? 'border-red-500/50' : 'border-amber-900/50'
+                      }`}
+                      style={!showCorrect && !showCorrectAnswer && !showWrong ? { backgroundColor: 'rgb(45 34 18)' } : undefined}
+                      >
                         <img
                           src={question.optionImages[option]}
                           alt={`Option ${option}`}
@@ -347,10 +387,10 @@ export default function Question({
 
           {/* Timer - Centered below answers */}
           <div className="flex flex-col items-center gap-1 pt-1">
-            <div className="text-3xl font-bold text-slate-300">
+            <div className="text-3xl font-bold text-amber-100">
               {formatTime(timeRemaining)}
             </div>
-            <div className="text-xs text-gray-400 uppercase tracking-wide">TIME REMAINING</div>
+            <div className="text-xs text-amber-200/70 uppercase tracking-wide">TIME REMAINING</div>
           </div>
         </div>
       </div>

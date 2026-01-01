@@ -162,7 +162,7 @@ export function generateItemCostQuestion(context: GeneratorContext): Question | 
 
     return {
         id: `item-${itemId}-${Date.now()}`,
-        question: `How much {icon} gold does ${itemName} cost?`,
+        question: `How much{icon} gold does ${itemName} cost?`,
         options: {
             A: formatAnswer(shuffled[0]),
             B: formatAnswer(shuffled[1]),
