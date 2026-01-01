@@ -15,7 +15,7 @@ import AssetImage from './AssetImage';
 interface QuestionProps {
   question: QuestionType;
   questionNumber: number;
-  totalQuestions: number;
+  totalQuestions?: number;
   currentScore: number;
   pointsEarned: number;
   onAnswer: (answer: 'A' | 'B' | 'C' | 'D', timeRemaining: number) => void;

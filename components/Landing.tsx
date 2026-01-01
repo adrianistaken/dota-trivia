@@ -12,8 +12,8 @@ export default function Landing({ onStartRun, isTransitioning = false }: Landing
         <img src="/images/dota2trivialogo.png" alt="Dota 2 Trivia Logo" className="w-40 h-40 mx-auto mb-6" />
         <h1 className="mb-6 text-5xl font-bold text-white uppercase">Dota 2 Trivia</h1>
         <p className="mb-12 text-lg text-gray-300">
-          Test your Dota 2 knowledge with quick-fire questions. Answer 10 questions
-          as fast as you can to maximize your score!
+          Test your Dota 2 knowledge with quick-fire questions. Answer as many questions
+          as you can - the game continues until you're done!
         </p>
         <div className="play-button-wrapper relative w-full max-w-md mx-auto">
           <button
