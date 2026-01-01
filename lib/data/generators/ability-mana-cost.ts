@@ -149,14 +149,20 @@ export function generateAbilityManaCostQuestion(context: GeneratorContext): Ques
 
     const correctAnswer = String.fromCharCode(65 + correctIndex) as 'A' | 'B' | 'C' | 'D';
 
+    // Format answer text - round to 1 decimal place to avoid floating point precision issues
+    const formatAnswer = (value: number): string => {
+        const rounded = parseFloat(value.toFixed(1));
+        return rounded.toString();
+    };
+
     return {
         id: `ability-${abilityId}-${level}-${Date.now()}`,
         question: `How much{icon} mana does ${heroName}'s ${abilityName} cost at level ${level}?`,
         options: {
-            A: shuffled[0].toString(),
-            B: shuffled[1].toString(),
-            C: shuffled[2].toString(),
-            D: shuffled[3].toString(),
+            A: formatAnswer(shuffled[0]),
+            B: formatAnswer(shuffled[1]),
+            C: formatAnswer(shuffled[2]),
+            D: formatAnswer(shuffled[3]),
         },
         correctAnswer,
         category: 'ability',

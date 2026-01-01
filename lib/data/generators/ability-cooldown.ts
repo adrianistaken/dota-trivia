@@ -150,8 +150,10 @@ export function generateAbilityCooldownQuestion(context: GeneratorContext): Ques
     const correctAnswer = String.fromCharCode(65 + correctIndex) as 'A' | 'B' | 'C' | 'D';
 
     // Format answer text (add "seconds" suffix)
+    // Round to 1 decimal place to avoid floating point precision issues
     const formatAnswer = (value: number): string => {
-        return `${value} seconds`;
+        const rounded = parseFloat(value.toFixed(1));
+        return `${rounded} seconds`;
     };
 
     return {
