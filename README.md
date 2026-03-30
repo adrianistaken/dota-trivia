@@ -1,36 +1,190 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dota 2 Trivia
+
+A Dota 2 trivia game built with Next.js. Test your knowledge of item costs, ability mana costs, and cooldowns.
 
 ## Getting Started
 
-First, run the development server:
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+## Updating Game Data for a New Patch
+
+Game data comes from the [Stratz GraphQL API](https://api.stratz.com/graphiq). When a new Dota 2 patch drops, you need to pull fresh data.
+
+### Step 1: Find the Latest Game Version ID
+
+Go to [https://api.stratz.com/graphiq](https://api.stratz.com/graphiq) and run:
+
+```graphql
+query {
+  constants {
+    gameVersions {
+      id
+      name
+      asOfDateTime
+    }
+  }
+}
+```
+
+Find the latest entry — the `id` is what you need (e.g. `181` was patch 7.37d).
+
+### Step 2: Pull All Game Data
+
+Using the version ID from step 1, run this query (replace `181` with the new ID):
+
+```graphql
+query {
+  constants {
+    heroes(gameVersionId: 181) {
+      id
+      displayName
+      talents {
+        slot
+        abilityId
+      }
+      facets {
+        abilityId
+        facetId
+        slot
+      }
+      stats {
+        enabled
+        attackType
+        startingArmor
+        startingMagicArmor
+        startingDamageMin
+        startingDamageMax
+        attackRange
+        primaryAttribute
+        strengthBase
+        strengthGain
+        intelligenceBase
+        intelligenceGain
+        agilityBase
+        agilityGain
+        hpRegen
+        mpRegen
+        moveSpeed
+        hpBarOffset
+        visionDaytimeRange
+        visionNighttimeRange
+        complexity
+        primaryAttributeEnum
+      }
+      abilities {
+        slot
+        ability {
+          id
+          name
+          stat {
+            abilityId
+            behavior
+            unitDamageType
+            dispellable
+            charges
+            duration
+            manaCost
+            damage
+            channelTime
+            castRange
+            spellImmunity
+            cooldown
+          }
+        }
+      }
+    }
+    gameVersions {
+      id
+      name
+      asOfDateTime
+    }
+    items(gameVersionId: 181) {
+      id
+      shortName
+      name
+      displayName
+      stat {
+        castRange
+        manaCost
+        channelTime
+        cost
+        shopTags
+        aliases
+        quality
+        isPurchasable
+        isSideShop
+        isSupport
+        itemResult
+      }
+    }
+    abilities(gameVersionId: 181) {
+      name
+      isTalent
+      stat {
+        abilityId
+        behavior
+        unitDamageType
+        dispellable
+        charges
+        duration
+        manaCost
+        damage
+        channelTime
+        castRange
+        spellImmunity
+        cooldown
+      }
+    }
+  }
+}
+```
+
+### Step 3: Save the Response
+
+Save the full JSON response to `app/data/dota-data-181.json` (replace the existing file). Optionally rename the file to match the new version ID.
+
+> If you rename the file, update the path in `scripts/extract-data.js` (line 5) to match.
+
+### Step 4: Run the Extract Script
+
+```bash
+node scripts/extract-data.js
+```
+
+This reads the raw Stratz data and generates:
+- `app/data/heroes.json`
+- `app/data/items.json`
+- `app/data/abilities.json`
+
+### Step 5: Verify
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Play a few rounds and make sure the questions/answers look correct for the new patch.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/
+  data/           # Game data (JSON files)
+  page.tsx        # Main app entry, state management
+  globals.css     # Global styles and animations
+components/
+  Landing.tsx     # Main menu
+  Game.tsx        # Game orchestrator
+  Question.tsx    # Question UI, timer, answers
+  Results.tsx     # End-of-run results
+  ShootingStars.tsx  # Background flying icons effect
+lib/
+  data/generators/   # Question generation (cooldowns, mana costs, item costs)
+  utils/             # Scoring, asset resolution, storage
+scripts/
+  extract-data.js    # Transforms raw Stratz data into app-ready JSON
+```
