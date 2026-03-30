@@ -1,18 +1,24 @@
 'use client';
 
 import { useState } from 'react';
-import { GameState } from '@/lib/types/game';
+import { GameState, GameMode } from '@/lib/types/game';
 import Landing from '@/components/Landing';
 import Game from '@/components/Game';
+import Results from '@/components/Results';
 
 export default function Home() {
   const [gameState, setGameState] = useState<GameState>('landing');
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [gameMode, setGameMode] = useState<GameMode>('limited');
+  const [finalScore, setFinalScore] = useState(0);
 
-  const handleStartRun = () => {
+  const showGameBackground = gameState === 'playing' || isTransitioning;
+
+  const handleStartRun = (mode: GameMode) => {
+    setGameMode(mode);
     // Start transition animation
     setIsTransitioning(true);
-    
+
     // After transition completes, switch to playing state
     setTimeout(() => {
       setGameState('playing');
@@ -20,13 +26,58 @@ export default function Home() {
     }, 700); // Match transition duration
   };
 
-  if (gameState === 'landing') {
-    return <Landing onStartRun={handleStartRun} isTransitioning={isTransitioning} />;
-  }
+  const handleGameComplete = (answers: any[], score: number) => {
+    setFinalScore(score);
+    setGameState('results');
+  };
 
-  if (gameState === 'playing') {
-    return <Game />;
-  }
+  const handleNewRun = () => {
+    setGameState('landing');
+    setFinalScore(0);
+  };
 
-  return null;
+  return (
+    <>
+      {/* Landing background (map) */}
+      <div
+        className="fixed inset-0 -z-10"
+        style={{
+          backgroundImage: 'url(/images/backgrounds/dota_2_map.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+          filter: 'blur(1.4px)',
+          transform: 'scale(1.05)',
+          opacity: showGameBackground ? 0 : 1,
+          transition: 'opacity 0.8s ease-in-out',
+        }}
+      />
+      {/* Game background */}
+      <div
+        className="fixed inset-0 -z-10"
+        style={{
+          backgroundImage: 'url(/images/backgrounds/dota2websitebackground.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
+          opacity: showGameBackground ? 1 : 0,
+          transition: 'opacity 0.8s ease-in-out',
+        }}
+      />
+      {/* Dark overlay for readability */}
+      <div className="fixed inset-0 -z-10 bg-black/20" />
+
+      {gameState === 'landing' && (
+        <Landing onStartRun={handleStartRun} isTransitioning={isTransitioning} />
+      )}
+      {gameState === 'playing' && (
+        <Game gameMode={gameMode} onComplete={handleGameComplete} />
+      )}
+      {gameState === 'results' && (
+        <Results finalScore={finalScore} onNewRun={handleNewRun} />
+      )}
+    </>
+  );
 }

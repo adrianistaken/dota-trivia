@@ -1,4 +1,14 @@
 export type GameState = 'landing' | 'playing' | 'results';
+export type GameMode = 'limited' | 'endless';
+
+export interface ScoreBreakdown {
+    total: number;
+    base: number;
+    speed: number;
+    streak: number;
+    perfect: number;
+    streakMultiplier: number;
+}
 
 export interface Question {
     id: string;
@@ -31,6 +41,7 @@ export interface AnswerResult {
     correct: boolean;
     timeRemaining: number;
     pointsEarned: number;
+    scoreBreakdown?: ScoreBreakdown;
 }
 
 export interface RunState {

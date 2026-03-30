@@ -1,6 +1,6 @@
 'use client';
 
-import { Question as QuestionType } from '@/lib/types/game';
+import { Question as QuestionType, ScoreBreakdown } from '@/lib/types/game';
 import { useEffect, useState, useRef } from 'react';
 import { 
   getAbilityIconUrl, 
@@ -17,7 +17,7 @@ interface QuestionProps {
   questionNumber: number;
   totalQuestions?: number;
   currentScore: number;
-  pointsEarned: number;
+  scoreBreakdown: ScoreBreakdown | null;
   onAnswer: (answer: 'A' | 'B' | 'C' | 'D', timeRemaining: number) => void;
   onTimeout: () => void;
   startTimer?: boolean;
@@ -30,7 +30,7 @@ export default function Question({
   questionNumber,
   totalQuestions,
   currentScore,
-  pointsEarned,
+  scoreBreakdown,
   onAnswer,
   onTimeout,
   startTimer = true,
@@ -45,6 +45,7 @@ export default function Question({
   const [previousFallbackUrl, setPreviousFallbackUrl] = useState<string | null>(null);
   const [previousQuestionText, setPreviousQuestionText] = useState<string | null>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [showBreakdown, setShowBreakdown] = useState(false);
   const answeredRef = useRef(false);
   const questionIdRef = useRef(question.id);
   const timerStartedRef = useRef(false);
@@ -112,33 +113,47 @@ export default function Question({
 
   // Update display score without resetting other state
   useEffect(() => {
-    if (pointsEarned === 0) {
+    if (!scoreBreakdown) {
       setDisplayScore(currentScore);
     }
-  }, [currentScore, pointsEarned]);
+  }, [currentScore, scoreBreakdown]);
 
   // Animate score counting when points are earned
   useEffect(() => {
-    if (pointsEarned > 0) {
+    if (scoreBreakdown && scoreBreakdown.total > 0) {
+      setShowBreakdown(true);
+      const startScore = currentScore - scoreBreakdown.total;
+      setDisplayScore(startScore);
+      
       const duration = 1000; // 1 second
       const steps = 30;
-      const increment = pointsEarned / steps;
+      const increment = scoreBreakdown.total / steps;
       const stepDuration = duration / steps;
       
       let currentStep = 0;
       const interval = setInterval(() => {
         currentStep++;
         if (currentStep <= steps) {
-          setDisplayScore((prev) => Math.min(prev + increment, currentScore + pointsEarned));
+          setDisplayScore((prev) => Math.min(startScore + (currentStep * increment), currentScore));
         } else {
-          setDisplayScore(currentScore + pointsEarned);
+          setDisplayScore(currentScore);
           clearInterval(interval);
         }
       }, stepDuration);
 
-      return () => clearInterval(interval);
+      // Hide breakdown after animation completes + 2 seconds
+      const hideTimer = setTimeout(() => {
+        setShowBreakdown(false);
+      }, duration + 2000);
+
+      return () => {
+        clearInterval(interval);
+        clearTimeout(hideTimer);
+      };
+    } else {
+      setShowBreakdown(false);
     }
-  }, [pointsEarned, currentScore]);
+  }, [scoreBreakdown, currentScore]);
 
   useEffect(() => {
     // Only start timer if startTimer is true and timer hasn't been started yet
@@ -477,10 +492,62 @@ export default function Question({
     );
   };
 
+  // Format score breakdown text
+  const formatScoreBreakdown = (breakdown: ScoreBreakdown | null): string => {
+    if (!breakdown) return '';
+    
+    const parts: string[] = [];
+    parts.push(`+${breakdown.base}`);
+    if (breakdown.speed > 0) parts.push(`+${breakdown.speed} speed`);
+    if (breakdown.streak > 0) parts.push(`+${breakdown.streak} streak`);
+    if (breakdown.perfect > 0) parts.push(`+${breakdown.perfect} perfect`);
+    
+    return parts.join(' ');
+  };
+
   return (
     <div 
       className="relative flex min-h-screen flex-col items-center justify-center px-4 py-8"
     >
+      {/* Fixed Score Display at Top Center */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center pt-4 pb-2 px-4 pointer-events-none">
+        <div 
+          className="rounded-lg border border-amber-900/60 shadow-2xl backdrop-blur-sm px-6 py-4"
+          style={{ backgroundColor: 'rgba(59, 46, 22, 0.95)' }}
+        >
+          {/* Current Score */}
+          <div className="text-center mb-2">
+            <div className="text-xs text-amber-200/70 uppercase tracking-wide mb-1">Current score</div>
+            <div className="text-4xl sm:text-5xl font-bold text-white">
+              {Math.round(displayScore).toLocaleString()}
+            </div>
+          </div>
+          
+          {/* Question Number */}
+          <div className="text-center mb-2">
+            <div className="text-sm text-amber-200/80">
+              Question number: {questionNumber}{totalQuestions ? `/${totalQuestions}` : ''}
+            </div>
+          </div>
+          
+          {/* Score Breakdown - Only show after correct answer */}
+          {scoreBreakdown && scoreBreakdown.total > 0 && showBreakdown && (
+            <div 
+              className={`text-center mt-2 pt-2 border-t border-amber-900/40 transition-opacity duration-500 ${
+                showBreakdown ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <div className="text-xs text-amber-200/90 mb-1">
+                {formatScoreBreakdown(scoreBreakdown)}
+              </div>
+              <div className="text-xs text-amber-300/80 font-semibold">
+                {scoreBreakdown.streakMultiplier.toFixed(1)}x streak
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Slim Pop-up Window Container */}
       <div className="w-full max-w-md rounded-lg border border-amber-900/60 shadow-2xl backdrop-blur-sm transition-all duration-300 ease-in-out" style={{ backgroundColor: 'rgb(59 46 22)' }}>
         {/* Window Content */}

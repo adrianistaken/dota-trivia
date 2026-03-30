@@ -242,7 +242,7 @@ body {
   transition: transform 0.2s ease-out, filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3);
-  filter: brightness(1.4);
+  filter: brightness(1.8);
 }
 
 /* Glow effect pseudo-element - on wrapper to avoid overflow clipping */
@@ -268,7 +268,7 @@ body {
 
 /* Play button hover and active states */
 .play-button-wrapper:hover .play-button {
-  filter: brightness(1.8);
+  filter: brightness(2.5);
   transition: filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.4);
 }

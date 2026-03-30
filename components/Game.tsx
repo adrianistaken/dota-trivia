@@ -1,25 +1,28 @@
 'use client';
 
-import { Question as QuestionType, AnswerResult } from '@/lib/types/game';
+import { Question as QuestionType, AnswerResult, GameMode } from '@/lib/types/game';
 import { calculatePoints } from '@/lib/utils/scoring';
 import { generateNextQuestion } from '@/lib/data/generators/engine';
 import { useEffect, useState, useRef, useCallback } from 'react';
 import Question from './Question';
 
 interface GameProps {
+  gameMode: GameMode;
   onComplete?: (answers: AnswerResult[], finalScore: number) => void;
 }
 
-export default function Game({ onComplete }: GameProps) {
+export default function Game({ gameMode, onComplete }: GameProps) {
   const [currentQuestion, setCurrentQuestion] = useState<QuestionType | null>(null);
   const [questionNumber, setQuestionNumber] = useState(1);
   const [score, setScore] = useState(0);
   const [streak, setStreak] = useState(0);
   const [answers, setAnswers] = useState<AnswerResult[]>([]);
-  const [pointsEarned, setPointsEarned] = useState(0);
+  const [scoreBreakdown, setScoreBreakdown] = useState<ReturnType<typeof calculatePoints>>(null);
   const [startTimer, setStartTimer] = useState(false);
   const lastCategoryRef = useRef<'cooldown' | 'ability' | 'item' | undefined>(undefined);
   const gameContainerRef = useRef<HTMLDivElement>(null);
+  
+  const totalQuestions = gameMode === 'limited' ? 10 : undefined;
 
   const generateNewQuestion = useCallback(() => {
     const newQuestion = generateNextQuestion(lastCategoryRef.current);
@@ -40,7 +43,8 @@ export default function Game({ onComplete }: GameProps) {
     if (!currentQuestion) return;
     
     const correct = selectedAnswer === currentQuestion.correctAnswer;
-    const earned = calculatePoints(correct, timeRemaining, streak);
+    const breakdown = calculatePoints(correct, timeRemaining, streak);
+    const earned = breakdown?.total ?? 0;
 
     const answerResult: AnswerResult = {
       questionId: currentQuestion.id,
@@ -48,11 +52,12 @@ export default function Game({ onComplete }: GameProps) {
       correct,
       timeRemaining,
       pointsEarned: earned,
+      scoreBreakdown: breakdown ?? undefined,
     };
 
     const newAnswers = [...answers, answerResult];
     setAnswers(newAnswers);
-    setPointsEarned(earned);
+    setScoreBreakdown(breakdown);
 
     if (correct) {
       setScore((prev) => prev + earned);
@@ -61,10 +66,22 @@ export default function Game({ onComplete }: GameProps) {
       setStreak(0);
     }
 
+    // Check if game should end (limited mode after 10 questions)
+    const nextQuestionNumber = questionNumber + 1;
+    if (gameMode === 'limited' && nextQuestionNumber > 10) {
+      // End game after delay
+      setTimeout(() => {
+        if (onComplete) {
+          onComplete(newAnswers, score + earned);
+        }
+      }, 3500);
+      return;
+    }
+
     // Move to next question after delay
     setTimeout(() => {
       setQuestionNumber((prev) => prev + 1);
-      setPointsEarned(0);
+      setScoreBreakdown(null);
       generateNewQuestion();
     }, 3500);
   };
@@ -83,12 +100,24 @@ export default function Game({ onComplete }: GameProps) {
     const newAnswers = [...answers, answerResult];
     setAnswers(newAnswers);
     setStreak(0);
-    setPointsEarned(0);
+    setScoreBreakdown(null);
+
+    // Check if game should end (limited mode after 10 questions)
+    const nextQuestionNumber = questionNumber + 1;
+    if (gameMode === 'limited' && nextQuestionNumber > 10) {
+      // End game after delay
+      setTimeout(() => {
+        if (onComplete) {
+          onComplete(newAnswers, score);
+        }
+      }, 3500);
+      return;
+    }
 
     // Move to next question after delay
     setTimeout(() => {
       setQuestionNumber((prev) => prev + 1);
-      setPointsEarned(0);
+      setScoreBreakdown(null);
       generateNewQuestion();
     }, 3500);
   };
@@ -98,11 +127,11 @@ export default function Game({ onComplete }: GameProps) {
     setScore(0);
     setStreak(0);
     setAnswers([]);
-    setPointsEarned(0);
+    setScoreBreakdown(null);
     setQuestionNumber(1);
     lastCategoryRef.current = undefined;
     generateNewQuestion();
-  }, [generateNewQuestion]);
+  }, [generateNewQuestion, gameMode]);
 
   // Start timer when a new question is loaded
   useEffect(() => {
@@ -132,8 +161,9 @@ export default function Game({ onComplete }: GameProps) {
       <Question
         question={currentQuestion}
         questionNumber={questionNumber}
+        totalQuestions={totalQuestions}
         currentScore={score}
-        pointsEarned={pointsEarned}
+        scoreBreakdown={scoreBreakdown}
         onAnswer={handleAnswer}
         onTimeout={handleTimeout}
         startTimer={startTimer}
