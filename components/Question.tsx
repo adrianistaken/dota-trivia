@@ -510,27 +510,27 @@ export default function Question({
       <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
         <div
           className="flex items-center justify-between px-6 py-2.5 backdrop-blur-xl"
-          style={{ backgroundColor: 'rgba(15, 17, 23, 0.8)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
+          style={{ backgroundColor: 'rgba(10, 14, 26, 0.85)', borderBottom: '1px solid #4f4f4f3b' }}
         >
           {/* Question Number - Left */}
-          <div className="text-xs text-white/40 uppercase tracking-widest font-medium">
+          <div className="text-xs uppercase tracking-widest font-medium" style={{ color: '#94a3b8' }}>
             Q{questionNumber}{totalQuestions ? ` / ${totalQuestions}` : ''}
           </div>
 
           {/* Score - Center */}
           <div className="flex items-center gap-2.5">
-            <span className="text-lg font-semibold text-white/90 tracking-wide tabular-nums">
+            <span className="text-lg font-semibold tracking-wide tabular-nums" style={{ color: '#f8fafc' }}>
               {Math.round(displayScore).toLocaleString()}
             </span>
             {scoreBreakdown && scoreBreakdown.total > 0 && showBreakdown && (
-              <span className="text-xs text-emerald-400/90 font-medium animate-fade-in">
+              <span className="text-xs font-medium animate-fade-in" style={{ color: '#7fb069' }}>
                 {formatScoreBreakdown(scoreBreakdown)}
               </span>
             )}
           </div>
 
           {/* Streak - Right */}
-          <div className="text-xs text-white/40 uppercase tracking-widest font-medium">
+          <div className="text-xs uppercase tracking-widest font-medium" style={{ color: '#94a3b8' }}>
             {scoreBreakdown && scoreBreakdown.streakMultiplier > 1
               ? `${scoreBreakdown.streakMultiplier.toFixed(1)}x`
               : ''}
@@ -539,11 +539,9 @@ export default function Question({
       </div>
 
       {/* Card Container */}
-      <div
-        className="question-card w-full max-w-md rounded-2xl overflow-hidden transition-all duration-300 ease-in-out"
-      >
+      <div className="question-card w-full max-w-md overflow-hidden transition-all duration-300 ease-in-out">
         {/* Timer Bar - Top of card */}
-        <div className="w-full h-1.5" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
+        <div className="w-full h-1" style={{ backgroundColor: 'rgba(127, 176, 105, 0.06)' }}>
           <div
             key={`timer-${question.id}`}
             className="h-full timer-bar"
@@ -551,7 +549,7 @@ export default function Question({
               width: answered ? undefined : '100%',
               animationDuration: `${TIMER_DURATION}s`,
               animationPlayState: answered ? 'paused' : (startTimer && timerStartedRef.current ? 'running' : 'paused'),
-              background: 'linear-gradient(90deg, #f97316, #eab308, #22c55e)',
+              background: 'linear-gradient(90deg, #ef4444, #f59e0b, #7fb069)',
             }}
           />
         </div>
@@ -575,9 +573,9 @@ export default function Question({
             {question.lore && (
               <div
                 className="px-4 py-3 rounded-lg transition-opacity duration-300"
-                style={{ backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}
+                style={{ backgroundColor: 'rgba(127, 176, 105, 0.04)', border: '1px solid rgba(127, 176, 105, 0.1)' }}
               >
-                <p className="text-center text-sm italic text-white/60">{question.lore}</p>
+                <p className="text-center text-sm italic" style={{ color: '#94a3b8' }}>{question.lore}</p>
               </div>
             )}
           </div>
@@ -602,7 +600,7 @@ export default function Question({
                       }
                     }}
                     disabled={answered}
-                    className={`answer-btn group relative flex flex-col items-center justify-center rounded-xl py-5 px-3 min-h-[5rem] ${
+                    className={`answer-btn group relative flex flex-col items-center justify-center py-5 px-3 min-h-[5rem] ${
                       answered && !showCorrect && !showCorrectAnswer ? 'pointer-events-none cursor-not-allowed opacity-50' : showCorrect ? '' : 'cursor-pointer'
                     } ${
                       showCorrect
@@ -617,10 +615,17 @@ export default function Question({
                     }`}
                   >
                     {/* Letter Label - Top-left corner */}
-                    <span className={`absolute left-2.5 top-2.5 flex h-5 w-5 items-center justify-center rounded-md text-[10px] font-bold uppercase ${
-                      showCorrect ? 'bg-emerald-500 text-white' : showWrong ? 'bg-red-500 text-white' : 'text-white/40'
-                    }`}
-                    style={!showCorrect && !showWrong ? { backgroundColor: 'rgba(255,255,255,0.07)' } : undefined}
+                    <span
+                      className={`absolute left-2 top-2 flex h-5 w-5 items-center justify-center rounded text-[10px] font-bold uppercase ${
+                        showCorrect ? 'text-white' : showWrong ? 'text-white' : ''
+                      }`}
+                      style={
+                        showCorrect
+                          ? { backgroundColor: '#7fb069' }
+                          : showWrong
+                          ? { backgroundColor: '#ef4444' }
+                          : { backgroundColor: 'rgba(255,255,255,0.05)', color: '#64748b' }
+                      }
                     >
                       {option}
                     </span>
@@ -628,14 +633,14 @@ export default function Question({
                     {/* Checkmark or X overlay */}
                     {showCorrect && (
                       <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <div className="text-4xl text-emerald-400 font-bold animate-bounce drop-shadow-lg" style={{ textShadow: '0 0 12px rgba(16, 185, 129, 0.8)' }}>
+                        <div className="text-4xl font-bold animate-bounce drop-shadow-lg" style={{ color: '#7fb069', textShadow: '0 0 12px rgba(127, 176, 105, 0.8)' }}>
                           ✓
                         </div>
                       </div>
                     )}
                     {showWrong && (
                       <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <div className="text-4xl text-red-400 font-bold animate-bounce drop-shadow-lg" style={{ textShadow: '0 0 12px rgba(239, 68, 68, 0.6)' }}>
+                        <div className="text-4xl font-bold animate-bounce drop-shadow-lg" style={{ color: '#ef4444', textShadow: '0 0 12px rgba(239, 68, 68, 0.6)' }}>
                           ✗
                         </div>
                       </div>
@@ -652,10 +657,16 @@ export default function Question({
                     >
                       {question.optionImages?.[option] && (
                         <div
-                          className={`h-16 w-16 flex items-center justify-center rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
-                            showCorrect ? 'ring-2 ring-emerald-400/60 animate-correct-glow' : showCorrectAnswer ? 'ring-1 ring-emerald-500/40' : showWrong ? 'ring-1 ring-red-500/40' : 'ring-1 ring-white/10'
-                          }`}
-                          style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}
+                          className={`h-16 w-16 flex items-center justify-center rounded overflow-hidden transition-all duration-300 ease-in-out`}
+                          style={
+                            showCorrect
+                              ? { border: '1px solid rgba(127, 176, 105, 0.5)', boxShadow: '0 0 10px rgba(127, 176, 105, 0.3)' }
+                              : showCorrectAnswer
+                              ? { border: '1px solid rgba(127, 176, 105, 0.3)' }
+                              : showWrong
+                              ? { border: '1px solid rgba(239, 68, 68, 0.3)' }
+                              : { border: '1px solid #4f4f4f3b', backgroundColor: 'rgb(25 25 25)' }
+                          }
                         >
                           <img
                             src={question.optionImages[option]}
@@ -667,9 +678,18 @@ export default function Question({
                     </div>
 
                     {/* Answer Text */}
-                    <div className={`text-center text-sm font-medium ${
-                      showCorrect ? 'text-emerald-200' : showCorrectAnswer ? 'text-emerald-300' : showWrong ? 'text-red-300' : 'text-white/90'
-                    }`}>
+                    <div
+                      className="text-center text-sm font-medium"
+                      style={
+                        showCorrect
+                          ? { color: '#a8d98a' }
+                          : showCorrectAnswer
+                          ? { color: '#7fb069' }
+                          : showWrong
+                          ? { color: '#fca5a5' }
+                          : { color: '#cbd5e1' }
+                      }
+                    >
                       {question.options[option]}
                     </div>
                   </button>

@@ -12,7 +12,6 @@ export default function Home() {
   const [gameMode, setGameMode] = useState<GameMode>('limited');
   const [finalScore, setFinalScore] = useState(0);
 
-  const showGameBackground = gameState === 'playing' || isTransitioning;
 
   const handleStartRun = (mode: GameMode) => {
     setGameMode(mode);
@@ -38,22 +37,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Landing background (map) */}
-      <div
-        className="fixed inset-0 -z-10"
-        style={{
-          backgroundImage: 'url(/images/backgrounds/dota_2_map.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundAttachment: 'fixed',
-          filter: 'blur(1.4px)',
-          transform: 'scale(1.05)',
-          opacity: showGameBackground ? 0 : 1,
-          transition: 'opacity 0.8s ease-in-out',
-        }}
-      />
-      {/* Game background */}
+      {/* Background */}
       <div
         className="fixed inset-0 -z-10"
         style={{
@@ -62,8 +46,6 @@ export default function Home() {
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
           backgroundAttachment: 'fixed',
-          opacity: showGameBackground ? 1 : 0,
-          transition: 'opacity 0.8s ease-in-out',
         }}
       />
       {/* Dark overlay for readability */}

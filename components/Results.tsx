@@ -14,29 +14,42 @@ export default function Results({ finalScore, onNewRun }: ResultsProps) {
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4">
-      <div className="w-full max-w-2xl space-y-8 text-center">
-        <h1 className="text-4xl font-bold text-white">Run Complete!</h1>
+      <div
+        className="w-full max-w-md space-y-8 text-center p-8"
+        style={{
+          background: 'rgb(18 18 18)',
+          border: '1px solid #4f4f4f3b',
+          borderRadius: '10px',
+          boxShadow: '0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(127, 176, 105, 0.05)',
+        }}
+      >
+        <h1 className="text-3xl font-bold" style={{ color: '#f8fafc' }}>Run Complete</h1>
 
-        <div className="space-y-4">
+        <div className="space-y-6">
           <div>
-            <div className="text-lg text-gray-300">Final Score</div>
-            <div className="text-5xl font-bold text-white">{finalScore.toLocaleString()}</div>
+            <div className="text-sm uppercase tracking-widest font-medium mb-2" style={{ color: '#94a3b8' }}>Final Score</div>
+            <div className="text-5xl font-bold tabular-nums" style={{ color: '#7fb069' }}>
+              {finalScore.toLocaleString()}
+            </div>
           </div>
 
-          <div>
-            <div className="text-lg text-gray-300">Best Score</div>
-            <div className="text-3xl font-bold text-white">
+          <div
+            className="pt-6"
+            style={{ borderTop: '1px solid #4f4f4f3b' }}
+          >
+            <div className="text-sm uppercase tracking-widest font-medium mb-2" style={{ color: '#94a3b8' }}>Best Score</div>
+            <div className="text-3xl font-bold tabular-nums" style={{ color: '#f8fafc' }}>
               {bestScore.toLocaleString()}
             </div>
             {isNewBest && (
-              <div className="mt-2 text-lg text-green-400">New Best! 🎉</div>
+              <div className="mt-2 text-sm font-semibold" style={{ color: '#7fb069' }}>New Best!</div>
             )}
           </div>
         </div>
 
         <button
           onClick={onNewRun}
-          className="rounded-lg bg-slate-700 px-8 py-4 text-xl font-semibold text-white transition-all hover:bg-slate-600 hover:shadow-lg active:scale-95"
+          className="landing-btn w-full h-14 font-semibold text-base uppercase tracking-wider cursor-pointer flex items-center justify-center mt-4"
         >
           Start New Run
         </button>
@@ -44,4 +57,3 @@ export default function Results({ finalScore, onNewRun }: ResultsProps) {
     </div>
   );
 }
-
