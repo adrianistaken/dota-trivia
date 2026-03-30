@@ -24,6 +24,7 @@ interface QuestionProps {
 }
 
 const TIMER_DURATION = 10; // seconds
+const FILL_DURATION = 1; // seconds for the bar to fill up before countdown
 
 export default function Question({
   question,
@@ -46,9 +47,11 @@ export default function Question({
   const [previousQuestionText, setPreviousQuestionText] = useState<string | null>(null);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [showBreakdown, setShowBreakdown] = useState(false);
+  const [timerPhase, setTimerPhase] = useState<'filling' | 'depleting' | 'paused'>('depleting');
   const answeredRef = useRef(false);
   const questionIdRef = useRef(question.id);
   const timerStartedRef = useRef(false);
+  const timerBarRef = useRef<HTMLDivElement>(null);
   const previousQuestionIdRef = useRef<string | null>(null);
   const previousIconUrlRef = useRef<string | null>(null);
   const previousFallbackUrlRef = useRef<string | null>(null);
@@ -105,6 +108,7 @@ export default function Question({
     setAnswered(false);
     setSelectedAnswer(null);
     setIsCorrect(null);
+    setTimerPhase('depleting');
     answeredRef.current = false;
     previousQuestionIdRef.current = questionIdRef.current;
     questionIdRef.current = question.id;
@@ -155,9 +159,38 @@ export default function Question({
     }
   }, [scoreBreakdown, currentScore]);
 
+  // After answering, refill the bar from its current position before the next question arrives
   useEffect(() => {
-    // Only start timer if startTimer is true and timer hasn't been started yet
-    if (!startTimer || answeredRef.current || timerStartedRef.current) return;
+    if (!answered) return;
+    const refillDelay = 3500 - FILL_DURATION * 1000;
+    const timeout = setTimeout(() => {
+      const bar = timerBarRef.current;
+      if (bar) {
+        // Get current computed width as a percentage
+        const parent = bar.parentElement;
+        if (parent) {
+          const currentWidth = bar.getBoundingClientRect().width;
+          const parentWidth = parent.getBoundingClientRect().width;
+          const currentPct = (currentWidth / parentWidth) * 100;
+
+          // Remove animation, set current width, then transition to 100%
+          bar.style.animation = 'none';
+          bar.style.width = `${currentPct}%`;
+          bar.style.transition = 'none';
+          // Force reflow
+          bar.offsetHeight;
+          bar.style.transition = `width ${FILL_DURATION}s linear`;
+          bar.style.width = '100%';
+        }
+      }
+      setTimerPhase('filling');
+    }, refillDelay);
+    return () => clearTimeout(timeout);
+  }, [answered]);
+
+  useEffect(() => {
+    // Only start timer when depleting, startTimer is true, and not yet answered
+    if (!startTimer || timerPhase !== 'depleting' || answeredRef.current || timerStartedRef.current) return;
 
     timerStartedRef.current = true;
 
@@ -181,7 +214,7 @@ export default function Question({
     }, 1000);
 
     return () => clearInterval(interval);
-  }, [onTimeout, question.id, startTimer]);
+  }, [onTimeout, question.id, timerPhase, startTimer]);
 
   const handleAnswer = (answer: 'A' | 'B' | 'C' | 'D') => {
     if (answeredRef.current) return;
@@ -541,15 +574,16 @@ export default function Question({
       {/* Card Container */}
       <div className="question-card w-full max-w-md overflow-hidden transition-all duration-300 ease-in-out">
         {/* Timer Bar - Top of card */}
-        <div className="w-full h-1" style={{ backgroundColor: 'rgba(127, 176, 105, 0.06)' }}>
+        <div className="w-full h-1" style={{ backgroundColor: 'rgba(34, 88, 149, 0.06)' }}>
           <div
+            ref={timerBarRef}
             key={`timer-${question.id}`}
-            className="h-full timer-bar"
+            className={`h-full timer-bar ${timerPhase === 'depleting' ? 'timer-bar-depleting' : ''}`}
             style={{
-              width: answered ? undefined : '100%',
+              width: timerPhase === 'depleting' && !answered ? '100%' : undefined,
               animationDuration: `${TIMER_DURATION}s`,
-              animationPlayState: answered ? 'paused' : (startTimer && timerStartedRef.current ? 'running' : 'paused'),
-              background: 'linear-gradient(90deg, #ef4444, #f59e0b, #7fb069)',
+              animationPlayState: answered ? 'paused' : (timerPhase === 'depleting' && startTimer ? 'running' : 'paused'),
+              background: 'linear-gradient(90deg, #225895, #a6ddf7)',
             }}
           />
         </div>
