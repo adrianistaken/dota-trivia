@@ -197,9 +197,6 @@ export default function Question({
     onAnswer(answer, timeRemaining);
   };
 
-  const formatTime = (seconds: number): string => {
-    return `0:${seconds.toString().padStart(2, '0')}`;
-  };
 
   const { primary: questionIconUrl, fallback: questionIconFallbackUrl } = getQuestionIconUrl();
 
@@ -506,89 +503,95 @@ export default function Question({
   };
 
   return (
-    <div 
+    <div
       className="relative flex min-h-screen flex-col items-center justify-center px-4 py-8"
     >
-      {/* Fixed Score Display at Top Center */}
-      <div className="fixed top-0 left-0 right-0 z-50 flex flex-col items-center pt-4 pb-2 px-4 pointer-events-none">
-        <div 
-          className="rounded-lg border border-amber-900/60 shadow-2xl backdrop-blur-sm px-6 py-4"
-          style={{ backgroundColor: 'rgba(59, 46, 22, 0.95)' }}
+      {/* Sleek Score Bar at Top */}
+      <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
+        <div
+          className="flex items-center justify-between px-6 py-2.5 backdrop-blur-xl"
+          style={{ backgroundColor: 'rgba(15, 17, 23, 0.8)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}
         >
-          {/* Current Score */}
-          <div className="text-center mb-2">
-            <div className="text-xs text-amber-200/70 uppercase tracking-wide mb-1">Current score</div>
-            <div className="text-4xl sm:text-5xl font-bold text-white">
+          {/* Question Number - Left */}
+          <div className="text-xs text-white/40 uppercase tracking-widest font-medium">
+            Q{questionNumber}{totalQuestions ? ` / ${totalQuestions}` : ''}
+          </div>
+
+          {/* Score - Center */}
+          <div className="flex items-center gap-2.5">
+            <span className="text-lg font-semibold text-white/90 tracking-wide tabular-nums">
               {Math.round(displayScore).toLocaleString()}
-            </div>
-          </div>
-          
-          {/* Question Number */}
-          <div className="text-center mb-2">
-            <div className="text-sm text-amber-200/80">
-              Question number: {questionNumber}{totalQuestions ? `/${totalQuestions}` : ''}
-            </div>
-          </div>
-          
-          {/* Score Breakdown - Only show after correct answer */}
-          {scoreBreakdown && scoreBreakdown.total > 0 && showBreakdown && (
-            <div 
-              className={`text-center mt-2 pt-2 border-t border-amber-900/40 transition-opacity duration-500 ${
-                showBreakdown ? 'opacity-100' : 'opacity-0'
-              }`}
-            >
-              <div className="text-xs text-amber-200/90 mb-1">
+            </span>
+            {scoreBreakdown && scoreBreakdown.total > 0 && showBreakdown && (
+              <span className="text-xs text-emerald-400/90 font-medium animate-fade-in">
                 {formatScoreBreakdown(scoreBreakdown)}
-              </div>
-              <div className="text-xs text-amber-300/80 font-semibold">
-                {scoreBreakdown.streakMultiplier.toFixed(1)}x streak
-              </div>
-            </div>
-          )}
+              </span>
+            )}
+          </div>
+
+          {/* Streak - Right */}
+          <div className="text-xs text-white/40 uppercase tracking-widest font-medium">
+            {scoreBreakdown && scoreBreakdown.streakMultiplier > 1
+              ? `${scoreBreakdown.streakMultiplier.toFixed(1)}x`
+              : ''}
+          </div>
         </div>
       </div>
 
-      {/* Slim Pop-up Window Container */}
-      <div className="w-full max-w-md rounded-lg border border-amber-900/60 shadow-2xl backdrop-blur-sm transition-all duration-300 ease-in-out" style={{ backgroundColor: 'rgb(59 46 22)' }}>
+      {/* Card Container */}
+      <div
+        className="question-card w-full max-w-md rounded-2xl overflow-hidden transition-all duration-300 ease-in-out"
+      >
+        {/* Timer Bar - Top of card */}
+        <div className="w-full h-1.5" style={{ backgroundColor: 'rgba(255,255,255,0.04)' }}>
+          <div
+            key={`timer-${question.id}`}
+            className="h-full timer-bar"
+            style={{
+              width: answered ? undefined : '100%',
+              animationDuration: `${TIMER_DURATION}s`,
+              animationPlayState: answered ? 'paused' : (startTimer && timerStartedRef.current ? 'running' : 'paused'),
+              background: 'linear-gradient(90deg, #f97316, #eab308, #22c55e)',
+            }}
+          />
+        </div>
+
         {/* Window Content */}
-        <div className="p-5 space-y-5 transition-all duration-300 ease-in-out">
+        <div className="p-6 space-y-5 transition-all duration-300 ease-in-out">
           {/* Question Text - Centered */}
           <div className="text-center transition-all duration-300 ease-in-out">
             {renderQuestionWithIcon()}
           </div>
 
-          {/* Lore Box - Dark brown rectangular box, no rounded corners */}
-          <div 
+          {/* Lore Box */}
+          <div
             key={`lore-container-${question.id}`}
             className={`transition-all duration-300 ease-in-out overflow-hidden ${
-              question.lore 
-                ? 'max-h-96 opacity-100' 
+              question.lore
+                ? 'max-h-96 opacity-100'
                 : 'max-h-0 opacity-0'
             }`}
           >
             {question.lore && (
-              <div 
-                className="px-4 py-3 border border-amber-900/40 transition-opacity duration-300" 
-                style={{ backgroundColor: 'rgb(45 34 18)' }}
+              <div
+                className="px-4 py-3 rounded-lg transition-opacity duration-300"
+                style={{ backgroundColor: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}
               >
-                <p className="text-center text-sm italic text-white">{question.lore}</p>
+                <p className="text-center text-sm italic text-white/60">{question.lore}</p>
               </div>
             )}
           </div>
 
-          {/* Answer Options - 2x2 Grid, compact */}
-          <div key={question.id} className="grid grid-cols-2 gap-2">
+          {/* Answer Options - 2x2 Grid */}
+          <div key={question.id} className="grid grid-cols-2 gap-3">
               {(['A', 'B', 'C', 'D'] as const).map((option) => {
-                // Only show visual feedback if we're still on the same question
                 const isCurrentQuestion = questionIdRef.current === question.id;
                 const isSelected = isCurrentQuestion && selectedAnswer === option;
                 const isCorrectAnswer = option === question.correctAnswer;
-                // Only show celebration animation if user got it correct and on current question
                 const showCorrect = isCurrentQuestion && answered && isCorrect === true && isCorrectAnswer;
-                // Show correct answer (without celebration) on timeout and on current question
                 const showCorrectAnswer = isCurrentQuestion && answered && isCorrect === false && isCorrectAnswer;
                 const showWrong = isCurrentQuestion && answered && isSelected && !isCorrectAnswer;
-                
+
                 return (
                   <button
                     key={`${question.id}-${option}`}
@@ -599,49 +602,47 @@ export default function Question({
                       }
                     }}
                     disabled={answered}
-                    style={{
-                      ...(showCorrect ? { animation: 'correct-pulse 1s ease-in-out infinite' } : {}),
-                      ...(!showCorrect && !showCorrectAnswer && !showWrong && !isSelected ? { backgroundColor: 'rgb(45 34 18)' } : {}),
-                    }}
-                    className={`group relative flex flex-col items-center justify-center rounded border p-2.5 ${
-                      answered && !showCorrect && !showCorrectAnswer ? 'pointer-events-none cursor-not-allowed opacity-60 transition-opacity' : showCorrect ? '' : 'transition-all cursor-pointer'
+                    className={`answer-btn group relative flex flex-col items-center justify-center rounded-xl py-5 px-3 min-h-[5rem] ${
+                      answered && !showCorrect && !showCorrectAnswer ? 'pointer-events-none cursor-not-allowed opacity-50' : showCorrect ? '' : 'cursor-pointer'
                     } ${
                       showCorrect
-                        ? 'border-green-500 bg-green-900/60 shadow-lg shadow-green-500/50 animate-correct-pulse'
+                        ? 'answer-btn-correct animate-correct-pulse'
                         : showCorrectAnswer
-                        ? 'border-green-600/50 bg-green-900/30'
+                        ? 'answer-btn-correct-reveal'
                         : showWrong
-                        ? 'border-red-500 bg-red-900/40 shadow-lg shadow-red-500/30'
+                        ? 'answer-btn-wrong'
                         : isSelected
-                        ? 'border-amber-700 bg-amber-950/70'
-                        : 'border-amber-900/50 hover:border-amber-800/70 hover:shadow-lg'
+                        ? 'answer-btn-selected'
+                        : 'answer-btn-default'
                     }`}
                   >
-                    {/* Letter Label - Top-left corner, subtle */}
-                    <span className={`absolute left-1.5 top-1.5 flex h-5 w-5 items-center justify-center rounded text-xs font-semibold text-white/70 ${
-                      showCorrect ? 'bg-green-600' : showWrong ? 'bg-red-600' : ''
+                    {/* Letter Label - Top-left corner */}
+                    <span className={`absolute left-2.5 top-2.5 flex h-5 w-5 items-center justify-center rounded-md text-[10px] font-bold uppercase ${
+                      showCorrect ? 'bg-emerald-500 text-white' : showWrong ? 'bg-red-500 text-white' : 'text-white/40'
                     }`}
-                    style={!showCorrect && !showWrong ? { backgroundColor: 'rgb(68 52 24)' } : undefined}
+                    style={!showCorrect && !showWrong ? { backgroundColor: 'rgba(255,255,255,0.07)' } : undefined}
                     >
                       {option}
                     </span>
-                    
+
                     {/* Checkmark or X overlay */}
                     {showCorrect && (
                       <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <div className="text-4xl text-green-400 font-bold animate-bounce drop-shadow-lg" style={{ textShadow: '0 0 10px rgba(34, 197, 94, 0.8)' }}>
+                        <div className="text-4xl text-emerald-400 font-bold animate-bounce drop-shadow-lg" style={{ textShadow: '0 0 12px rgba(16, 185, 129, 0.8)' }}>
                           ✓
                         </div>
                       </div>
                     )}
                     {showWrong && (
                       <div className="absolute inset-0 flex items-center justify-center z-10">
-                        <div className="text-4xl text-red-400 font-bold animate-bounce drop-shadow-lg">✗</div>
+                        <div className="text-4xl text-red-400 font-bold animate-bounce drop-shadow-lg" style={{ textShadow: '0 0 12px rgba(239, 68, 68, 0.6)' }}>
+                          ✗
+                        </div>
                       </div>
                     )}
-                    
+
                     {/* Answer Image - Centered, square */}
-                    <div 
+                    <div
                       key={`option-image-container-${question.id}-${option}`}
                       className={`transition-all duration-300 ease-in-out overflow-hidden ${
                         question.optionImages?.[option]
@@ -650,24 +651,24 @@ export default function Question({
                       }`}
                     >
                       {question.optionImages?.[option] && (
-                        <div 
-                          className={`h-16 w-16 flex items-center justify-center border rounded transition-all duration-300 ease-in-out ${
-                            showCorrect ? 'border-green-500/80 animate-correct-glow' : showCorrectAnswer ? 'border-green-600/50' : showWrong ? 'border-red-500/50' : 'border-amber-900/50'
+                        <div
+                          className={`h-16 w-16 flex items-center justify-center rounded-lg overflow-hidden transition-all duration-300 ease-in-out ${
+                            showCorrect ? 'ring-2 ring-emerald-400/60 animate-correct-glow' : showCorrectAnswer ? 'ring-1 ring-emerald-500/40' : showWrong ? 'ring-1 ring-red-500/40' : 'ring-1 ring-white/10'
                           }`}
-                          style={!showCorrect && !showCorrectAnswer && !showWrong ? { backgroundColor: 'rgb(45 34 18)' } : undefined}
+                          style={{ backgroundColor: 'rgba(255,255,255,0.05)' }}
                         >
                           <img
                             src={question.optionImages[option]}
                             alt={`Option ${option}`}
-                            className={`h-full w-full object-contain transition-opacity duration-300 ${showWrong ? 'opacity-50' : ''}`}
+                            className={`h-full w-full object-contain transition-opacity duration-300 ${showWrong ? 'opacity-40' : ''}`}
                           />
                         </div>
                       )}
                     </div>
-                    
-                    {/* Answer Text - Below image */}
+
+                    {/* Answer Text */}
                     <div className={`text-center text-sm font-medium ${
-                      showCorrect ? 'text-green-200' : showCorrectAnswer ? 'text-green-300' : showWrong ? 'text-red-300' : 'text-white'
+                      showCorrect ? 'text-emerald-200' : showCorrectAnswer ? 'text-emerald-300' : showWrong ? 'text-red-300' : 'text-white/90'
                     }`}>
                       {question.options[option]}
                     </div>
@@ -675,14 +676,6 @@ export default function Question({
                 );
               })}
             </div>
-
-          {/* Timer - Centered below answers */}
-          <div className="flex flex-col items-center gap-1 pt-1">
-            <div className="text-3xl font-bold text-amber-100">
-              {formatTime(timeRemaining)}
-            </div>
-            <div className="text-xs text-amber-200/70 uppercase tracking-wide">TIME REMAINING</div>
-          </div>
         </div>
       </div>
     </div>
